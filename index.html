@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HYBRD — Legal</title>
+    <meta
+      name="description"
+      content="Privacy Policy and Terms for HYBRD — Built for Hybrid Athletes."
+    />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./">
+          <img class="brand__mark" src="./assets/logo.png" alt="" width="36" height="36" />
+          <span class="brand__text">HYBRD</span>
+        </a>
+        <nav class="nav" aria-label="Legal">
+          <a href="./privacy/">Privacy</a>
+          <a href="./terms/">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="hub">
+      <p class="hub__tag">Built for Hybrid Athletes</p>
+      <h1>Legal</h1>
+      <p class="hub__lede">
+        Policies that govern how HYBRD handles your data and how athletes use the
+        community.
+      </p>
+
+      <div class="card-list">
+        <a class="card" href="./privacy/">
+          <div class="card__title">Privacy Policy</div>
+          <p class="card__desc">What we collect, how we use it, and your choices.</p>
+        </a>
+        <a class="card" href="./terms/">
+          <div class="card__title">Terms &amp; Conditions</div>
+          <p class="card__desc">Rules for using HYBRD and publishing training content.</p>
+        </a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        © <span id="year"></span> HYBRD ·
+        <a href="mailto:fmatamorosa98@icloud.com">fmatamorosa98@icloud.com</a>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
