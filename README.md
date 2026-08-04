@@ -9,6 +9,7 @@ Public Privacy Policy and Terms for [HYBRD](https://github.com/Fermacu/hybrd).
 | Home | https://fermacu.github.io/hybrd-legal/ |
 | Privacy Policy | https://fermacu.github.io/hybrd-legal/privacy/ |
 | Terms | https://fermacu.github.io/hybrd-legal/terms/ |
+| Delete account | https://fermacu.github.io/hybrd-legal/delete-account/ |
 
 ## GitHub Pages
 
