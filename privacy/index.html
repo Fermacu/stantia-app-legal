@@ -36,7 +36,7 @@
     <header class="hero">
       <p class="hero__eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="hero__meta">Last updated: July 11, 2026</p>
+      <p class="hero__meta">Last updated: August 5, 2026</p>
       <p class="hero__lede">
         This Privacy Policy explains how HYBRD (“we”, “us”, or “our”) collects, uses,
         shares, and protects information when you use the HYBRD mobile application
@@ -71,7 +71,16 @@
           <li>
             <strong>User-generated content</strong> — workouts, posts, comments,
             session history, ratings, saved items, and other content you create or
-            upload (including profile and workout images).
+            upload (including profile photos, workout covers, and post photos).
+          </li>
+          <li>
+            <strong>Health and fitness metrics (optional, Apple platforms)</strong> —
+            when you use Train with a paired Apple Watch and grant Health access,
+            we may process workout-related metrics such as heart rate, active energy
+            (calories), distance, and pace. These metrics may be shown live in the
+            app, stored with your completed Train session summary, and written to
+            Apple Health on your devices when you allow it. Without a Watch or without
+            Health permission, Train works without collecting this data.
           </li>
           <li>
             <strong>Social graph data</strong> — who you follow, who follows you,
@@ -90,17 +99,60 @@
         <p>
           We do not require access to your contacts, precise location, microphone, or
           advertising identifiers for core HYBRD features. Photo library access is
-          requested only when you choose to set a profile photo or workout cover.
+          requested only when you choose a profile photo, workout cover, or post photo.
+          Apple Health / HealthKit access is requested only when you start Train metrics
+          with a paired Apple Watch companion.
         </p>
       </section>
 
       <section>
-        <h2>3. How we use information</h2>
+        <h2>3. Apple Watch, Apple Health, and HealthKit</h2>
+        <p>
+          On iPhone, HYBRD can work with an optional Apple Watch companion app and
+          Apple’s HealthKit framework to capture Train session metrics.
+        </p>
+        <ul>
+          <li>
+            <strong>Optional</strong> — Live Watch metrics require a paired Apple Watch
+            with the HYBRD Watch app. If you do not use a Watch, or you decline Health
+            permission, Train still works and we do not collect HealthKit metrics.
+          </li>
+          <li>
+            <strong>What we access</strong> — with your permission, HYBRD may read and
+            write workout-related Health data needed for Train (for example heart rate,
+            active energy, distance, and workout samples). We request access through
+            the system Health permission prompts.
+          </li>
+          <li>
+            <strong>How we use it</strong> — to show live metrics during Train, include
+            summaries on completed sessions and history, and save workouts to Apple
+            Health so they can appear alongside your other activity on your devices.
+          </li>
+          <li>
+            <strong>What we do not do</strong> — we do not sell Health or fitness data,
+            and we do not use HealthKit data for advertising, marketing, or data-broker
+            purposes. Health metrics are not required to use the social features of
+            HYBRD.
+          </li>
+          <li>
+            <strong>Your control</strong> — you can change Health permissions anytime in
+            iPhone Settings → Health → Data Access &amp; Devices (or the equivalent
+            Health settings screen), and you can stop using Watch metrics by ending or
+            not starting Watch-connected Train sessions.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. How we use information</h2>
         <p>We use information to:</p>
         <ul>
           <li>Create and manage your account and athlete profile</li>
           <li>Provide feed, search, follow, like, save, train, and ranking features</li>
           <li>Display public profile fields and published content to other athletes</li>
+          <li>
+            Provide optional Apple Watch / HealthKit Train metrics and session summaries
+          </li>
           <li>Send in-app notifications related to social activity</li>
           <li>Moderate the community (including reports and blocks)</li>
           <li>Improve reliability, security, and product quality</li>
@@ -111,18 +163,27 @@
       </section>
 
       <section>
-        <h2>4. How information is shared</h2>
+        <h2>5. How information is shared</h2>
         <ul>
           <li>
             <strong>Other HYBRD users</strong> — public profile fields, public posts,
             and public workouts are visible to other athletes. Private workouts remain
-            in your library until you choose to share them.
+            in your library until you choose to share them. HealthKit metrics from Train
+            are part of your session experience; they are not posted publicly unless you
+            choose to share a session summary or similar content yourself.
+          </li>
+          <li>
+            <strong>Apple Health on your devices</strong> — when you grant permission,
+            workout data may be written to Apple Health / HealthKit on your Apple
+            devices and governed by Apple’s Health settings and policies in addition to
+            this Privacy Policy.
           </li>
           <li>
             <strong>Service providers</strong> — we use trusted infrastructure
             providers to host and operate HYBRD. Today this includes Google Firebase
             (Authentication, Firestore, Cloud Storage, Cloud Functions) to store
-            account data, content, and media, and to run backend logic.
+            account data, content, media, and session records (which may include
+            aggregate Train metrics you captured), and to run backend logic.
           </li>
           <li>
             <strong>Legal and safety</strong> — we may disclose information if required
@@ -133,19 +194,25 @@
       </section>
 
       <section>
-        <h2>5. Account deletion and your choices</h2>
+        <h2>6. Account deletion and your choices</h2>
         <p>You can:</p>
         <ul>
           <li>Edit profile information and feed preferences in Settings</li>
           <li>Delete posts and manage content you control</li>
           <li>Block other users and report content that violates guidelines</li>
           <li>
+            Manage Apple Health permissions on your device, and choose whether to use
+            Watch-connected Train metrics
+          </li>
+          <li>
             Delete your account in-app (Settings → Delete account), or follow the steps on
             our
             <a href="../delete-account/">Delete account</a>
             page. Account deletion removes your account and associated personal data we
             are not legally required to retain, including profile data and content tied
-            to your account, subject to processing time and backups.
+            to your account, subject to processing time and backups. Workout samples
+            already saved in Apple Health remain under your Apple Health controls unless
+            you delete them there.
           </li>
         </ul>
         <p>
@@ -156,17 +223,19 @@
       </section>
 
       <section>
-        <h2>6. Data retention</h2>
+        <h2>7. Data retention</h2>
         <p>
-          We retain account and content data while your account is active. After you
-          delete your account, we remove or de-identify personal data within a
-          reasonable period, except where we must keep limited records for security,
-          dispute resolution, or legal compliance.
+          We retain account and content data while your account is active, including
+          Train session summaries and any associated metrics stored with your HYBRD
+          account. After you delete your account, we remove or de-identify personal data
+          within a reasonable period, except where we must keep limited records for
+          security, dispute resolution, or legal compliance. Data stored in Apple Health
+          on your devices is retained according to your Apple Health settings.
         </p>
       </section>
 
       <section>
-        <h2>7. Security</h2>
+        <h2>8. Security</h2>
         <p>
           We use industry-standard safeguards provided by our cloud providers,
           including encrypted transport (HTTPS/TLS) and access controls. No method of
@@ -176,7 +245,7 @@
       </section>
 
       <section>
-        <h2>8. Children’s privacy</h2>
+        <h2>9. Children’s privacy</h2>
         <p>
           HYBRD is not directed to children under 13 (or the minimum age required in
           your country). We do not knowingly collect personal information from
@@ -187,7 +256,7 @@
       </section>
 
       <section>
-        <h2>9. International processing</h2>
+        <h2>10. International processing</h2>
         <p>
           HYBRD may process information on servers located outside your country
           (including through Firebase/Google Cloud regions). By using the app, you
@@ -197,7 +266,7 @@
       </section>
 
       <section>
-        <h2>10. Changes to this policy</h2>
+        <h2>11. Changes to this policy</h2>
         <p>
           We may update this Privacy Policy as HYBRD evolves. We will revise the
           “Last updated” date above and, when changes are material, provide additional
@@ -207,7 +276,7 @@
       </section>
 
       <section>
-        <h2>11. Contact</h2>
+        <h2>12. Contact</h2>
         <p>
           Contact:
           <a href="mailto:fmatamorosa98@icloud.com">fmatamorosa98@icloud.com</a>
