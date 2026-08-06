@@ -79,7 +79,8 @@ a:hover {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  filter: invert(1);
+  /* Mark is already white on black — matches the dark site header. */
+  border-radius: 6px;
 }
 
 .brand__text {
