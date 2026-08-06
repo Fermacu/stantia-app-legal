@@ -1,6 +1,6 @@
-# HYBRD Legal
+# IBRID Legal
 
-Public Privacy Policy and Terms for [HYBRD](https://github.com/Fermacu/hybrd).
+Public Privacy Policy and Terms for [IBRID](https://github.com/Fermacu/hybrd).
 
 ## URLs
 

@@ -21,7 +21,7 @@ cd "$LEGAL_DIR"
 
 if ! gh repo view Fermacu/hybrd-legal >/dev/null 2>&1; then
   gh repo create Fermacu/hybrd-legal --public --source=. --remote=origin --push \
-    --description "Public Privacy Policy and Terms for HYBRD"
+    --description "Public Privacy Policy and Terms for IBRID"
 else
   if ! git remote get-url origin >/dev/null 2>&1; then
     git remote add origin "https://github.com/Fermacu/hybrd-legal.git"
