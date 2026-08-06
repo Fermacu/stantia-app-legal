@@ -1,15 +1,17 @@
 # IBRID Legal
 
-Public Privacy Policy and Terms for [IBRID](https://github.com/Fermacu/hybrd).
+Public Privacy Policy and Terms for [IBRID](https://github.com/Fermacu/ibrid-mobile).
+
+**Repo:** [`Fermacu/ibrid-app-legal`](https://github.com/Fermacu/ibrid-app-legal)
 
 ## URLs
 
 | Page | URL |
 | --- | --- |
-| Home | https://fermacu.github.io/hybrd-legal/ |
-| Privacy Policy | https://fermacu.github.io/hybrd-legal/privacy/ |
-| Terms | https://fermacu.github.io/hybrd-legal/terms/ |
-| Delete account | https://fermacu.github.io/hybrd-legal/delete-account/ |
+| Home | https://fermacu.github.io/ibrid-app-legal/ |
+| Privacy Policy | https://fermacu.github.io/ibrid-app-legal/privacy/ |
+| Terms | https://fermacu.github.io/ibrid-app-legal/terms/ |
+| Delete account | https://fermacu.github.io/ibrid-app-legal/delete-account/ |
 
 ## GitHub Pages
 
