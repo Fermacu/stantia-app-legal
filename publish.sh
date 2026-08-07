@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time setup: publish ibrid-app-legal and lock down the ibrid-mobile code repo.
+# One-time setup: publish stantia-app-legal and lock down the app code repo.
 # Requires: GitHub CLI (`brew install gh`) and `gh auth login`.
 
 set -euo pipefail
@@ -18,38 +18,37 @@ gh auth status
 
 cd "$LEGAL_DIR"
 
-if ! gh repo view Fermacu/ibrid-app-legal >/dev/null 2>&1; then
-  gh repo create Fermacu/ibrid-app-legal --public --source=. --remote=origin --push \
-    --description "Public Privacy Policy and Terms for IBRID"
+if ! gh repo view Fermacu/stantia-app-legal >/dev/null 2>&1; then
+  gh repo create Fermacu/stantia-app-legal --public --source=. --remote=origin --push \
+    --description "Public Privacy Policy and Terms for Stantia"
 else
   if ! git remote get-url origin >/dev/null 2>&1; then
-    git remote add origin "https://github.com/Fermacu/ibrid-app-legal.git"
+    git remote add origin "https://github.com/Fermacu/stantia-app-legal.git"
   else
-    git remote set-url origin "https://github.com/Fermacu/ibrid-app-legal.git"
+    git remote set-url origin "https://github.com/Fermacu/stantia-app-legal.git"
   fi
   git push -u origin main
 fi
 
 # Enable GitHub Pages from root of main
-gh api -X POST "repos/Fermacu/ibrid-app-legal/pages" \
+gh api -X POST "repos/Fermacu/stantia-app-legal/pages" \
   -f build_type=legacy \
   -f source[branch]=main \
   -f source[path]=/ \
   2>/dev/null || \
-gh api -X PUT "repos/Fermacu/ibrid-app-legal/pages" \
+gh api -X PUT "repos/Fermacu/stantia-app-legal/pages" \
   -f build_type=legacy \
   -f source[branch]=main \
   -f source[path]=/ \
   2>/dev/null || true
 
 echo ""
-echo "Legal site: https://fermacu.github.io/ibrid-app-legal/privacy/"
+echo "Legal site: https://fermacu.github.io/stantia-app-legal/privacy/"
 echo "(Pages can take 1–2 minutes the first time.)"
 echo ""
 
 read -r -p "Make Fermacu/ibrid-mobile PRIVATE now? [y/N] " ans
 if [[ "${ans:-}" =~ ^[Yy]$ ]]; then
-  # Disable Pages on the app repo if still enabled
   gh api -X DELETE "repos/Fermacu/ibrid-mobile/pages" 2>/dev/null || true
   gh repo edit Fermacu/ibrid-mobile --visibility private --accept-visibility-change-consequences
   echo "ibrid-mobile is now private."

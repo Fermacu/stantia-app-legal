@@ -1,17 +1,17 @@
-# IBRID Legal
+# Stantia Legal
 
-Public Privacy Policy and Terms for [IBRID](https://github.com/Fermacu/ibrid-mobile).
+Public Privacy Policy and Terms for [Stantia](https://github.com/Fermacu/ibrid-mobile).
 
-**Repo:** [`Fermacu/ibrid-app-legal`](https://github.com/Fermacu/ibrid-app-legal)
+**Repo:** [`Fermacu/stantia-app-legal`](https://github.com/Fermacu/stantia-app-legal)
 
 ## URLs
 
 | Page | URL |
 | --- | --- |
-| Home | https://fermacu.github.io/ibrid-app-legal/ |
-| Privacy Policy | https://fermacu.github.io/ibrid-app-legal/privacy/ |
-| Terms | https://fermacu.github.io/ibrid-app-legal/terms/ |
-| Delete account | https://fermacu.github.io/ibrid-app-legal/delete-account/ |
+| Home | https://fermacu.github.io/stantia-app-legal/ |
+| Privacy Policy | https://fermacu.github.io/stantia-app-legal/privacy/ |
+| Terms | https://fermacu.github.io/stantia-app-legal/terms/ |
+| Delete account | https://fermacu.github.io/stantia-app-legal/delete-account/ |
 
 ## GitHub Pages
 
