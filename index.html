@@ -8,11 +8,11 @@
       name="description"
       content="Privacy Policy, Terms, and account deletion for Stantia — Built for Athletes."
     />
-    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="icon" href="./assets/logo-mark.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -20,9 +20,15 @@
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="./">
-          <img class="brand__mark" src="./assets/logo.png" alt="" width="36" height="36" />
-          <span class="brand__text">Stantia</span>
+        <a class="brand" href="./" aria-label="Stantia home">
+          <img class="brand__mark" src="./assets/logo-mark.png" alt="" width="36" height="36" />
+          <span class="brand__divider" aria-hidden="true"></span>
+          <img
+            class="brand__wordmark"
+            src="./assets/logo-wordmark.png"
+            alt="Stantia"
+            height="18"
+          />
         </a>
         <nav class="nav" aria-label="Legal">
           <a href="./privacy/">Privacy</a>
@@ -33,8 +39,14 @@
     </header>
 
     <main class="hub">
-      <p class="hub__tag">Built for Athletes</p>
+      <img
+        class="hub__lockup"
+        src="./assets/logo-lockup.png"
+        alt="Stantia — Built for Athletes"
+        width="220"
+      />
       <h1>Legal</h1>
+      <p class="hub__tag">Built for Athletes</p>
       <p class="hub__lede">
         Policies that govern how Stantia handles your data and how athletes use the
         community.

@@ -1,17 +1,18 @@
-/* Stantia legal pages — monochrome brand */
+/* Stantia legal pages — dark monochrome brand (matches mobile app) */
 :root {
   --black: #000000;
   --white: #ffffff;
-  --gray-50: #fafafa;
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
   --gray-400: #a3a3a3;
   --gray-500: #737373;
-  --gray-600: #525252;
+  --gray-700: #2e2e2e;
+  --gray-800: #1f1f1f;
   --gray-900: #141414;
+  --gray-950: #0a0a0a;
   --max: 42rem;
-  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", sans-serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font-display: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -22,15 +23,14 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  color: var(--black);
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.06), transparent),
-    var(--white);
+  color: var(--white);
+  background: var(--black);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -38,7 +38,7 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--white);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
@@ -48,9 +48,8 @@ a:hover {
 }
 
 .site-header {
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-800);
   background: var(--black);
-  color: var(--white);
 }
 
 .site-header__inner {
@@ -60,13 +59,13 @@ a:hover {
   gap: 1rem;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.25rem;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
   color: inherit;
   text-decoration: none;
 }
@@ -79,35 +78,43 @@ a:hover {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  /* Mark is already white on black — matches the dark site header. */
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
-.brand__text {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.brand__wordmark {
+  height: 18px;
+  width: auto;
+  max-width: 148px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand__divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .nav a {
-  color: var(--white);
+  color: var(--gray-400);
   text-decoration: none;
-  opacity: 0.75;
 }
 
 .nav a:hover,
 .nav a[aria-current="page"] {
+  color: var(--white);
   opacity: 1;
   text-decoration: underline;
 }
@@ -146,7 +153,7 @@ a:hover {
 .hero__lede {
   margin: 1.25rem 0 0;
   max-width: 36rem;
-  color: var(--gray-600);
+  color: var(--gray-400);
   font-size: 1.0625rem;
 }
 
@@ -159,7 +166,7 @@ a:hover {
 .content section {
   margin-top: 2.25rem;
   padding-top: 2.25rem;
-  border-top: 1px solid var(--gray-200);
+  border-top: 1px solid var(--gray-800);
 }
 
 .content h2 {
@@ -173,7 +180,12 @@ a:hover {
 
 .content p,
 .content li {
-  color: var(--gray-600);
+  color: var(--gray-400);
+}
+
+.content strong {
+  color: var(--white);
+  font-weight: 600;
 }
 
 .content p {
@@ -191,13 +203,21 @@ a:hover {
 }
 
 .content li::marker {
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .hub {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 4rem 1.25rem 5rem;
+  padding: 3.5rem 1.25rem 5rem;
+  text-align: center;
+}
+
+.hub__lockup {
+  display: block;
+  width: min(220px, 58vw);
+  height: auto;
+  margin: 0 auto 2rem;
 }
 
 .hub h1 {
@@ -209,17 +229,18 @@ a:hover {
 }
 
 .hub__tag {
-  margin: 0.75rem 0 0;
+  margin: 0.85rem 0 0;
   color: var(--gray-500);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
 
 .hub__lede {
-  margin: 1.5rem 0 0;
-  color: var(--gray-600);
+  margin: 1.5rem auto 0;
+  max-width: 32rem;
+  color: var(--gray-400);
   font-size: 1.125rem;
 }
 
@@ -227,27 +248,30 @@ a:hover {
   display: grid;
   gap: 1rem;
   margin-top: 2.5rem;
+  text-align: left;
 }
 
 .card {
   display: block;
   padding: 1.35rem 1.4rem;
-  border: 1px solid var(--black);
-  background: var(--white);
+  border: 1px solid var(--gray-800);
+  border-radius: var(--radius-lg);
+  background: var(--gray-950);
   color: inherit;
   text-decoration: none;
-  transition: background 160ms ease, color 160ms ease;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .card:hover {
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
   opacity: 1;
 }
 
 .card__title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -256,12 +280,17 @@ a:hover {
 .card__desc {
   margin: 0.45rem 0 0;
   font-size: 0.95rem;
-  opacity: 0.75;
+  color: var(--gray-400);
+}
+
+.card:hover .card__desc {
+  color: inherit;
+  opacity: 0.7;
 }
 
 .site-footer {
-  border-top: 1px solid var(--gray-200);
-  background: var(--gray-50);
+  border-top: 1px solid var(--gray-800);
+  background: var(--gray-950);
 }
 
 .site-footer__inner {
@@ -273,7 +302,7 @@ a:hover {
 }
 
 .site-footer a {
-  color: var(--gray-600);
+  color: var(--gray-400);
 }
 
 @media (max-width: 640px) {
@@ -285,5 +314,14 @@ a:hover {
   .brand__mark {
     width: 32px;
     height: 32px;
+  }
+
+  .brand__wordmark {
+    height: 16px;
+    max-width: 130px;
+  }
+
+  .brand__divider {
+    height: 18px;
   }
 }
