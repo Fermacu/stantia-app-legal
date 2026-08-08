@@ -1,6 +1,6 @@
 # Stantia Legal
 
-Public Privacy Policy and Terms for [Stantia](https://github.com/Fermacu/ibrid-mobile).
+Public help guides, Privacy Policy, and Terms for [Stantia](https://github.com/Fermacu/ibrid-mobile).
 
 **Repo:** [`Fermacu/stantia-app-legal`](https://github.com/Fermacu/stantia-app-legal)
 
@@ -9,6 +9,7 @@ Public Privacy Policy and Terms for [Stantia](https://github.com/Fermacu/ibrid-m
 | Page | URL |
 | --- | --- |
 | Home | https://fermacu.github.io/stantia-app-legal/ |
+| Help & Guides | https://fermacu.github.io/stantia-app-legal/help/ |
 | Privacy Policy | https://fermacu.github.io/stantia-app-legal/privacy/ |
 | Terms | https://fermacu.github.io/stantia-app-legal/terms/ |
 | Delete account | https://fermacu.github.io/stantia-app-legal/delete-account/ |
