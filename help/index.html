@@ -43,11 +43,12 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Support</p>
       <h1>Help &amp; Guides</h1>
+      <p class="hero__meta">Last updated: August 9, 2026 · App version 1.0.5</p>
       <p class="hero__lede">
         Training is the content. Community is the product. Here’s how to get around Stantia,
-        build workouts, train live, and track how hybrid you really are.
+        build workouts, train live, share sessions, and track how hybrid you really are.
       </p>
-          <nav class="guide-toc guide-toc--mobile" aria-label="On this page">
+      <nav class="guide-toc guide-toc--mobile" aria-label="On this page">
         <a href="#screens">Screens</a>
         <a href="#get-around">Get around</a>
         <a href="#workouts">Workouts</a>
@@ -159,15 +160,16 @@
         </p>
         <ul class="guide-basics__tabs">
           <li><strong>Feed</strong> — posts from you and athletes you follow</li>
-          <li><strong>Workouts</strong> — your library, collections, and saved sessions</li>
-          <li><strong>Train</strong> — live sessions, quick timers, history, and insights</li>
+          <li><strong>Workouts</strong> — your library, collections, and saved workouts</li>
+          <li><strong>Train</strong> — live sessions, Smart Timer, History, and insights</li>
           <li><strong>Search</strong> — find athletes, workouts, and monthly rankings</li>
           <li><strong>Profile</strong> — your page, settings, About, and help</li>
         </ul>
         <p>
           Use <strong>+</strong> on Feed to create a post, and <strong>+</strong> on Workouts to
-          build a new workout. In Profile → Settings you can edit your display name, username,
-          bio, specialties, feed preferences, and country flag.
+          build a new workout. In <strong>Profile → Settings</strong> you can edit display name,
+          username, bio, specialties, feed preferences, country flag, theme (light/dark), and
+          accent color.
         </p>
       </section>
 
@@ -264,11 +266,15 @@
           </li>
           <li>
             You can <strong>rate</strong> someone else’s workout 1–5 stars (not your own, and
-            not quick timers). One rating per athlete per workout — you can update it next time
+            not Smart Timers). One rating per athlete per workout — you can update it next time
           </li>
           <li>
             <strong>Share</strong> a session card in Full, Workout, Time, or List style via the
-            system share sheet
+            system share sheet (Share exports the style you have selected)
+          </li>
+          <li>
+            From the feed you can also publish a <strong>completed session</strong> post that
+            shows your run summary (see <a href="#feed">Feed</a>)
           </li>
         </ul>
       </section>
@@ -287,10 +293,31 @@
             and share
           </li>
           <li>
-            History splits <strong>Workouts completed</strong> (library Train runs) and
-            <strong>Other sessions</strong> (manual / freeform logs)
+            An active session banner stays visible when you leave Train mid-session; on iPhone,
+            Live Activity can show on Lock Screen / Dynamic Island
           </li>
         </ul>
+
+        <h3>History</h3>
+        <p>Under <strong>Train → History</strong> you’ll find:</p>
+        <ul>
+          <li>
+            <strong>Activity</strong> — a year grid of daily training minutes (accent intensity)
+          </li>
+          <li>
+            <strong>Workouts completed</strong> — full Train runs of library workouts
+          </li>
+          <li>
+            <strong>Other sessions</strong> — editable freeform logs (title, notes, specialties,
+            date; duration optional to save, but required to count toward History metrics and
+            Hybrid Index). Finished <strong>Smart Timers</strong> save here automatically
+          </li>
+        </ul>
+        <p>
+          Share an Other session as an image card from session detail. Deleting an Other session
+          detaches it from linked posts (photos/caption stay); posts that only shared that
+          session are removed.
+        </p>
 
         <h3>Live Activity on iPhone</h3>
         <p>
@@ -398,28 +425,38 @@
         <p class="guide__eyebrow">Quick timer</p>
         <h2>Train with smart timers</h2>
         <p>
-          Need a clock without building a full library workout? Open <strong>Train</strong> →
-          <strong>Start a timer</strong> and pick a format. Preview the setup, then go.
+          Need a clock without building a full library workout? Open <strong>Train</strong> and
+          use <strong>Smart Timer</strong> (or the quick-start cards). Preview the setup, then
+          go.
         </p>
         <ul>
+          <li><strong>Free</strong> — open count-up until you stop</li>
+          <li><strong>Timer</strong> — set a duration and count down</li>
           <li>
-            <strong>Intervals</strong> — alternate work and rest for N rounds (defaults like
-            30s work / 15s rest / 5 rounds; adjustable in the UI)
+            <strong>Intervals</strong> — alternate work and rest for N rounds (adjustable in the
+            UI)
           </li>
           <li>
             <strong>EMOM</strong> — every minute on the minute: finish the work before the next
-            beep (e.g. every 60s × 10 rounds)
+            beep
           </li>
           <li>
             <strong>AMRAP</strong> — one countdown; as many rounds/reps as possible before the
-            cap (e.g. 12 minutes)
+            cap
           </li>
         </ul>
         <p>
-          Quick timers are not library workouts and are <strong>not rateable</strong>. They
-          still run through Train with the same pause / resume / restart controls, and can use
-          Watch Effort metrics when your Watch is ready. Finished freeform work can also be
-          logged under History → Other sessions.
+          Quick starts above the timer preset common sessions:
+          <strong>Run / Swim / Ride</strong> (Free + Distance metrics) and
+          <strong>Strength</strong> (Free + Effort). Finished Smart Timers save automatically
+          under <strong>History → Other sessions</strong> (title, duration, optional Watch
+          distance, notes; specialties editable later).
+        </p>
+        <p>
+          Smart Timers are not library workouts and are <strong>not rateable</strong>. They use
+          the same pause / resume controls and optional Watch metrics when your Watch is ready.
+          Share them from History or attach a completed run to a feed post — not as a Library
+          workout attach.
         </p>
       </section>
 
@@ -433,7 +470,8 @@
         </p>
         <p>
           It measures <strong>specialty balance</strong>, not duration, intensity, or calories.
-          Each completed workout counts toward every specialty it includes (by workout count).
+          Each completed library workout and each timed Other session (with duration) counts
+          toward every specialty it includes.
         </p>
 
         <h3>How the score is built</h3>
@@ -471,27 +509,53 @@
         <p class="guide__eyebrow">Community</p>
         <h2>Connect through training</h2>
         <p>
-          The feed is where athletes share progress, ideas, and public workouts. Follow people
-          you want to train beside — your feed shows their posts plus yours.
+          The feed is where athletes share progress, ideas, and workouts. Follow people you want
+          to train beside — your feed shows their posts plus yours.
         </p>
+        <p>
+          Creating a post is a short multi-step flow (same chrome as New workout):
+          <strong>Content</strong> (photos + caption) → <strong>Attach</strong> → Publish. Each
+          part is optional, but the post needs at least one of caption, photos, or a valid
+          attachment.
+        </p>
+        <h3>What you can attach</h3>
+        <p>Pick at most one attach type per post:</p>
         <ul>
           <li>
-            Create a post with text and optional photos (crop to 4:3 or 4:5); you can attach a
-            <strong>public</strong> library workout <em>or</em> a logged session — not both on
-            the same post
+            <strong>Library workout</strong> — a <strong>public</strong> workout from your
+            library, or one you’ve <strong>Saved</strong> from another athlete (great for
+            recommending training). Private library workouts cannot be attached.
+          </li>
+          <li>
+            <strong>Completed workout</strong> — a Train History run (including Smart Timer).
+            On the post, viewers see a <strong>Completed workout</strong> banner; open detail
+            for <strong>Post</strong> / <strong>Resumen</strong> (Time-highlight summary) and
+            Open workout when the source still exists.
+          </li>
+          <li>
+            <strong>Other session</strong> — pick an existing History → Other session, or
+            create one while posting. Shows as a <strong>Completed session</strong> banner and
+            opens Session resume.
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Photos: up to 10; choose <strong>4:3</strong> or <strong>4:5</strong> once for the
+            whole post, then crop each photo
           </li>
           <li>Like (including double-tap), comment, save, and share posts you want to keep</li>
           <li>
             Use <strong>Search</strong> for athletes, workouts, and specialty filters; Ranking
-            shows monthly top athletes
+            shows monthly top athletes (top 100 earn a profile badge)
           </li>
           <li>
-            Monthly rankings combine rating quality and volume; top 100 earn a profile badge
+            You’ll get an in-app notification when someone recommends your public workout in a
+            post, or shares a completed Train run of your workout
           </li>
         </ul>
         <p>
-          Private workouts stay in your library until you publish them. Save workouts from the
-          feed or Search to pull them into your Saved library for later.
+          Save workouts from the feed or Search to pull them into Saved — then attach them when
+          you want to recommend them.
         </p>
       </section>
 
@@ -514,8 +578,8 @@
           <details class="faq__item">
             <summary>Is Stantia free?</summary>
             <p>
-              The MVP is free to use. Premium features may be introduced later; we will always
-              communicate pricing clearly before anything changes.
+              Yes — Stantia is free to use. If premium features arrive later, we will communicate
+              pricing clearly before anything changes.
             </p>
           </details>
 
@@ -523,16 +587,46 @@
             <summary>Who can see my workouts?</summary>
             <p>
               Public workouts and posts are visible to other Stantia athletes. Private
-              workouts stay in your library until you choose to share them.
+              workouts stay in your library until you choose to share them. Private workouts
+              cannot be attached to feed posts.
             </p>
           </details>
 
           <details class="faq__item">
             <summary>How do I start a training session?</summary>
             <p>
-              Open a workout → review the session preview → start the session. Or go to
-              <strong>Train</strong> and use a quick timer (Intervals, EMOM, or AMRAP) without
-              building a workout first.
+              Open a workout → review the session preview → start. Or go to
+              <strong>Train</strong> and use Smart Timer / quick starts (Run, Swim, Ride,
+              Strength) without building a workout first.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>What is Smart Timer?</summary>
+            <p>
+              Train without a saved workout: Free, Timer, Intervals, EMOM, or AMRAP. Quick
+              starts preset Run / Swim / Ride (distance) or Strength (effort). Finished timers
+              save under History → Other sessions. See the
+              <a href="#timers">Smart timers</a> guide.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Can I recommend someone else’s workout in a post?</summary>
+            <p>
+              Yes. Save their public workout, then when you create a post choose
+              <strong>Attach → Library</strong> and pick it from Saved. Publishing re-checks
+              that the workout is still public. The workout owner gets a notification.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>What’s the difference between Completed workout and Completed session?</summary>
+            <p>
+              <strong>Completed workout</strong> is a Train History run of a library workout (or
+              Smart Timer) shared on the feed, with a Resumen summary.
+              <strong>Completed session</strong> is an Other session (freeform log) shared on
+              the feed; tap opens Session resume.
             </p>
           </details>
 
@@ -585,8 +679,9 @@
           <details class="faq__item">
             <summary>How does the feed work?</summary>
             <p>
-              Your feed shows your posts and posts from athletes you follow. Use Search to
-              discover new athletes and workouts, then follow or save what you like.
+              Your feed shows your posts and posts from athletes you follow. Create posts with
+              text, photos, and optionally a library/Saved workout, a completed Train run, or an
+              Other session. Use Search to discover athletes and workouts.
             </p>
           </details>
 
