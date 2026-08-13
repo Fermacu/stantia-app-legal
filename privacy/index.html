@@ -43,7 +43,7 @@
     <header class="hero">
       <p class="hero__eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="hero__meta">Last updated: August 9, 2026</p>
+      <p class="hero__meta">Last updated: August 13, 2026</p>
       <p class="hero__lede">
         This Privacy Policy explains how Stantia (“we”, “us”, or “our”) collects, uses,
         shares, and protects information when you use the Stantia mobile application
@@ -122,18 +122,22 @@
           <li>
             <strong>Optional</strong> — Live Watch metrics require a paired Apple Watch
             with the Stantia Watch app. If you do not use a Watch, or you decline Health
-            permission, Train still works and we do not collect HealthKit metrics.
+            permission or the in-app disclosure, Train still works and we do not collect
+            HealthKit metrics.
           </li>
           <li>
             <strong>What we access</strong> — with your permission, Stantia may read and
             write workout-related Health data needed for Train (for example heart rate,
             active energy, distance, and workout samples). We request access through
-            the system Health permission prompts.
+            an in-app disclosure (including that aggregate metrics may be uploaded to
+            Stantia’s servers) and then the system Health permission prompts.
           </li>
           <li>
             <strong>How we use it</strong> — to show live metrics during Train, include
-            summaries on completed sessions and history, and save workouts to Apple
-            Health so they can appear alongside your other activity on your devices.
+            summaries on completed sessions and history on your device, optionally upload
+            aggregate session metrics to Stantia’s servers when cloud upload is enabled,
+            and save workouts to Apple Health so they can appear alongside your other
+            activity on your devices.
           </li>
           <li>
             <strong>What we do not do</strong> — we do not sell Health or fitness data,
@@ -144,8 +148,10 @@
           <li>
             <strong>Your control</strong> — you can change Health permissions anytime in
             iPhone Settings → Health → Data Access &amp; Devices (or the equivalent
-            Health settings screen), and you can stop using Watch metrics by ending or
-            not starting Watch-connected Train sessions.
+            Health settings screen), turn off
+            <em>Upload Watch metrics to cloud</em> in the Stantia app Settings to keep
+            HealthKit-derived metrics on this device only, and stop using Watch metrics
+            by declining the disclosure or ending Watch-connected Train sessions.
           </li>
         </ul>
       </section>
@@ -193,7 +199,8 @@
             providers to host and operate Stantia. Today this includes Google Firebase
             (Authentication, Firestore, Cloud Storage, Cloud Functions) to store
             account data, content, media, and session records (which may include
-            aggregate Train metrics you captured), and to run backend logic.
+            aggregate Train metrics you captured when cloud upload is enabled), and to
+            run backend logic.
           </li>
           <li>
             <strong>Legal and safety</strong> — we may disclose information if required
@@ -211,8 +218,10 @@
           <li>Delete posts and manage content you control</li>
           <li>Block other users and report content that violates guidelines</li>
           <li>
-            Manage Apple Health permissions on your device, and choose whether to use
-            Watch-connected Train metrics
+            Manage Apple Health permissions on your device, choose whether to use
+            Watch-connected Train metrics, and turn off
+            <em>Upload Watch metrics to cloud</em> in Stantia Settings so HealthKit-derived
+            metrics stay on this device only
           </li>
           <li>
             Delete your account in-app (Settings → Delete account), or follow the steps on
