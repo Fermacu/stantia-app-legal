@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stantia — Legal</title>
+    <link rel="canonical" href="https://fermacu.github.io/stantia-app-legal/" />
+    <link rel="alternate" hreflang="en" href="https://fermacu.github.io/stantia-app-legal/" />
+    <link rel="alternate" hreflang="es" href="https://fermacu.github.io/stantia-app-legal/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://fermacu.github.io/stantia-app-legal/" />
     <meta
       name="description"
       content="Help guides, Privacy Policy, Terms, and account deletion for Stantia — Built for Athletes."
@@ -30,12 +34,18 @@
             height="18"
           />
         </a>
-        <nav class="nav" aria-label="Site">
-          <a href="./help/">Help</a>
+                <div class="header-actions">
+          <nav class="nav" aria-label="Site">
+            <a href="./help/">Help</a>
           <a href="./privacy/">Privacy</a>
           <a href="./terms/">Terms</a>
           <a href="./delete-account/">Delete account</a>
-        </nav>
+          </nav>
+          <nav class="lang-switch" aria-label="Language">
+            <a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true" class="is-active">EN</a>
+            <a href="./es/" hreflang="es" lang="es" data-lang="es">ES</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -72,8 +82,6 @@
         <a href="mailto:fmatamorosa09@icloud.com">fmatamorosa09@icloud.com</a>
       </div>
     </footer>
-    <script>
-      document.getElementById("year").textContent = String(new Date().getFullYear());
-    </script>
+    <script src="./js/site.js" defer></script>
   </body>
 </html>

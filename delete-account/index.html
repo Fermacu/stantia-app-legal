@@ -9,6 +9,9 @@
       content="How to delete your Stantia account and what data is removed."
     />
     <link rel="canonical" href="https://fermacu.github.io/stantia-app-legal/delete-account/" />
+    <link rel="alternate" hreflang="en" href="https://fermacu.github.io/stantia-app-legal/delete-account/" />
+    <link rel="alternate" hreflang="es" href="https://fermacu.github.io/stantia-app-legal/es/delete-account/" />
+    <link rel="alternate" hreflang="x-default" href="https://fermacu.github.io/stantia-app-legal/delete-account/" />
     <link rel="icon" href="../assets/logo-mark.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,12 +34,18 @@
             height="18"
           />
         </a>
-        <nav class="nav" aria-label="Site">
-          <a href="../help/">Help</a>
+                <div class="header-actions">
+          <nav class="nav" aria-label="Site">
+            <a href="../help/">Help</a>
           <a href="../privacy/">Privacy</a>
           <a href="../terms/">Terms</a>
           <a href="../delete-account/" aria-current="page">Delete account</a>
-        </nav>
+          </nav>
+          <nav class="lang-switch" aria-label="Language">
+            <a href="../delete-account/" hreflang="en" lang="en" data-lang="en" aria-current="true" class="is-active">EN</a>
+            <a href="../es/delete-account/" hreflang="es" lang="es" data-lang="es">ES</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -147,8 +156,6 @@
         <a href="../">Legal home</a>
       </div>
     </footer>
-    <script>
-      document.getElementById("year").textContent = String(new Date().getFullYear());
-    </script>
+    <script src="../js/site.js" defer></script>
   </body>
 </html>
