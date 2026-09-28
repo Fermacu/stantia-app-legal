@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="../js/prefs.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Help &amp; Guides — Stantia</title>
@@ -52,7 +53,7 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Support</p>
       <h1>Help &amp; Guides</h1>
-      <p class="hero__meta">Last updated: August 13, 2026 · App version 1.0.6</p>
+      <p class="hero__meta">Last updated: September 27, 2026 · App version 2.0.1</p>
       <p class="hero__lede">
         Training is the content. Community is the product. Here’s how to get around Stantia,
         build workouts, train live, share sessions, and track how hybrid you really are.
@@ -66,6 +67,7 @@
         <a href="#apple-watch">Apple Watch</a>
         <a href="#timers">Timers</a>
         <a href="#hybrid-index">Hybrid Index</a>
+        <a href="#crews">Crews</a>
         <a href="#feed">Feed</a>
         <a href="#faq">FAQs</a>
       </nav>
@@ -84,6 +86,7 @@
             <li><a href="#apple-watch" data-nav>Apple Watch</a></li>
             <li><a href="#timers" data-nav>Smart timers</a></li>
             <li><a href="#hybrid-index" data-nav>Hybrid Index</a></li>
+            <li><a href="#crews" data-nav>Crews</a></li>
             <li><a href="#feed" data-nav>Feed</a></li>
             <li><a href="#faq" data-nav>FAQs</a></li>
           </ol>
@@ -165,20 +168,25 @@
         <h2>Get around the app</h2>
         <p>
           Stantia is a social training app for hybrid athletes. Training is the content;
-          community is the product. Five tabs cover almost everything you’ll do.
+          community is the product. The tab bar is icons only. From left to right:
         </p>
         <ul class="guide-basics__tabs">
           <li><strong>Feed</strong> — posts from you and athletes you follow</li>
           <li><strong>Workouts</strong> — your library, collections, and saved workouts</li>
-          <li><strong>Train</strong> — live sessions, Smart Timer, History, and insights</li>
+          <li><strong>History</strong> — completed Train runs, Other sessions, and insights</li>
+          <li><strong>Train</strong> — start a live session, or log one you already finished</li>
+          <li><strong>Crews</strong> — private training circles with partners and friends</li>
           <li><strong>Search</strong> — find athletes, workouts, and monthly rankings</li>
           <li><strong>Profile</strong> — your page, settings, About, and help</li>
         </ul>
         <p>
           Use <strong>+</strong> on Feed to create a post, and <strong>+</strong> on Workouts to
           build a new workout. In <strong>Profile → Settings</strong> you can edit display name,
-          username, bio, specialties, feed preferences, country flag, theme (light/dark), and
-          accent color.
+          username, bio, specialties, feed preferences, and country; choose light or dark and an
+          accent color; set the app language to <strong>English</strong> or <strong>Español</strong>;
+          turn push notifications on or off; and, on iPhone, choose whether Apple Watch metrics
+          upload to the cloud. <strong>Public profile metrics</strong> is off by default. Turn it
+          on if other athletes should see your Hybrid Index and specialty split on your Stats tab.
         </p>
       </section>
 
@@ -271,14 +279,14 @@
         <h3>After you finish</h3>
         <ul>
           <li>
-            Completed library sessions land in <strong>Train → History → Workouts completed</strong>
+            Completed library sessions land on the <strong>History</strong> tab, under <strong>Workouts completed</strong>
           </li>
           <li>
             You can <strong>rate</strong> someone else’s workout 1–5 stars (not your own, and
             not Smart Timers). One rating per athlete per workout — you can update it next time
           </li>
           <li>
-            <strong>Share</strong> a session card in Full, Workout, Time, or List style via the
+            <strong>Share</strong> a session card as Full session, Workout only, Time highlight, or Checklist via the
             system share sheet (Share exports the style you have selected)
           </li>
           <li>
@@ -308,7 +316,12 @@
         </ul>
 
         <h3>History</h3>
-        <p>Under <strong>Train → History</strong> you’ll find:</p>
+        <p>
+          History is its own tab. It lists completed Train workouts and Other sessions, plus
+          insights (Hybrid Index and an activity view). Open <strong>+</strong> there to log a
+          session you already finished.
+        </p>
+        <p>On that tab you’ll find:</p>
         <ul>
           <li>
             <strong>Activity</strong> — a year grid of daily training minutes (accent intensity)
@@ -323,9 +336,20 @@
           </li>
         </ul>
         <p>
-          Share an Other session as an image card from session detail. Deleting an Other session
-          detaches it from linked posts (photos/caption stay); posts that only shared that
-          session are removed.
+          Each finished session can include notes, calories, and — when the specialties include
+          running, swimming, cycling, hiking, rowing, or kayaking — distance and pace. Swim pace
+          is per 100 m. Rowing and kayaking pace is per 500 m. Running, cycling, and hiking use
+          pace per km.
+        </p>
+        <p>
+          Share an Other session as an image card from session detail (Highlight, Metrics, With
+          notes, or Minimal). Deleting an Other session detaches it from linked posts
+          (photos and caption stay); posts that only shared that session are removed.
+        </p>
+        <p>
+          From a finished session you can invite mutual followers without posting. If they accept
+          from Activity, they get their own copy in History. A collaboration copy shows their
+          avatar in front of yours.
         </p>
 
         <h3>Live Activity on iPhone</h3>
@@ -515,6 +539,35 @@
         </p>
       </section>
 
+      <section class="guide" id="crews">
+        <p class="guide__eyebrow">Private circles</p>
+        <h2>Train with a crew</h2>
+        <p>
+          <strong>Crews</strong> are private circles for gym partners and friends. Posts stay
+          inside the crew. They do not appear on the Home feed.
+        </p>
+        <ul>
+          <li>Create a crew with a name, cover, and description, then invite mutual followers</li>
+          <li>
+            The conversation shows others on the left and your posts on the right. Swipe a
+            message right to reply
+          </li>
+          <li>
+            Share a caption, photos, and an optional session or library workout. Mention members
+            with <strong>@username</strong>, or notify everyone else with <strong>@everyone</strong>
+          </li>
+          <li>
+            Admins can invite, promote other admins, remove members, and edit the crew. Anyone
+            can leave
+          </li>
+          <li>
+            The charts icon opens the <strong>weekly ranking</strong>: members ordered by last
+            week’s training time and session count. Admins choose all specialties or a subset.
+            You can browse past weeks and an all-time board of 1st, then 2nd, then 3rd places
+          </li>
+        </ul>
+      </section>
+
       <section class="guide" id="feed">
         <p class="guide__eyebrow">Community</p>
         <h2>Connect through training</h2>
@@ -553,19 +606,37 @@
             Photos: up to 10; choose <strong>4:3</strong> or <strong>4:5</strong> once for the
             whole post, then crop each photo
           </li>
-          <li>Like (including double-tap), comment, save, and share posts you want to keep</li>
+          <li>
+            Tap a photo to open a fullscreen gallery: swipe between that post’s photos, and pinch
+            or double-tap to zoom. Double-tap a photo in the feed still likes the post
+          </li>
+          <li>
+            Like (including double-tap), comment, reply to a comment, save, and share posts.
+            Type <strong>@</strong> in a caption or comment to mention an athlete you follow
+          </li>
           <li>
             Use <strong>Search</strong> for athletes, workouts, and specialty filters; Ranking
             shows monthly top athletes (top 100 earn a profile badge)
           </li>
           <li>
-            You’ll get an in-app notification when someone recommends your public workout in a
-            post, or shares a completed Train run of your workout
+            Activity notifies you about likes, comments, replies, mentions, follows, saves, crew
+            invites, and when someone recommends your public workout or shares a completed run of
+            it. Push notifications can mirror those events when the app is in the background.
+            Turn push off in Settings; the inbox still works
           </li>
         </ul>
         <p>
           Save workouts from the feed or Search to pull them into Saved — then attach them when
           you want to recommend them.
+        </p>
+        <h3>Collaborate on a post</h3>
+        <p>
+          While creating a post, or later from Edit post, you can invite mutual followers. The
+          post stays yours and only you can edit it. Invitees get an Activity notification that
+          opens the post. Declining is silent and closes the invite. Accepting adds their name,
+          shows the post on their profile, and, when the post includes a session, saves an
+          independent copy in their History. They can edit that copy without changing yours.
+          Leaving removes them from the post and deletes that copy.
         </p>
       </section>
 
@@ -713,6 +784,24 @@
           </details>
 
           <details class="faq__item">
+            <summary>What is a crew?</summary>
+            <p>
+              A private training circle. Create one, invite mutual followers, and post there
+              without putting those posts on the Home feed. The weekly ranking compares members
+              by recent training. See <a href="#crews">Train with a crew</a>.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Can someone else appear on my post?</summary>
+            <p>
+              Yes. Invite a mutual follower to collaborate. If they accept, their name is added,
+              the post shows on their profile too, and a session on that post is copied into
+              their History as their own log. They can leave later, which removes the copy.
+            </p>
+          </details>
+
+          <details class="faq__item">
             <summary>How do I delete my account?</summary>
             <p>
               In the app: <strong>Profile → Settings → Delete account</strong>. You can also
@@ -724,7 +813,7 @@
 
         <p class="faq__contact">
           Still stuck? Email
-          <a href="mailto:fmatamorosa09@icloud.com">fmatamorosa09@icloud.com</a>
+          <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
           — we typically respond within 2 business days.
         </p>
       </section>
@@ -735,7 +824,7 @@
     <footer class="site-footer">
       <div class="site-footer__inner">
         © <span id="year"></span> Stantia ·
-        <a href="mailto:fmatamorosa09@icloud.com">fmatamorosa09@icloud.com</a>
+        <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
       </div>
     </footer>
     <script src="../js/site.js" defer></script>

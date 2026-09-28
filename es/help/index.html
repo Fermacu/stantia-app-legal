@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <script src="../../js/prefs.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ayuda y guías — Stantia</title>
@@ -52,7 +53,7 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Soporte</p>
       <h1>Ayuda y guías</h1>
-      <p class="hero__meta">Última actualización: 13 de agosto de 2026 · App versión 2.0.0</p>
+      <p class="hero__meta">Última actualización: 27 de septiembre de 2026 · App versión 2.0.1</p>
       <p class="hero__lede">
         El entrenamiento es el contenido. La comunidad es el producto. Así te mueves en Stantia,
         creas workouts, entrenas en vivo, compartes sesiones y ves qué tan híbrido eres.
@@ -66,6 +67,7 @@
         <a href="#apple-watch">Apple Watch</a>
         <a href="#timers">Timers</a>
         <a href="#hybrid-index">Hybrid Index</a>
+        <a href="#crews">Crews</a>
         <a href="#feed">Feed</a>
         <a href="#faq">Preguntas</a>
       </nav>
@@ -84,6 +86,7 @@
             <li><a href="#apple-watch" data-nav>Apple Watch</a></li>
             <li><a href="#timers" data-nav>Smart timers</a></li>
             <li><a href="#hybrid-index" data-nav>Hybrid Index</a></li>
+            <li><a href="#crews" data-nav>Crews</a></li>
             <li><a href="#feed" data-nav>Feed</a></li>
             <li><a href="#faq" data-nav>Preguntas</a></li>
           </ol>
@@ -165,20 +168,27 @@
         <h2>Recorre la app</h2>
         <p>
           Stantia es una app social de entrenamiento para atletas híbridos. El entrenamiento es
-          el contenido; la comunidad es el producto. Cinco pestañas cubren casi todo lo que harás.
+          el contenido; la comunidad es el producto. La barra usa solo iconos. De izquierda a
+          derecha:
         </p>
         <ul class="guide-basics__tabs">
           <li><strong>Feed</strong> — posts tuyos y de atletas que sigues</li>
           <li><strong>Workouts</strong> — tu biblioteca, colecciones y workouts guardados</li>
-          <li><strong>Entrenar</strong> — sesiones en vivo, Smart Timer, Historial e insights</li>
+          <li><strong>Historial</strong> — sesiones de Entrenar, Otras sesiones e insights</li>
+          <li><strong>Entrenar</strong> — empieza una sesión en vivo o registra una ya hecha</li>
+          <li><strong>Crews</strong> — círculos privados con compañeros y amigos</li>
           <li><strong>Buscar</strong> — encuentra atletas, workouts y rankings mensuales</li>
           <li><strong>Perfil</strong> — tu página, ajustes, Acerca de y ayuda</li>
         </ul>
         <p>
           Usa <strong>+</strong> en Feed para crear un post, y <strong>+</strong> en Workouts para
           crear un workout nuevo. En <strong>Perfil → Ajustes</strong> puedes editar nombre,
-          username, bio, especialidades, preferencias del feed, bandera de país, tema (claro/oscuro)
-          y color de acento.
+          username, bio, especialidades, preferencias del feed y país; elegir tema claro u oscuro
+          y color de acento; poner el idioma en <strong>English</strong> o <strong>Español</strong>;
+          activar o desactivar notificaciones push; y, en iPhone, decidir si las métricas del
+          Apple Watch se suben a la nube. La opción <strong>Métricas públicas en el perfil</strong> viene
+          apagada por defecto. Actívalo si otros atletas deben ver tu Hybrid Index y el reparto
+          por especialidad en la pestaña Estadísticas.
         </p>
       </section>
 
@@ -271,15 +281,15 @@
         <h3>Después de terminar</h3>
         <ul>
           <li>
-            Las sesiones de biblioteca completadas van a <strong>Entrenar → Historial → Workouts completados</strong>
+            Las sesiones de biblioteca completadas van a la pestaña <strong>Historial</strong>, en <strong>Entrenamientos completados</strong>
           </li>
           <li>
             Puedes <strong>calificar</strong> el workout de otra persona de 1–5 estrellas (no el tuyo, ni
             Smart Timers). Una calificación por atleta por workout — puedes actualizarla la próxima vez
           </li>
           <li>
-            <strong>Comparte</strong> una card de sesión en estilo Full, Workout, Time o List con la
-            hoja de compartir del sistema (Share exporta el estilo que tengas seleccionado)
+            <strong>Comparte</strong> una card de sesión como Sesión completa, Solo entrenamiento, Tiempo destacado o Lista con la
+            hoja de compartir del sistema (se exporta el estilo que tengas seleccionado)
           </li>
           <li>
             Desde el feed también puedes publicar un post de <strong>sesión completada</strong> que
@@ -308,7 +318,12 @@
         </ul>
 
         <h3>Historial</h3>
-        <p>En <strong>Entrenar → Historial</strong> encontrarás:</p>
+        <p>
+          Historial es su propia pestaña. Lista workouts completados en Entrenar y Otras sesiones,
+          más insights (Hybrid Index y actividad). Usa <strong>+</strong> ahí para registrar una
+          sesión que ya terminaste.
+        </p>
+        <p>En esa pestaña encontrarás:</p>
         <ul>
           <li>
             <strong>Actividad</strong> — una grilla anual de minutos diarios de entrenamiento (intensidad del acento)
@@ -323,9 +338,20 @@
           </li>
         </ul>
         <p>
-          Comparte una Otras sesión como card de imagen desde el detalle. Borrar una Otras sesión
-          la desvincula de posts ligados (fotos/caption se quedan); los posts que solo compartían esa
-          sesión se eliminan.
+          Cada sesión terminada puede incluir notas, calorías y — si las especialidades incluyen
+          carrera, natación, ciclismo, senderismo, remo o kayak — distancia y ritmo. El ritmo de
+          natación es por 100 m. Remo y kayak, por 500 m. Carrera, ciclismo y senderismo usan ritmo
+          por km.
+        </p>
+        <p>
+          Comparte una Otras sesión como imagen desde el detalle (Destacado, Métricas, Con notas o
+          Minimalista). Borrar una Otras sesión la desvincula de posts ligados (fotos y caption se
+          quedan); los posts que solo compartían esa sesión se eliminan.
+        </p>
+        <p>
+          Desde una sesión terminada puedes invitar a seguidores mutuos sin publicar un post. Si
+          aceptan desde Actividad, reciben su propia copia en Historial. Una copia de colaboración
+          muestra su avatar delante del tuyo.
         </p>
 
         <h3>Live Activity en iPhone</h3>
@@ -515,6 +541,36 @@
         </p>
       </section>
 
+      <section class="guide" id="crews">
+        <p class="guide__eyebrow">Círculos privados</p>
+        <h2>Entrena con un crew</h2>
+        <p>
+          Los <strong>Crews</strong> son círculos privados para compañeros de gym y amigos. Los
+          posts se quedan dentro del crew. No aparecen en el feed de inicio.
+        </p>
+        <ul>
+          <li>Crea un crew con nombre, portada y descripción, e invita a seguidores mutuos</li>
+          <li>
+            La conversación muestra a los demás a la izquierda y tus posts a la derecha. Desliza
+            un mensaje a la derecha para responder
+          </li>
+          <li>
+            Comparte un caption, fotos y una sesión o workout de biblioteca opcional. Menciona
+            miembros con <strong>@username</strong>, o avisa al resto con <strong>@everyone</strong>
+          </li>
+          <li>
+            Los admins pueden invitar, promover otros admins, quitar miembros y editar el crew.
+            Cualquiera puede salir
+          </li>
+          <li>
+            El icono de gráficas abre el <strong>ranking semanal</strong>: miembros ordenados por
+            tiempo de entrenamiento y número de sesiones de la semana pasada. Los admins eligen
+            todas las especialidades o un subconjunto. Puedes ver semanas anteriores y un tablero
+            histórico de 1.º, luego 2.º, luego 3.º
+          </li>
+        </ul>
+      </section>
+
       <section class="guide" id="feed">
         <p class="guide__eyebrow">Comunidad</p>
         <h2>Conéctate a través del entrenamiento</h2>
@@ -553,19 +609,39 @@
             Fotos: hasta 10; elige <strong>4:3</strong> o <strong>4:5</strong> una vez para todo
             el post y luego recorta cada foto
           </li>
-          <li>Da like (incluido doble toque), comenta, guarda y comparte posts que quieras conservar</li>
+          <li>
+            Toca una foto para abrir la galería a pantalla completa: desliza entre las fotos de
+            ese post y pellizca o haz doble toque para ampliar. El doble toque en el feed sigue
+            dando like
+          </li>
+          <li>
+            Da like (incluido doble toque), comenta, responde un comentario, guarda y comparte.
+            Escribe <strong>@</strong> en un caption o comentario para mencionar a un atleta que
+            sigues
+          </li>
           <li>
             Usa <strong>Buscar</strong> para atletas, workouts y filtros de especialidad; Ranking
             muestra el top mensual (el top 100 gana badge en el perfil)
           </li>
           <li>
-            Recibirás una notificación in-app cuando alguien recomiende tu workout público en un
-            post, o comparta una corrida de Entrenar de tu workout
+            Actividad te avisa de likes, comentarios, respuestas, menciones, follows, guardados,
+            invitaciones a crews y cuando alguien recomienda tu workout público o comparte una
+            corrida completada. Las notificaciones push pueden repetir esos avisos con la app en
+            segundo plano. Puedes apagar el push en Ajustes; la bandeja sigue funcionando
           </li>
         </ul>
         <p>
           Guarda workouts desde el feed o Buscar para traerlos a Guardados — luego adjúntalos cuando
           quieras recomendarlos.
+        </p>
+        <h3>Colabora en un post</h3>
+        <p>
+          Al crear un post, o después desde Editar post, puedes invitar a seguidores mutuos. El
+          post sigue siendo tuyo y solo tú puedes editarlo. Quien recibe la invitación ve una
+          notificación en Actividad que abre el post. Rechazar es silencioso y cierra la
+          invitación. Aceptar añade su nombre, muestra el post en su perfil y, si el post incluye
+          una sesión, guarda una copia independiente en su Historial. Puede editar esa copia sin
+          cambiar la tuya. Salir lo quita del post y borra esa copia.
         </p>
       </section>
 
@@ -713,6 +789,25 @@
           </details>
 
           <details class="faq__item">
+            <summary>¿Qué es un crew?</summary>
+            <p>
+              Un círculo de entrenamiento privado. Créalo, invita a seguidores mutuos y publica
+              ahí sin poner esos posts en el feed de inicio. El ranking semanal compara a los
+              miembros por el entrenamiento reciente. Mira
+              <a href="#crews">Entrena con un crew</a>.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>¿Alguien más puede aparecer en mi post?</summary>
+            <p>
+              Sí. Invita a un seguidor mutuo a colaborar. Si acepta, se añade su nombre, el post
+              también aparece en su perfil y, si hay una sesión, se copia a su Historial como un
+              registro propio. Puede salir después, y eso borra la copia.
+            </p>
+          </details>
+
+          <details class="faq__item">
             <summary>¿Cómo elimino mi cuenta?</summary>
             <p>
               En la app: <strong>Perfil → Ajustes → Eliminar cuenta</strong>. También puedes
@@ -724,7 +819,7 @@
 
         <p class="faq__contact">
           ¿Sigues con dudas? Escribe a
-          <a href="mailto:fmatamorosa09@icloud.com">fmatamorosa09@icloud.com</a>
+          <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
           — normalmente respondemos en 2 días hábiles.
         </p>
       </section>
@@ -735,7 +830,7 @@
     <footer class="site-footer">
       <div class="site-footer__inner">
         © <span id="year"></span> Stantia ·
-        <a href="mailto:fmatamorosa09@icloud.com">fmatamorosa09@icloud.com</a>
+        <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
       </div>
     </footer>
     <script src="../../js/site.js" defer></script>
