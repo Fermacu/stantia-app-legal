@@ -53,7 +53,7 @@
     <header class="hero">
       <p class="hero__eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="hero__meta">Last updated: September 29, 2026</p>
+      <p class="hero__meta">Last updated: October 16, 2026</p>
       <p class="hero__lede">
         This Privacy Policy explains how Stantia (“we”, “us”, or “our”) collects, uses,
         shares, and protects information when you use the Stantia mobile application
@@ -104,18 +104,36 @@
             Health permission, Train works without collecting this data.
           </li>
           <li>
+            <strong>Route and location data from Apple Watch GPS (optional)</strong> — during
+            outdoor locomotion sessions (such as runs, rides, hikes, rows, and kayaks) that the
+            Apple Watch is measuring, the Watch may use its GPS to record a route. We process
+            the route points (a polyline) only to draw the path of your session, on the
+            complete screen and on your History record. Your iPhone does not record GPS for
+            session metrics; distance, pace, and routes come from the Apple Watch. The route
+            stays on your device until the session ends, then one compact route is saved with
+            the session. If cloud upload is off, the route stays on your device only.
+          </li>
+          <li>
             <strong>Session details you enter</strong> — title, notes, specialties, date,
             duration, calories, and, when relevant, distance and pace. These can come from a
             live session, a manual log, or values you type after you finish.
           </li>
           <li>
             <strong>Social graph data</strong> — who you follow, who follows you,
-            likes, saves, blocks, reports, crew memberships, and collaboration invites you
-            send or receive.
+            likes, saves, reposts, blocks, reports, crew memberships, and collaboration invites
+            you send or receive. In crews, we also record which members have opened a
+            conversation so seen-by indicators can be shown to other members.
           </li>
           <li>
             <strong>Crew content</strong> — posts, photos, and attachments you share inside a
             crew. That content is visible to current members of that crew, not on the Home feed.
+          </li>
+          <li>
+            <strong>Announcements and notices</strong> — Stantia may send custom announcements
+            (as a push, when push is on) and in-app notices to selected audiences, such as
+            everyone, a group of athletes, athletes of a specific specialty, or specific people.
+            Audiences may be based on profile details like gender or specialties. Announcements
+            appear in Activity, and notices you close stay under Activity → Notices.
           </li>
           <li>
             <strong>Push notification token</strong> — if you allow notifications, a device
@@ -133,11 +151,12 @@
           </li>
         </ul>
         <p>
-          We do not require access to your contacts, precise location, microphone, or
-          advertising identifiers for core Stantia features. Photo library access is
-          requested only when you choose a profile photo, workout cover, or post photo.
-          Apple Health / HealthKit access is requested only when you start Train metrics
-          with a paired Apple Watch companion.
+          We do not require access to your contacts, microphone, or advertising identifiers
+          for core Stantia features, and the core app does not need your phone’s location.
+          Outdoor sessions measured by a paired Apple Watch may use the Watch’s location to
+          record a route, as described above. Photo library access is requested only when you
+          choose a profile photo, workout cover, or post photo. Apple Health / HealthKit access
+          is requested only when you start Train metrics with a paired Apple Watch companion.
         </p>
       </section>
 
@@ -157,16 +176,24 @@
           <li>
             <strong>What we access</strong> — with your permission, Stantia may read and
             write workout-related Health data needed for Train (for example heart rate,
-            active energy, distance, and workout samples). We request access through
+            active energy, distance, pace, and workout samples, and, for outdoor sessions, the
+            route recorded by the Watch). We request access through
             an in-app disclosure (including that aggregate metrics may be uploaded to
             Stantia’s servers) and then the system Health permission prompts.
           </li>
           <li>
             <strong>How we use it</strong> — to show live metrics during Train, include
-            summaries on completed sessions and history on your device, optionally upload
-            aggregate session metrics to Stantia’s servers when cloud upload is enabled,
+            summaries and routes on completed sessions and history on your device, optionally
+            upload aggregate session metrics and routes to Stantia’s servers when cloud upload
+            is enabled,
             and save workouts to Apple Health so they can appear alongside your other
             activity on your devices.
+          </li>
+          <li>
+            <strong>Phone and Watch</strong> — Stantia asks, when a Watch is detected, whether
+            you want to measure with Apple Watch. If you decline, Train runs without Watch
+            metrics or routes. After a Watch-measured session, distance, pace, and calories are
+            shown on the complete screen as measured and cannot be edited there.
           </li>
           <li>
             <strong>What we do not do</strong> — we do not sell Health or fitness data,
@@ -179,7 +206,8 @@
             iPhone Settings → Health → Data Access &amp; Devices (or the equivalent
             Health settings screen), turn off
             <em>Upload Watch metrics to cloud</em> in the Stantia app Settings to keep
-            HealthKit-derived metrics on this device only, and stop using Watch metrics
+            HealthKit-derived metrics and routes on this device only (turning it on lets us
+            upload aggregate metrics and routes to Stantia’s servers), and stop using Watch metrics
             by declining the disclosure or ending Watch-connected Train sessions.
           </li>
         </ul>
@@ -196,12 +224,13 @@
           </li>
           <li>Display public profile fields and published content to other athletes</li>
           <li>
-            Provide optional Apple Watch / HealthKit Train metrics and session summaries
+            Provide optional Apple Watch / HealthKit Train metrics, routes, and session summaries
           </li>
           <li>
             Send in-app and, if you enable them, push notifications for social activity
-            (follows, likes, comments, replies, mentions, saves, crew invites, collaboration
-            invites, and when someone shares or recommends your public workout)
+            (follows, likes, comments, replies, reposts, mentions, saves, crew invites, crew
+            messages, collaboration invites, and when someone shares or recommends your public
+            workout), and to deliver Stantia announcements and in-app notices
           </li>
           <li>Moderate the community (including reports and blocks)</li>
           <li>Improve reliability, security, and product quality</li>
@@ -222,11 +251,14 @@
             profile. Private workouts remain
             in your library until you choose to share them. HealthKit metrics from Train
             are part of your session experience; they are not posted publicly unless you
-            choose to share a session summary or similar content yourself.
+            choose to share a session summary or similar content yourself. Public posts do not
+            include your GPS route. When you repost someone’s post, your followers can see that
+            repost with your name on it, even if they do not follow the original author.
           </li>
           <li>
             <strong>Crew members</strong> — posts you publish in a crew are visible to current
             members of that crew, including captions, photos, and attached sessions or workouts.
+            Members can also see who has seen a message and who liked it.
           </li>
           <li>
             <strong>Collaborators</strong> — if someone accepts your invite, their name appears
@@ -272,7 +304,7 @@
             Manage Apple Health permissions on your device, choose whether to use
             Watch-connected Train metrics, and turn off
             <em>Upload Watch metrics to cloud</em> in Stantia Settings so HealthKit-derived
-            metrics stay on this device only
+            metrics and routes stay on this device only
           </li>
           <li>
             Delete your account in-app (Settings → Delete account), or follow the steps on

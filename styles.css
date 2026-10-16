@@ -911,20 +911,6 @@ html[data-theme="light"][data-accent="sky"] {
   --lime-soft: rgba(2, 132, 199, 0.14);
 }
 
-html[data-accent="orange"] {
-  --lime: #FB923C;
-  --lime-bright: #FDBA74;
-  --accent-fg: #000000;
-  --lime-soft: rgba(253, 186, 116, 0.2);
-}
-
-html[data-theme="light"][data-accent="orange"] {
-  --lime: #9A3412;
-  --lime-bright: #EA580C;
-  --accent-fg: #FFFFFF;
-  --lime-soft: rgba(234, 88, 12, 0.14);
-}
-
 html[data-accent="teal"] {
   --lime: #2DD4BF;
   --lime-bright: #5EEAD4;

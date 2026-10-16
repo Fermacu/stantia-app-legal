@@ -21,7 +21,6 @@
     { id: "amber", en: "Amber", es: "Ámbar", swatch: "#F59E0B" },
     { id: "rose", en: "Rose", es: "Rosa", swatch: "#F472B6" },
     { id: "sky", en: "Sky", es: "Cielo", swatch: "#0EA5E9" },
-    { id: "orange", en: "Orange", es: "Naranja", swatch: "#F97316" },
     { id: "teal", en: "Teal", es: "Verde azulado", swatch: "#14B8A6" },
     { id: "indigo", en: "Indigo", es: "Índigo", swatch: "#6366F1" },
     { id: "gray", en: "Gray", es: "Gris", swatch: "#737373" },

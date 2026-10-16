@@ -10,7 +10,6 @@
     amber: 1,
     rose: 1,
     sky: 1,
-    orange: 1,
     teal: 1,
     indigo: 1,
     gray: 1,
