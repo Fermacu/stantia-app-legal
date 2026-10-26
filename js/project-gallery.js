@@ -27,6 +27,51 @@
     return (label ? label + "-" : "") + leaf;
   }
 
+  var preparedHref = "";
+  var preparedFile = null;
+
+  function absoluteUrl(url) {
+    return new URL(url, window.location.href).href;
+  }
+
+  function isPhone() {
+    return window.matchMedia("(max-width: 820px)").matches
+      && window.matchMedia("(pointer: coarse)").matches;
+  }
+
+  function imageFile(blob, name) {
+    var type = blob.type && blob.type.indexOf("image/") === 0 ? blob.type : "image/jpeg";
+    return new File([blob], name, { type: type });
+  }
+
+  function prepareFile(url, name) {
+    var abs = absoluteUrl(url);
+    preparedHref = abs;
+    preparedFile = null;
+    fetch(abs)
+      .then(function (response) {
+        if (!response.ok) throw new Error("download");
+        return response.blob();
+      })
+      .then(function (blob) {
+        if (preparedHref === abs) preparedFile = imageFile(blob, name);
+      })
+      .catch(function () {});
+  }
+
+  function saveBlob(blob, name) {
+    var objectUrl = URL.createObjectURL(blob);
+    var link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = name;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function () {
+      URL.revokeObjectURL(objectUrl);
+    }, 1500);
+  }
+
   function saveFile(url, name) {
     fetch(url)
       .then(function (response) {
@@ -34,16 +79,7 @@
         return response.blob();
       })
       .then(function (blob) {
-        var objectUrl = URL.createObjectURL(blob);
-        var link = document.createElement("a");
-        link.href = objectUrl;
-        link.download = name;
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        window.setTimeout(function () {
-          URL.revokeObjectURL(objectUrl);
-        }, 1500);
+        saveBlob(blob, name);
       })
       .catch(function () {
         var link = document.createElement("a");
@@ -53,6 +89,19 @@
         link.click();
         link.remove();
       });
+  }
+
+  function shareFile(url, name) {
+    var abs = absoluteUrl(url);
+    if (preparedFile && preparedHref === abs && navigator.canShare && navigator.canShare({ files: [preparedFile] })) {
+      navigator.share({ files: [preparedFile], title: "Stantia" }).catch(function (err) {
+        if (!err || err.name !== "AbortError") saveFile(abs, name);
+      });
+      return;
+    }
+    navigator.share({ url: abs, title: "Stantia" }).catch(function (err) {
+      if (!err || err.name !== "AbortError") saveFile(abs, name);
+    });
   }
 
   function openGallery() {
@@ -78,6 +127,7 @@
     if (download) {
       download.dataset.href = src;
       download.dataset.name = fileName(item, src);
+      prepareFile(src, download.dataset.name);
     }
     box.hidden = false;
     document.body.classList.add("lightbox-open");
@@ -117,7 +167,9 @@
   if (download) {
     download.addEventListener("click", function () {
       if (!download.dataset.href) return;
-      saveFile(download.dataset.href, download.dataset.name || "photo.JPG");
+      var photoName = download.dataset.name || "photo.JPG";
+      if (isPhone() && navigator.share) shareFile(download.dataset.href, photoName);
+      else saveFile(download.dataset.href, photoName);
     });
   }
   box.addEventListener("click", function (event) {
