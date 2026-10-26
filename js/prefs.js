@@ -1,5 +1,5 @@
 /**
- * Apply saved theme and accent before first paint.
+ * Apply saved accent before first paint. The site stays dark.
  * Keep accent tokens in sync with the mobile app palettes.
  */
 (function () {
@@ -14,14 +14,12 @@
     indigo: 1,
     gray: 1,
   };
-  var theme = "dark";
   var accent = "lime";
   try {
-    var storedTheme = localStorage.getItem("stantia-site-theme");
     var storedAccent = localStorage.getItem("stantia-site-accent");
-    if (storedTheme === "light" || storedTheme === "dark") theme = storedTheme;
     if (storedAccent && ACCENTS[storedAccent]) accent = storedAccent;
+    localStorage.setItem("stantia-site-theme", "dark");
   } catch (_) {}
-  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme", "dark");
   document.documentElement.setAttribute("data-accent", accent);
 })();

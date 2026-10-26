@@ -1,7 +1,7 @@
 /**
  * Shared helpers for Stantia legal site (EN + ES).
  * - Fills © year
- * - Settings: language, light/dark, accent (same palette as the app)
+ * - Settings: language and accent (same palette as the app). Theme stays dark.
  * - Optional first-visit redirect to /es/ when browser language is Spanish
  */
 (function () {
@@ -11,7 +11,6 @@
   }
 
   var LANG_KEY = "stantia-legal-lang";
-  var THEME_KEY = "stantia-site-theme";
   var ACCENT_KEY = "stantia-site-accent";
 
   var ACCENTS = [
@@ -35,6 +34,154 @@
     return currentLang === "es" ? es : en;
   }
 
+  function mountDrawer() {
+    var header = document.querySelector(".site-header__inner");
+    var nav = header && header.querySelector(".nav");
+    if (!header || !nav) return;
+
+    var mq = window.matchMedia("(max-width: 720px)");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var pieces = [];
+
+    function remember(el) {
+      if (!el || !el.parentNode) return;
+      pieces.push({ el: el, parent: el.parentNode, next: el.nextSibling });
+    }
+
+    remember(nav);
+    remember(header.querySelector(".nav-home"));
+    remember(header.querySelector(".nav-cta"));
+    remember(header.querySelector(".lang-switch"));
+
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-drawer__toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "site-nav");
+    toggle.setAttribute("aria-label", copy("Menu", "Menú"));
+    toggle.innerHTML = '<span class="nav-drawer__glyph" aria-hidden="true"></span>';
+
+    var backdrop = document.createElement("button");
+    backdrop.type = "button";
+    backdrop.className = "nav-drawer__backdrop";
+    backdrop.setAttribute("aria-label", copy("Close menu", "Cerrar menú"));
+    backdrop.tabIndex = -1;
+
+    var drawer = document.createElement("div");
+    drawer.className = "nav-drawer";
+    drawer.id = "site-nav";
+    drawer.setAttribute("role", "dialog");
+    drawer.setAttribute("aria-modal", "true");
+    drawer.setAttribute("aria-label", copy("Menu", "Menú"));
+
+    var actions = header.querySelector(".header-actions") || header;
+    actions.insertBefore(toggle, actions.firstChild);
+    document.body.appendChild(backdrop);
+    document.body.appendChild(drawer);
+    document.body.classList.add("has-drawer");
+
+    var open = false;
+    var tracking = false;
+    var fromEdge = false;
+    var startX = 0;
+    var startY = 0;
+    var dragX = 0;
+
+    function park() {
+      pieces.forEach(function (item) {
+        drawer.appendChild(item.el);
+      });
+    }
+
+    function restore() {
+      if (!pieces.length) return;
+      var parent = pieces[0].parent;
+      for (var i = pieces.length - 1; i >= 0; i--) {
+        parent.insertBefore(pieces[i].el, parent.firstChild);
+      }
+    }
+
+    function setOpen(next) {
+      open = next;
+      document.body.classList.toggle("nav-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      drawer.style.transform = "";
+      backdrop.style.opacity = "";
+    }
+
+    function sync() {
+      if (mq.matches) {
+        park();
+        drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      } else {
+        setOpen(false);
+        restore();
+      }
+    }
+
+    toggle.addEventListener("click", function () {
+      if (!mq.matches) return;
+      setOpen(!open);
+    });
+    backdrop.addEventListener("click", function () {
+      setOpen(false);
+    });
+    drawer.addEventListener("click", function (event) {
+      if (event.target.closest("a")) setOpen(false);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && open) setOpen(false);
+    });
+
+    document.addEventListener("touchstart", function (event) {
+      if (!mq.matches || !event.touches.length) return;
+      var touch = event.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      dragX = 0;
+      fromEdge = !open && startX <= 28;
+      tracking = open || fromEdge;
+    }, { passive: true });
+
+    document.addEventListener("touchmove", function (event) {
+      if (!tracking || !event.touches.length) return;
+      var touch = event.touches[0];
+      var dx = touch.clientX - startX;
+      var dy = touch.clientY - startY;
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      if (!dragX && Math.abs(dy) > Math.abs(dx)) {
+        tracking = false;
+        return;
+      }
+      var width = drawer.getBoundingClientRect().width || 320;
+      var offset = open ? Math.max(-width, Math.min(0, dx)) : Math.min(0, Math.max(-width, -width + dx));
+      if (!open && dx <= 0) return;
+      dragX = dx;
+      if (!reduce) drawer.classList.add("is-dragging");
+      drawer.style.transform = "translate3d(" + offset + "px,0,0)";
+      backdrop.style.opacity = String(Math.max(0, (width + offset) / width));
+      if (event.cancelable) event.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener("touchend", function () {
+      if (!tracking) return;
+      var width = drawer.getBoundingClientRect().width || 320;
+      drawer.classList.remove("is-dragging");
+      if (dragX) {
+        var offset = open ? Math.max(-width, Math.min(0, dragX)) : Math.min(0, Math.max(-width, -width + dragX));
+        setOpen(offset > -width * 0.55);
+      }
+      tracking = false;
+      fromEdge = false;
+      dragX = 0;
+    });
+
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else if (mq.addListener) mq.addListener(sync);
+    sync();
+  }
+
   function mountSettings() {
     var header = document.querySelector(".site-header__inner");
     if (!header || header.querySelector(".settings-root")) return;
@@ -45,7 +192,29 @@
       if (lang === "en" || lang === "es") langLinks[lang] = link.getAttribute("href");
     });
 
-    var theme = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    function langHref(targetLang) {
+      if (langLinks[targetLang]) return langLinks[targetLang];
+      var here = window.location.pathname || "/";
+      var base = here.indexOf("/stantia-app-legal") === 0 ? "/stantia-app-legal" : "";
+      var rest = here.slice(base.length) || "/";
+      var tail = window.location.search + window.location.hash;
+      var next = rest;
+      if (targetLang === "es") {
+        if (!(rest === "/es" || rest.indexOf("/es/") === 0)) {
+          next = "/es" + (rest === "/" ? "/" : rest);
+        }
+      } else {
+        next = rest.replace(/^\/es(?=\/|$)/, "") || "/";
+      }
+      if (next.charAt(0) !== "/") next = "/" + next;
+      if (next !== "/" && !/\/$/.test(next) && !/\.[a-z0-9]+$/i.test(next)) next += "/";
+      return base + next + tail;
+    }
+
+    document.documentElement.setAttribute("data-theme", "dark");
+    try {
+      localStorage.setItem("stantia-site-theme", "dark");
+    } catch (_) {}
     var accent = document.documentElement.getAttribute("data-accent") || "lime";
     if (!ACCENTS.some(function (item) { return item.id === accent; })) accent = "lime";
 
@@ -100,41 +269,18 @@
       return group;
     }
 
-    function setPressed(group, id) {
-      group.querySelectorAll("button").forEach(function (button, index) {
-        var optionId = group._ids[index];
-        button.setAttribute("aria-pressed", optionId === id ? "true" : "false");
-      });
-    }
-
     var langOptions = [
       { id: "en", label: "English" },
       { id: "es", label: "Español" },
     ];
-    var themeOptions = [
-      { id: "light", label: copy("Light", "Claro") },
-      { id: "dark", label: copy("Dark", "Oscuro") },
-    ];
 
     var langGroup = segmented(copy("Language", "Idioma"), langOptions, currentLang, function (id) {
-      if (id === currentLang || !langLinks[id]) return;
+      if (id === currentLang) return;
       try {
         localStorage.setItem(LANG_KEY, id);
       } catch (_) {}
-      window.location.href = langLinks[id];
+      window.location.href = langHref(id);
     });
-    langGroup._ids = langOptions.map(function (option) { return option.id; });
-
-    var themeGroup = segmented(copy("Theme", "Tema"), themeOptions, theme, function (id, button) {
-      theme = id;
-      document.documentElement.setAttribute("data-theme", theme);
-      try {
-        localStorage.setItem(THEME_KEY, theme);
-      } catch (_) {}
-      setPressed(themeGroup, theme);
-      button.blur();
-    });
-    themeGroup._ids = themeOptions.map(function (option) { return option.id; });
 
     var accentRow = document.createElement("div");
     accentRow.className = "settings-accent__row";
@@ -181,8 +327,6 @@
     panel.appendChild(title);
     panel.appendChild(sectionLabel(copy("Language", "Idioma")));
     panel.appendChild(langGroup);
-    panel.appendChild(sectionLabel(copy("Theme", "Tema")));
-    panel.appendChild(themeGroup);
     panel.appendChild(accentHead);
     panel.appendChild(swatches);
 
@@ -215,6 +359,7 @@
   }
 
   mountSettings();
+  mountDrawer();
 
   try {
     document.querySelectorAll(".lang-switch a[data-lang]").forEach(function (link) {

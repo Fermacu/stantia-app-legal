@@ -1,88 +1,963 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script src="../js/prefs.js"></script>
+    <script src="../js/prefs.js?v=2"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stantia — Legal</title>
+    <title>Stantia</title>
     <link rel="canonical" href="https://fermacu.github.io/stantia-app-legal/es/" />
     <link rel="alternate" hreflang="en" href="https://fermacu.github.io/stantia-app-legal/" />
     <link rel="alternate" hreflang="es" href="https://fermacu.github.io/stantia-app-legal/es/" />
     <link rel="alternate" hreflang="x-default" href="https://fermacu.github.io/stantia-app-legal/" />
     <meta
       name="description"
-      content="Guías de ayuda, Política de privacidad, Términos y eliminación de cuenta de Stantia — Built for Athletes."
+      content="Stantia es la red para atletas híbridos. Entrená en vivo, compartí workouts y competí con gente que se mueve como vos."
     />
     <link rel="icon" href="../assets/logo-mark.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles.css?v=9" />
   </head>
-  <body>
+  <body class="home">
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="./" aria-label="Inicio de Stantia">
-          <img class="brand__mark" src="../assets/logo-mark.png" alt="" width="36" height="36" />
-          <span class="brand__divider" aria-hidden="true"></span>
           <img
             class="brand__wordmark"
             src="../assets/logo-wordmark.png"
             alt="Stantia"
-            height="18"
+            height="26"
           />
         </a>
         <div class="header-actions">
           <nav class="nav" aria-label="Sitio">
-            <a href="./help/">Ayuda</a>
-            <a href="./privacy/">Privacidad</a>
-            <a href="./terms/">Términos</a>
-            <a href="./delete-account/">Eliminar cuenta</a>
-          </nav>
-          <nav class="lang-switch" aria-label="Idioma">
-            <a href="../" hreflang="en" lang="en" data-lang="en">EN</a>
-            <a href="./" hreflang="es" lang="es" data-lang="es" aria-current="true" class="is-active">ES</a>
+            <a href="./privacy/">Acerca de la app</a>
+            <a href="#galeria">Galería</a>
+            <a href="./projects/">Proyectos</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="hub">
-      <h1>Soporte</h1>
-      <p class="hub__tag">Built for Athletes</p>
-      <p class="hub__lede">
-        Cómo usar Stantia, más las políticas que rigen tus datos y la comunidad.
-      </p>
+    <main>
+      <section class="home-open" id="inicio">
+        <figure class="home-open__feature" id="train">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="../assets/home/sports/andres-1.jpg"
+            aria-label="Atleta en entrenamiento"
+          >
+            <source src="../assets/home/sports/andres-1.mp4" type="video/mp4" />
+          </video>
+          <div class="home-pushes" aria-hidden="true"></div>
+          <script type="application/json" id="home-push-notes">
+            [{"body":"Es hora de entrenar."},{"name":"Valentina","body":"le gustó tu publicación."},{"name":"Mateo","body":"compartió un entrenamiento con vos."},{"name":"Sofía","body":"comentó tu sesión."},{"name":"Andrés","body":"empezó a seguirte."},{"name":"Lucía","body":"guardó tu entrenamiento."},{"name":"Diego","body":"te invitó a su crew."}]
+          </script>
+        </figure>
+        <div class="home-open__copy">
+          <div class="home-chips" aria-hidden="true"></div>
+          <script type="application/json" id="home-chip-names">
+            [{"label":"Carrera","icon":"RunningShoe"},{"label":"Caminata","icon":"Walk"},{"label":"Fuerza","icon":"WeightLiftingUp"},{"label":"Hyrox","icon":"HeavyLightning"},{"label":"CrossFit","icon":"MuscleUp"},{"label":"Calistenia","icon":"MuscleUp"},{"label":"Fitness funcional","icon":"Weight"},{"label":"HIIT","icon":"HeavyTimer"},{"label":"Cuerda","icon":"JumpingRope"},{"label":"Ciclismo","icon":"Cycling"},{"label":"Natación","icon":"Swimfins"},{"label":"Remo","icon":"Canoe"},{"label":"Triatlón","icon":"SportMedal"},{"label":"Kayak","icon":"Canoe"},{"label":"Movilidad","icon":"Meditation"},{"label":"Yoga","icon":"Meditation"},{"label":"Pilates","icon":"Meditation"},{"label":"Gimnasia","icon":"MuscleUp"},{"label":"Baile","icon":"Person"},{"label":"Artes marciales","icon":"BlackBelt"},{"label":"MMA","icon":"BoxingGlove"},{"label":"Jiu-jitsu brasileño","icon":"Kimono"},{"label":"Judo","icon":"Kimono"},{"label":"Lucha","icon":"GraspingClaws"},{"label":"Boxeo","icon":"BoxingGlove"},{"label":"Muay Thai","icon":"HighKick"},{"label":"Kickboxing","icon":"HighKick"},{"label":"Karate","icon":"HighPunch"},{"label":"Kyokushin","icon":"HighPunch"},{"label":"Taekwondo","icon":"HighKick"},{"label":"Krav Maga","icon":"ShieldImpact"},{"label":"Kung Fu","icon":"YinYang"},{"label":"Aikido","icon":"YinYang"},{"label":"Capoeira","icon":"HighKick"},{"label":"Senderismo","icon":"Hiking"},{"label":"Rucking","icon":"Backpack"},{"label":"Escalada","icon":"MountainClimbing"},{"label":"OCR","icon":"SpartanHelmet"},{"label":"Esquí","icon":"Skier"},{"label":"Snowboard","icon":"Snowboard"},{"label":"Surf","icon":"SurfBoard"},{"label":"Skate","icon":"Skateboarding01"},{"label":"Básquetbol","icon":"BasketballBall"},{"label":"Fútbol","icon":"SoccerBall"},{"label":"Tenis","icon":"TennisBall"},{"label":"Pádel","icon":"TennisRacket"},{"label":"Pickleball","icon":"Pickle"},{"label":"Squash","icon":"TennisRacket"},{"label":"Bádminton","icon":"Shuttlecock"},{"label":"Tenis de mesa","icon":"PingPongBat"},{"label":"Voleibol","icon":"VolleyballBall"},{"label":"Rugby","icon":"RugbyConversion"},{"label":"Fútbol americano","icon":"AmericanFootballBall"},{"label":"Béisbol","icon":"BaseballGlove"},{"label":"Hockey","icon":"Hockey"},{"label":"Balonmano","icon":"ThrowingBall"},{"label":"Lacrosse","icon":"Hockey"},{"label":"Golf","icon":"GolfFlag"}]
+          </script>
+          <div class="home-open__statement home-open__statement--intro">
+            <h1>Entrená.<br /><strong>Registrá.</strong><br /><span class="home-open__accent">Compartí.</span></h1>
+            <p class="home-open__lede">
+              Stantia es la red para atletas híbridos. Entrená en vivo, compartí la sesión y
+              competí con gente que se mueve como vos.
+            </p>
+            <a class="home-cta" href="#inicio">Movete con STANTIA</a>
+          </div>
+          <div class="home-open__statement home-open__statement--coach" aria-hidden="true">
+            <h2 class="home-open__display">Sé parte de la<br /><strong>Comunidad Stantia</strong><br /><span class="home-open__accent">viví el deporte como nunca antes</span></h2>
+          </div>
+          <div class="home-open__statement home-open__statement--shop" aria-hidden="true">
+            <h2 class="home-open__display"><span class="home-open__accent">No importa cuál sea tu deporte,</span><br /><strong>en Stantia</strong><br />todos somos parte del movimiento.</h2>
+          </div>
+        </div>
+        <button type="button" class="home-arrow home-arrow--prev" data-home-dir="-1" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.5 6.5 8.5 12l6 5.5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button type="button" class="home-arrow home-arrow--next" data-home-dir="1" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.5 6.5 15.5 12l-6 5.5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </section>
 
-      <div class="card-list">
-        <a class="card" href="./help/">
-          <div class="card__title">Ayuda y guías</div>
-          <p class="card__desc">Cómo entrenar, crear workouts, usar timers y preguntas frecuentes.</p>
-        </a>
-        <a class="card" href="./privacy/">
-          <div class="card__title">Política de privacidad</div>
-          <p class="card__desc">Qué recopilamos, cómo lo usamos y tus opciones.</p>
-        </a>
-        <a class="card" href="./terms/">
-          <div class="card__title">Términos y condiciones</div>
-          <p class="card__desc">Reglas para usar Stantia y publicar contenido de entrenamiento.</p>
-        </a>
-        <a class="card" href="./delete-account/">
-          <div class="card__title">Eliminar cuenta</div>
-          <p class="card__desc">Cómo eliminar tu cuenta de Stantia y qué datos se borran.</p>
-        </a>
-      </div>
+      <section class="home-gallery" id="galeria" aria-label="Galería">
+        <div class="home-gallery__head">
+          <h2 class="home-gallery__title">
+            <span class="home-gallery__accent">Nuestros atletas</span><br />
+            son la parte<br />
+            <strong>más importante</strong><br />
+            de nuestra comunidad.
+          </h2>
+          <a class="home-gallery__join" href="#inicio">Quiero ser parte</a>
+        </div>
+                <div class="home-gallery__viewport">
+          <div class="home-gallery__track" hidden>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">Andrés</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/andres-1.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/andres-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption>01</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/andres-2.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/andres-2.mp4" type="video/mp4" />
+              </video>
+              <figcaption>02</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/andres-3.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/andres-3.mp4" type="video/mp4" />
+              </video>
+              <figcaption>03</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/andres-4.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/andres-4.mp4" type="video/mp4" />
+              </video>
+              <figcaption>04</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">Andrés</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/andres-5.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/andres-5.mp4" type="video/mp4" />
+              </video>
+              <figcaption>05</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">Cris</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-1.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption>01</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-2.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-2.mp4" type="video/mp4" />
+              </video>
+              <figcaption>02</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-3.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-3.mp4" type="video/mp4" />
+              </video>
+              <figcaption>03</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-4.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-4.mp4" type="video/mp4" />
+              </video>
+              <figcaption>04</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">Cris</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-6.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-6.mp4" type="video/mp4" />
+              </video>
+              <figcaption>06</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/cris-7.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/cris-7.mp4" type="video/mp4" />
+              </video>
+              <figcaption>07</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">P&D</p>
+            <div class="home-gallery__row">
+            <figure class="home-film" id="community">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-1.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption>01</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-3.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-3.mp4" type="video/mp4" />
+              </video>
+              <figcaption>03</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-4.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-4.mp4" type="video/mp4" />
+              </video>
+              <figcaption>04</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-5.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-5.mp4" type="video/mp4" />
+              </video>
+              <figcaption>05</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">P&D</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-6.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-6.mp4" type="video/mp4" />
+              </video>
+              <figcaption>06</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-7.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-7.mp4" type="video/mp4" />
+              </video>
+              <figcaption>07</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-8.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-8.mp4" type="video/mp4" />
+              </video>
+              <figcaption>08</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-9.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-9.mp4" type="video/mp4" />
+              </video>
+              <figcaption>09</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">P&D</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/pd-10.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/pd-10.mp4" type="video/mp4" />
+              </video>
+              <figcaption>10</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">T&A</p>
+            <div class="home-gallery__row">
+            <figure class="home-film" id="rankings">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-1.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption>01</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-2.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-2.mp4" type="video/mp4" />
+              </video>
+              <figcaption>02</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-3.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-3.mp4" type="video/mp4" />
+              </video>
+              <figcaption>03</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-4.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-4.mp4" type="video/mp4" />
+              </video>
+              <figcaption>04</figcaption>
+            </figure>
+            </div>
+          </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">T&A</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-5.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-5.mp4" type="video/mp4" />
+              </video>
+              <figcaption>05</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/home/sports/ta-6.jpg" aria-label="Atleta en entrenamiento">
+                <source src="../assets/home/sports/ta-6.mp4" type="video/mp4" />
+              </video>
+              <figcaption>06</figcaption>
+            </figure>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-work home-work--intro" id="proyectos" aria-label="Trabajá con Stantia">
+        <div class="home-work__banner">
+          <img class="home-work__photo" src="../assets/proyects/LigaBJJ-Scramble/IMG_8571.JPG" alt="" />
+          <div class="home-work__copy">
+            <h2>Trabajá con</h2>
+            <img class="home-work__logo" src="../assets/logo-wordmark.png" alt="Stantia" />
+            <a class="home-work__cta" href="./projects/">Ver proyectos</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        © <span id="year"></span> Stantia ·
-        <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+    <footer class="site-footer home-foot">
+      <div class="home-foot__inner">
+        <div class="home-foot__brand">
+          <a href="./" aria-label="Inicio de Stantia">
+            <img class="home-foot__logo" src="../assets/logo-wordmark.png" alt="Stantia" />
+          </a>
+          <p>La red para atletas híbridos.</p>
+        </div>
+        <nav class="home-foot__nav" aria-label="Pie de página">
+          <div class="home-foot__col">
+            <p>Sitio</p>
+            <a href="#inicio">Inicio</a>
+            <a href="#galeria">Galería</a>
+            <a href="./projects/">Proyectos</a>
+          </div>
+          <div class="home-foot__col">
+            <p>App</p>
+            <a href="./privacy/">Acerca de la app</a>
+            <a href="./help/">Ayuda y guías</a>
+            <a href="#inicio">Empezar</a>
+          </div>
+          <div class="home-foot__col">
+            <p>Contacto</p>
+            <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+          </div>
+        </nav>
+        <p class="home-foot__meta">© <span id="year"></span> Stantia</p>
       </div>
     </footer>
-    <script src="../js/site.js" defer></script>
+    <script src="../js/site.js?v=4" defer></script>
+    <script src="../js/specialty-icons.js"></script>
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document.querySelectorAll("video").forEach(function (video) {
+          if (reduce) {
+            video.removeAttribute("autoplay");
+            video.pause();
+          }
+        });
+        var opening = document.querySelector(".home-open");
+        if (opening && !reduce) {
+          var fadeTick = false;
+          var fadeOpening = function () {
+            var distance = opening.offsetHeight * 0.62 || 1;
+            var progress = Math.min(1, Math.max(0, window.scrollY / distance));
+            opening.style.opacity = String(1 - progress);
+          };
+          window.addEventListener("scroll", function () {
+            if (fadeTick) return;
+            fadeTick = true;
+            window.requestAnimationFrame(function () {
+              fadeOpening();
+              fadeTick = false;
+            });
+          }, { passive: true });
+          fadeOpening();
+        }
+        if (opening) {
+          var phase = 0;
+          var phaseTimer = 0;
+          var phasePanels = [
+            opening.querySelector(".home-open__statement--intro"),
+            opening.querySelector(".home-open__statement--coach"),
+            opening.querySelector(".home-open__statement--shop")
+          ];
+          var showPhase = function (next) {
+            phase = (next + phasePanels.length) % phasePanels.length;
+            opening.classList.toggle("is-swapped", phase === 1);
+            opening.classList.toggle("is-shop", phase === 2);
+            phasePanels.forEach(function (panel, index) {
+              if (!panel) return;
+              if (index === phase) panel.removeAttribute("aria-hidden");
+              else panel.setAttribute("aria-hidden", "true");
+            });
+            window.clearTimeout(phaseTimer);
+            phaseTimer = window.setTimeout(function () {
+              showPhase(phase + 1);
+            }, 8000);
+          };
+          opening.querySelectorAll("[data-home-dir]").forEach(function (button) {
+            button.addEventListener("click", function () {
+              showPhase(phase + Number(button.getAttribute("data-home-dir")));
+            });
+          });
+          phaseTimer = window.setTimeout(function () {
+            showPhase(1);
+          }, 8000);
+        }
+        var chipHost = document.querySelector(".home-chips");
+        var chipData = document.getElementById("home-chip-names");
+        if (chipHost && chipData) {
+          var chipNames = [];
+          try {
+            chipNames = JSON.parse(chipData.textContent);
+          } catch (err) {
+            chipNames = [];
+          }
+          var chipIcons = window.STANTIA_SPECIALTY_ICONS || {};
+          var buildChipGroup = function () {
+            var group = document.createElement("div");
+            group.className = "home-chips__group";
+            chipNames.forEach(function (item) {
+              var chip = document.createElement("span");
+              chip.className = "home-chip";
+              var glyph = chipIcons[item.icon];
+              if (glyph) {
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute("viewBox", "0 0 512 512");
+                svg.setAttribute("aria-hidden", "true");
+                var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("fill", "currentColor");
+                path.setAttribute("d", glyph);
+                svg.appendChild(path);
+                chip.appendChild(svg);
+              }
+              chip.appendChild(document.createTextNode(item.label));
+              group.appendChild(chip);
+            });
+            return group;
+          };
+          if (chipNames.length) {
+            var track = document.createElement("div");
+            track.className = "home-chips__track";
+            track.appendChild(buildChipGroup());
+            var clone = buildChipGroup();
+            clone.setAttribute("aria-hidden", "true");
+            track.appendChild(clone);
+            chipHost.appendChild(track);
+            if (!reduce) {
+              var chipNodes = track.querySelectorAll(".home-chip");
+              var chipLayout = [];
+              var chipGaps = [];
+              for (var c = 0; c < chipNodes.length; c += 1) {
+                var cursor = chipNodes[c];
+                var layoutLeft = 0;
+                while (cursor && cursor !== chipHost) {
+                  layoutLeft += cursor.offsetLeft;
+                  cursor = cursor.offsetParent;
+                }
+                chipLayout.push({
+                  el: chipNodes[c],
+                  left: layoutLeft,
+                  width: chipNodes[c].offsetWidth
+                });
+              }
+              for (var g = 0; g < chipLayout.length - 1; g += 1) {
+                chipGaps.push(chipLayout[g + 1].left - chipLayout[g].left - chipLayout[g].width);
+              }
+              var focusChips = function () {
+                var bounds = chipHost.getBoundingClientRect();
+                if (bounds.width > 0 && bounds.bottom > 0 && bounds.top < window.innerHeight) {
+                  var travel = 0;
+                  var transform = window.getComputedStyle(track).transform;
+                  if (transform && transform !== "none") travel = new DOMMatrix(transform).m41;
+                  var mid = chipHost.clientWidth / 2;
+                  var reach = Math.min(210, Math.max(128, bounds.width * 0.24));
+                  var focus = [];
+                  var extra = [];
+                  for (var i = 0; i < chipLayout.length; i += 1) {
+                    var center = chipLayout[i].left + travel + chipLayout[i].width / 2;
+                    var distance = Math.abs(center - mid) / reach;
+                    var amount = distance >= 1 ? 0 : 0.5 + Math.cos(distance * Math.PI) * 0.5;
+                    focus.push(amount * amount);
+                    extra.push(focus[i] * 0.42 * chipLayout[i].width / 2);
+                  }
+                  var open = [];
+                  var place = [0];
+                  for (var p = 0; p < chipGaps.length; p += 1) {
+                    open.push(Math.max(0, extra[p] + extra[p + 1] - chipGaps[p]));
+                    place.push(place[p] + open[p]);
+                  }
+                  var weight = 0;
+                  var weighted = 0;
+                  for (var w = 0; w < focus.length; w += 1) {
+                    var share = focus[w] + 0.0001;
+                    weight += share;
+                    weighted += place[w] * share;
+                  }
+                  var origin = weight ? weighted / weight : 0;
+                  for (var n = 0; n < chipLayout.length; n += 1) {
+                    chipLayout[n].el.style.setProperty("--chip-focus", focus[n].toFixed(3));
+                    chipLayout[n].el.style.setProperty("--chip-shift", (place[n] - origin).toFixed(2) + "px");
+                    chipLayout[n].el.style.zIndex = focus[n] > 0.55 ? "3" : "1";
+                  }
+                }
+                window.requestAnimationFrame(focusChips);
+              };
+              window.requestAnimationFrame(focusChips);
+            }
+          }
+        }
+        function clipSrc(video) {
+          var source = video.querySelector("source");
+          return (source && source.getAttribute("src")) || video.getAttribute("src") || "";
+        }
+        function playVideo(video) {
+          var pending = video.play();
+          if (pending && pending.catch) pending.catch(function () {});
+        }
+        function watchTail(video, onTail) {
+          var busy = false;
+          var cut = function () {
+            var duration = video.duration;
+            if (busy || video.seeking || !duration || !isFinite(duration)) return;
+            if (video.currentTime < duration - 2) return;
+            busy = true;
+            onTail();
+            window.setTimeout(function () { busy = false; }, 500);
+          };
+          video.addEventListener("timeupdate", cut);
+          var onFrame = function () {
+            cut();
+            if (!video.paused && video.requestVideoFrameCallback) video.requestVideoFrameCallback(onFrame);
+          };
+          video.addEventListener("play", function () {
+            if (video.requestVideoFrameCallback) video.requestVideoFrameCallback(onFrame);
+          });
+        }
+        var pushHost = document.querySelector(".home-pushes");
+        var pushData = document.getElementById("home-push-notes");
+        if (pushHost && pushData) {
+          var pushNotes = [];
+          try {
+            pushNotes = JSON.parse(pushData.textContent);
+          } catch (err) {
+            pushNotes = [];
+          }
+          var pushSrc = "../assets/logo-mark.png";
+          var pushWhen = document.documentElement.lang === "es" ? "ahora" : "now";
+          var pushIndex = 0;
+          var pushCard = null;
+          var buildPush = function (note) {
+            var card = document.createElement("div");
+            card.className = "home-push";
+            var icon = document.createElement("img");
+            icon.src = pushSrc || "";
+            icon.alt = "";
+            icon.width = 30;
+            icon.height = 30;
+            var copy = document.createElement("div");
+            copy.className = "home-push__copy";
+            var app = document.createElement("p");
+            app.className = "home-push__app";
+            app.appendChild(document.createTextNode("Stantia"));
+            var when = document.createElement("span");
+            when.textContent = pushWhen;
+            app.appendChild(when);
+            var body = document.createElement("p");
+            body.className = "home-push__body";
+            if (note.name) {
+              var who = document.createElement("strong");
+              who.textContent = note.name;
+              body.appendChild(who);
+              body.appendChild(document.createTextNode(" " + note.body));
+            } else {
+              body.textContent = note.body;
+            }
+            copy.appendChild(app);
+            copy.appendChild(body);
+            card.appendChild(icon);
+            card.appendChild(copy);
+            return card;
+          };
+          var showPush = function () {
+            if (!pushNotes.length) return;
+            var note = pushNotes[pushIndex % pushNotes.length];
+            pushIndex += 1;
+            var card = buildPush(note);
+            pushHost.appendChild(card);
+            window.requestAnimationFrame(function () {
+              card.classList.add("is-in");
+            });
+            pushCard = card;
+          };
+          if (pushNotes.length && reduce) {
+            var stillPush = buildPush(pushNotes[0]);
+            stillPush.classList.add("is-in");
+            pushHost.appendChild(stillPush);
+          } else if (pushNotes.length) {
+            var cyclePush = function () {
+              if (!pushCard) {
+                showPush();
+                return;
+              }
+              var leaving = pushCard;
+              pushCard = null;
+              leaving.classList.remove("is-in");
+              leaving.classList.add("is-leave");
+              window.setTimeout(function () {
+                leaving.remove();
+              }, 480);
+              window.setTimeout(showPush, 360);
+            };
+            window.setTimeout(function () {
+              showPush();
+              window.setInterval(cyclePush, 3800);
+            }, 900);
+          }
+        }
+        var feature = document.querySelector(".home-open__feature");
+        var hero = feature ? feature.querySelector("video") : null;
+        if (hero && !reduce) {
+          var playlist = [];
+          var labels = {};
+          var addClip = function (video) {
+            var src = clipSrc(video);
+            if (!src || playlist.indexOf(src) !== -1) return;
+            playlist.push(src);
+            labels[src] = video.getAttribute("aria-label") || "";
+          };
+          addClip(hero);
+          document.querySelectorAll(".home-film video").forEach(addClip);
+          if (playlist.length > 1) {
+            hero.removeAttribute("loop");
+            hero.classList.add("is-reel", "is-on");
+            var spare = document.createElement("video");
+            spare.muted = true;
+            spare.defaultMuted = true;
+            spare.playsInline = true;
+            spare.setAttribute("playsinline", "");
+            spare.preload = "auto";
+            spare.setAttribute("aria-hidden", "true");
+            spare.className = "is-reel";
+            feature.appendChild(spare);
+            var active = hero;
+            var idle = spare;
+            var index = 0;
+            var switching = false;
+            var featureVisible = true;
+            var partMs = 5200;
+            var partTimer = 0;
+            var passes = {};
+            passes[playlist[0]] = 1;
+            function partStart(src, duration) {
+              if (!duration || !isFinite(duration)) return 0;
+              var seen = passes[src] || 0;
+              var maxStart = Math.max(0, duration - partMs / 1000 - 2);
+              var start = maxStart ? (seen * 8) % (maxStart + 0.01) : 0;
+              if (start > maxStart) start = 0;
+              passes[src] = seen + 1;
+              return start;
+            }
+            function armPart() {
+              window.clearTimeout(partTimer);
+              partTimer = window.setTimeout(goNext, partMs);
+            }
+            idle.src = playlist[1];
+            var goNext = function () {
+              if (switching || !featureVisible) return;
+              switching = true;
+              window.clearTimeout(partTimer);
+              var incoming = idle;
+              var outgoing = active;
+              var incomingIndex = (index + 1) % playlist.length;
+              var startIn = function () {
+                try {
+                  incoming.currentTime = partStart(playlist[incomingIndex], incoming.duration);
+                } catch (err) {}
+                if (labels[playlist[incomingIndex]]) {
+                  incoming.setAttribute("aria-label", labels[playlist[incomingIndex]]);
+                }
+                playVideo(incoming);
+                incoming.classList.add("is-on", "is-in");
+                window.setTimeout(function () {
+                  outgoing.classList.remove("is-on", "is-in");
+                  outgoing.pause();
+                  incoming.classList.remove("is-in");
+                  outgoing.src = playlist[(incomingIndex + 1) % playlist.length];
+                  active = incoming;
+                  idle = outgoing;
+                  index = incomingIndex;
+                  switching = false;
+                  if (featureVisible) armPart();
+                }, 950);
+              };
+              if (incoming.readyState >= 2) startIn();
+              else incoming.addEventListener("canplay", function onReady() {
+                incoming.removeEventListener("canplay", onReady);
+                startIn();
+              });
+            };
+            var onEnded = function () {
+              if (this === active) goNext();
+            };
+            hero.addEventListener("ended", onEnded);
+            spare.addEventListener("ended", onEnded);
+            watchTail(hero, function () { if (hero === active) goNext(); });
+            watchTail(spare, function () { if (spare === active) goNext(); });
+            armPart();
+            if ("IntersectionObserver" in window) {
+              var reelWatch = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                  featureVisible = entry.isIntersecting;
+                  if (!featureVisible) {
+                    window.clearTimeout(partTimer);
+                    active.pause();
+                    idle.pause();
+                    return;
+                  }
+                  if (active.ended) goNext();
+                  else {
+                    playVideo(active);
+                    armPart();
+                  }
+                });
+              }, { threshold: 0.28 });
+              reelWatch.observe(feature);
+            }
+          }
+        }
+        var armHomeFilms = function () {};
+        var galleryTrack = document.querySelector(".home-gallery__track");
+        if (galleryTrack) {
+          var galleryFilms = Array.prototype.slice.call(galleryTrack.querySelectorAll(".home-film"));
+          var galleryAthlete = function (film) {
+            var source = film.querySelector("source");
+            var src = source ? source.getAttribute("src") : "";
+            var file = src.split("/").pop() || "";
+            return file.split("-")[0];
+          };
+          var galleryBuckets = {};
+          var galleryNames = [];
+          galleryFilms.forEach(function (film) {
+            var who = galleryAthlete(film);
+            film.setAttribute("data-athlete", who);
+            if (!galleryBuckets[who]) {
+              galleryBuckets[who] = [];
+              galleryNames.push(who);
+            }
+            galleryBuckets[who].push(film);
+          });
+          galleryNames.forEach(function (who) {
+            var bucket = galleryBuckets[who];
+            for (var filmIndex = bucket.length - 1; filmIndex > 0; filmIndex--) {
+              var swapIndex = Math.floor(Math.random() * (filmIndex + 1));
+              var heldFilm = bucket[filmIndex];
+              bucket[filmIndex] = bucket[swapIndex];
+              bucket[swapIndex] = heldFilm;
+            }
+          });
+          var galleryMixed = [];
+          var galleryPrevious = "";
+          while (galleryMixed.length < galleryFilms.length) {
+            var galleryPool = galleryNames.filter(function (who) {
+              return who !== galleryPrevious && galleryBuckets[who].length;
+            });
+            if (!galleryPool.length) {
+              galleryPool = galleryNames.filter(function (who) {
+                return galleryBuckets[who].length;
+              });
+            }
+            var galleryMost = 0;
+            galleryPool.forEach(function (who) {
+              if (galleryBuckets[who].length > galleryMost) galleryMost = galleryBuckets[who].length;
+            });
+            var galleryChoices = galleryPool.filter(function (who) {
+              return galleryBuckets[who].length === galleryMost;
+            });
+            var galleryPick = galleryChoices[Math.floor(Math.random() * galleryChoices.length)];
+            galleryMixed.push(galleryBuckets[galleryPick].pop());
+            galleryPrevious = galleryPick;
+          }
+          galleryFilms = galleryMixed;
+          var galleryBase = galleryFilms.slice();
+          var galleryQuery = window.matchMedia("(max-width: 720px)");
+          var galleryIndex = 0;
+          var galleryTimer = 0;
+          var gallerySlides = 0;
+          var gallerySeenOnScreen = false;
+          var galleryViewport = galleryTrack.parentNode;
+          var galleryDriving = false;
+          var galleryScrollTimer = 0;
+          var readGalleryIndex = function () {
+            var width = galleryViewport.clientWidth || 1;
+            var next = Math.round(galleryViewport.scrollLeft / width);
+            if (next < 0) next = 0;
+            if (next > gallerySlides - 1) next = gallerySlides - 1;
+            galleryIndex = next;
+          };
+          var showGallery = function (next, instant) {
+            if (!gallerySlides) return;
+            galleryIndex = (next + gallerySlides) % gallerySlides;
+            if (galleryQuery.matches) {
+              galleryTrack.style.transform = "none";
+              galleryDriving = true;
+              galleryViewport.scrollTo({
+                left: galleryIndex * galleryViewport.clientWidth,
+                behavior: instant ? "auto" : "smooth"
+              });
+              window.clearTimeout(galleryScrollTimer);
+              galleryScrollTimer = window.setTimeout(function () {
+                galleryDriving = false;
+              }, instant ? 40 : 800);
+              return;
+            }
+            if (galleryViewport.scrollLeft) galleryViewport.scrollLeft = 0;
+            galleryTrack.style.transform = "translate3d(" + (galleryIndex * -100) + "%, 0, 0)";
+          };
+          galleryViewport.addEventListener("touchstart", function () {
+            if (!galleryQuery.matches) return;
+            window.clearInterval(galleryTimer);
+            galleryDriving = false;
+          }, { passive: true });
+          galleryViewport.addEventListener("touchend", function () {
+            if (!galleryQuery.matches) return;
+            window.setTimeout(function () {
+              readGalleryIndex();
+              if (gallerySeenOnScreen) armGallery();
+            }, 420);
+          }, { passive: true });
+          galleryViewport.addEventListener("scroll", function () {
+            if (!galleryQuery.matches || galleryDriving) return;
+            window.clearTimeout(galleryScrollTimer);
+            galleryScrollTimer = window.setTimeout(readGalleryIndex, 120);
+          }, { passive: true });
+          var armGallery = function () {
+            window.clearInterval(galleryTimer);
+            if (reduce || gallerySlides < 2) return;
+            galleryTimer = window.setInterval(function () {
+              showGallery(galleryIndex + 1);
+            }, 7000);
+          };
+          var buildGallery = function () {
+            var gallerySize = galleryQuery.matches ? 2 : 4;
+            var galleryGroups = [];
+            for (var groupStart = 0; groupStart < galleryBase.length; groupStart += gallerySize) {
+              galleryGroups.push(galleryBase.slice(groupStart, groupStart + gallerySize));
+            }
+            var galleryLast = galleryGroups[galleryGroups.length - 1];
+            if (galleryLast && galleryLast.length && galleryLast.length < gallerySize) {
+              var gallerySeen = {};
+              galleryLast.forEach(function (film) {
+                var source = film.querySelector("source");
+                gallerySeen[source ? source.getAttribute("src") : ""] = true;
+              });
+              var galleryFill = galleryBase.filter(function (film) {
+                var source = film.querySelector("source");
+                var src = source ? source.getAttribute("src") : "";
+                return !gallerySeen[src];
+              });
+              var galleryNeighbor = galleryLast[galleryLast.length - 1].getAttribute("data-athlete");
+              var galleryFirst = galleryGroups[0][0].getAttribute("data-athlete");
+              while (galleryLast.length < gallerySize && galleryFill.length) {
+                var galleryClosing = galleryLast.length === gallerySize - 1;
+                var galleryOptions = galleryFill.filter(function (film) {
+                  return film.getAttribute("data-athlete") !== galleryNeighbor;
+                });
+                if (galleryClosing) {
+                  var galleryWrapped = galleryOptions.filter(function (film) {
+                    return film.getAttribute("data-athlete") !== galleryFirst;
+                  });
+                  if (galleryWrapped.length) galleryOptions = galleryWrapped;
+                }
+                if (!galleryOptions.length) galleryOptions = galleryFill.slice();
+                var fillPick = galleryOptions[Math.floor(Math.random() * galleryOptions.length)];
+                galleryFill.splice(galleryFill.indexOf(fillPick), 1);
+                var fillCopy = fillPick.cloneNode(true);
+                fillCopy.removeAttribute("id");
+                galleryLast.push(fillCopy);
+                galleryNeighbor = fillCopy.getAttribute("data-athlete");
+              }
+            }
+            window.clearInterval(galleryTimer);
+            galleryTrack.textContent = "";
+            galleryGroups.forEach(function (group) {
+              var slide = document.createElement("div");
+              slide.className = "home-gallery__slide";
+              var row = document.createElement("div");
+              row.className = "home-gallery__row";
+              group.forEach(function (film) {
+                row.appendChild(film);
+              });
+              slide.appendChild(row);
+              galleryTrack.appendChild(slide);
+            });
+            galleryTrack.hidden = false;
+            gallerySlides = galleryTrack.children.length;
+            showGallery(0, true);
+            if (typeof armHomeFilms === "function") armHomeFilms();
+            if (gallerySeenOnScreen) armGallery();
+          };
+          if (!reduce && "IntersectionObserver" in window) {
+            var galleryWatch = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                gallerySeenOnScreen = entry.isIntersecting;
+                if (entry.isIntersecting) armGallery();
+                else window.clearInterval(galleryTimer);
+              });
+            }, { threshold: 0.35 });
+            galleryWatch.observe(galleryTrack.parentNode);
+          }
+          buildGallery();
+          if (reduce && gallerySlides > 1) armGallery();
+          if (galleryQuery.addEventListener) galleryQuery.addEventListener("change", buildGallery);
+          else if (galleryQuery.addListener) galleryQuery.addListener(buildGallery);
+        }
+        if (!reduce && "IntersectionObserver" in window) {
+          var films = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                var video = entry.target;
+                if (entry.isIntersecting) playVideo(video);
+                else video.pause();
+              });
+            },
+            { threshold: 0.28 }
+          );
+          armHomeFilms = function () {
+            document.querySelectorAll(".home-film video").forEach(function (video) {
+              if (video.getAttribute("data-piece") === "1") {
+                films.observe(video);
+                return;
+              }
+              video.setAttribute("data-piece", "1");
+              films.observe(video);
+              var partTimer = 0;
+              var nextPiece = function () {
+                var duration = video.duration;
+                if (!duration || !isFinite(duration)) return;
+                var maxStart = Math.max(0, duration - 5.2 - 2);
+                var start = maxStart ? Math.random() * maxStart : 0;
+                try { video.currentTime = start; } catch (err) {}
+                window.clearTimeout(partTimer);
+                partTimer = window.setTimeout(function () {
+                  if (!video.paused) nextPiece();
+                }, 5200);
+              };
+              video.addEventListener("loadedmetadata", nextPiece);
+              watchTail(video, nextPiece);
+            });
+          };
+          armHomeFilms();
+        }
+      })();
+    </script>
   </body>
 </html>

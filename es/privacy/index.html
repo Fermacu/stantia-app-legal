@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script src="../../js/prefs.js"></script>
+    <script src="../../js/prefs.js?v=2"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Política de privacidad — Stantia</title>
@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../styles.css" />
@@ -25,11 +25,12 @@
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="../" aria-label="Inicio de Stantia">
-          <img class="brand__mark" src="../../assets/logo-mark.png" alt="" width="36" height="36" />
-          <span class="brand__divider" aria-hidden="true"></span>
+        <div class="brand-lockup">
+          <a class="brand-back" href="../" aria-label="Volver al inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg></a>
+          <a class="brand" href="../" aria-label="Inicio de Stantia">
           <img class="brand__wordmark" src="../../assets/logo-wordmark.png" alt="Stantia" height="18" />
         </a>
+        </div>
         <div class="header-actions">
           <nav class="nav" aria-label="Sitio">
             <a href="../help/">Ayuda</a>
@@ -386,10 +387,10 @@
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        © <span id="year"></span> Stantia · Built for Athletes ·
+        © <span id="year"></span> Stantia ·
         <a href="../">Inicio legal</a>
       </div>
     </footer>
-    <script src="../../js/site.js" defer></script>
+    <script src="../../js/site.js?v=4" defer></script>
   </body>
 </html>
