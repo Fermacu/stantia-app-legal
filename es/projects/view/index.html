@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="../../../js/prefs.js?v=2"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proyecto — Stantia</title>
+    <meta name="description" content="Galería de proyecto Stantia." />
+    <link rel="icon" href="../../../assets/logo-mark.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../styles.css?v=14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stantia" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Proyecto — Stantia" />
+    <meta property="og:image" content="https://stantia.app/assets/og-share.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="projects">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand-lockup">
+          <a class="brand-back" href="../" aria-label="Volver a proyectos"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg></a>
+          <a class="brand" href="../../" aria-label="Inicio de Stantia">
+            <img class="brand__wordmark" src="../../../assets/logo-wordmark.png" alt="Stantia" height="28" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <nav class="lang-switch" aria-label="Idioma">
+            <a href="../../../projects/view/" hreflang="en" lang="en" data-lang="en" id="lang-en">EN</a>
+            <a href="./" hreflang="es" lang="es" data-lang="es" aria-current="true" class="is-active" id="lang-es">ES</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="home-work" aria-label="Proyecto">
+        <div class="home-work__banner">
+          <img class="home-work__photo" src="" alt="" />
+          <div class="home-work__copy">
+            <h2 class="home-work__event" data-project-title>Proyecto</h2>
+            <p class="home-work__sub" data-project-subtitle></p>
+            <a class="project-banner__gallery" href="#galeria">
+              Ver galería
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="project-facts">
+        <p class="project-summary" data-project-summary></p>
+        <div class="project-facts__meta">
+          <p class="project-fact">
+            <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M255.233 61.009c-64.986-.549-141.156 21.77-232.77 86.17-2.124 1.136-2.856 1.77-3.663 2.576-.33 22.087.053 44.195.169 66.287 41.134 25.308 100.629 45.815 141.87 55.242-40.006 54.984-65.757 112.762-84.793 169.274l-1.916 5.685 49.586 43.473 5.185-10.524c29.919-60.708 55.189-122.456 94.832-179.1 7.43 6.226 16.197 11.95 27.217 11.128 5.455-.407 9.59-2.521 12.97-5.264l3.835.158c11.196.46 22.125-.34 32.049-3.79a49.45 49.45 0 0 0 8.133-3.678c42.982 51.203 65.056 121.754 80.294 177.52L392.286 491l57.81-57.041-2.197-5.54c-18.928-47.699-37.653-110.49-75.439-159.839 40.2-10.794 76.734-27.318 108.326-48.125 10.64-7.01 5.245-3.447 12.545-8.617l-1.523-61.74c-4.272-2.654-6.305-3.658-10.121-5.711-51.467-27.684-109.288-67.177-183.198-79.582a274.737 274.737 0 0 0-43.256-3.797z" /></svg>
+            <span><small>Deporte</small><strong data-project-sport></strong></span>
+          </p>
+          <p class="project-fact">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a7 7 0 0 0-7 7c0 5.25 7 12.6 7 12.6s7-7.35 7-12.6a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" /></svg>
+            <span><small>Lugar</small><strong data-project-location></strong></span>
+          </p>
+        </div>
+      </div>
+      <section class="project-gallery" id="galeria" aria-label="Galería">
+        <div class="project-gallery__grid" data-project-id="" data-alt="Stantia"></div>
+      </section>
+      <div class="project-lightbox" hidden>
+        <button class="project-lightbox__close" type="button" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <button class="project-lightbox__nav project-lightbox__nav--prev" type="button" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg>
+        </button>
+        <img alt="" />
+        <button class="project-lightbox__nav project-lightbox__nav--next" type="button" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
+        </button>
+        <button class="project-lightbox__download" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+          Descargar
+        </button>
+        <p class="project-lightbox__count"></p>
+      </div>
+    </main>
+
+    <footer class="site-footer home-foot">
+      <div class="home-foot__inner">
+        <div class="home-foot__brand">
+          <a href="../../" aria-label="Inicio de Stantia">
+            <img class="home-foot__logo" src="../../../assets/logo-wordmark.png" alt="Stantia" />
+          </a>
+          <p>La red para atletas híbridos.</p>
+        </div>
+        <nav class="home-foot__nav" aria-label="Pie de página">
+          <div class="home-foot__col">
+            <p>Sitio</p>
+            <a href="../../">Inicio</a>
+            <a href="../">Proyectos</a>
+          </div>
+          <div class="home-foot__col">
+            <p>Contacto</p>
+            <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+          </div>
+        </nav>
+        <p class="home-foot__meta">© <span id="year"></span> Stantia</p>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var id = new URLSearchParams(window.location.search).get('id') || '';
+        var grid = document.querySelector('.project-gallery__grid');
+        if (grid && id) grid.setAttribute('data-project-id', id);
+        var q = id ? '?id=' + encodeURIComponent(id) : '';
+        var en = document.getElementById('lang-en');
+        var es = document.getElementById('lang-es');
+        if (en) en.href = '../../../projects/view/' + q;
+        if (es) es.href = './' + q;
+      })();
+    </script>
+    <script src="../../../js/site.js?v=4" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js" defer></script>
+    <script src="../../../js/firebase-config.js?v=1" defer></script>
+    <script src="../../../js/project-gallery.js?v=7" defer></script>
+    <script src="../../../js/project-photos.js?v=4" defer></script>
+  </body>
+</html>

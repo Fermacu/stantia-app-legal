@@ -2076,6 +2076,11 @@ body.home .settings-toggle {
   height: 100%;
   object-fit: cover;
   object-position: center 62%;
+  background: #141414;
+}
+
+.home-work__photo[src=""] {
+  opacity: 0;
 }
 
 .home-work__banner::after {
@@ -2117,8 +2122,13 @@ body.home .settings-toggle {
   width: 100%;
 }
 
+.home-work--intro .home-work__lead {
+  min-width: 0;
+}
+
 .home-work--intro .home-work__copy h2 {
-  font-size: clamp(2.6rem, 4.8vw, 4.15rem);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  max-width: 14ch;
 }
 
 .home-work__logo {
@@ -2616,6 +2626,7 @@ body.projects .home-work:has(+ .project-facts) {
 }
 
 .project-gallery__item {
+  position: relative;
   display: block;
   width: 100%;
   margin: 0 0 0.55rem;
@@ -2632,6 +2643,73 @@ body.projects .home-work:has(+ .project-facts) {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.project-gallery__item:has(.project-gallery__thumb-loader):not(.is-loaded) img {
+  opacity: 0;
+}
+
+.project-gallery__thumb-loader {
+  position: absolute;
+  inset: 0;
+  min-height: 10rem;
+  background: linear-gradient(110deg, #1a1a1a 8%, #2a2a2a 18%, #1a1a1a 33%);
+  background-size: 200% 100%;
+  animation: project-shimmer 1.35s linear infinite;
+}
+
+.project-gallery__item.is-loaded .project-gallery__thumb-loader {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.project-gallery__skeleton {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.55rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  break-inside: avoid;
+  background: #141414;
+  min-height: 12rem;
+}
+
+.project-gallery__skeleton span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  background: linear-gradient(110deg, #1a1a1a 8%, #2a2a2a 18%, #1a1a1a 33%);
+  background-size: 200% 100%;
+  animation: project-shimmer 1.35s linear infinite;
+}
+
+@keyframes project-shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.project-list__loading {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.project-list__loading span {
+  display: block;
+  min-height: min(52vh, 28rem);
+  border-radius: 0;
+  background: linear-gradient(110deg, #1a1a1a 8%, #2a2a2a 18%, #1a1a1a 33%);
+  background-size: 200% 100%;
+  animation: project-shimmer 1.35s linear infinite;
+}
+
+.project-list__cover-empty {
+  background: #141414;
 }
 
 .project-lightbox {

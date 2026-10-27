@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=9" />
+    <link rel="stylesheet" href="./styles.css?v=15" />
       <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stantia" />
     <meta property="og:locale" content="en_US" />
@@ -324,12 +324,14 @@
         </div>
       </section>
 
-      <section class="home-work home-work--intro" id="projects" aria-label="Work with Stantia">
+      <section class="home-work home-work--intro" id="projects" aria-label="Work with our Studio Stantia">
         <div class="home-work__banner">
-          <img class="home-work__photo" src="./assets/proyects/LigaBJJ-Scramble/IMG_8571.JPG" alt="" />
+          <img class="home-work__photo" src="" alt="" data-project-cover="liga-bjj" />
           <div class="home-work__copy">
-            <h2>Work with</h2>
-            <img class="home-work__logo" src="./assets/logo-wordmark.png" alt="Stantia" />
+            <div class="home-work__lead">
+              <h2>Work with our Studio</h2>
+              <img class="home-work__logo" src="./assets/logo-wordmark.png" alt="Stantia" />
+            </div>
             <a class="home-work__cta" href="./projects/">See projects</a>
           </div>
         </div>
@@ -366,6 +368,10 @@
       </div>
     </footer>
     <script src="./js/site.js?v=4" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js" defer></script>
+    <script src="./js/firebase-config.js?v=1" defer></script>
+    <script src="./js/project-cover.js?v=1" defer></script>
     <script src="./js/specialty-icons.js"></script>
     <script>
       (function () {
