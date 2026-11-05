@@ -67,7 +67,7 @@
     <header class="hero">
       <p class="hero__eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="hero__meta">Last updated: October 16, 2026</p>
+      <p class="hero__meta">Last updated: November 5, 2026</p>
       <p class="hero__lede">
         This Privacy Policy explains how Stantia (“we”, “us”, or “our”) collects, uses,
         shares, and protects information when you use the Stantia mobile application
@@ -109,13 +109,60 @@
             upload (including profile photos, workout covers, and post photos).
           </li>
           <li>
-            <strong>Health and fitness metrics (optional, Apple platforms)</strong> —
+            <strong>Garmin Connect activity data (optional)</strong> —
+            if you connect Garmin in Stantia Settings, Garmin may send us activity
+            summaries after you train on a Garmin device and sync with Garmin Connect
+            (for example sport type, start time, duration, distance, pace or speed,
+            heart rate, and calories). We store that activity on your Stantia account
+            as a History session. Details are in
+            <a href="#garmin">Garmin Connect</a> below.
+          </li>
+          <li>
+            <strong>Health and fitness metrics (optional, Apple platforms / iOS)</strong> —
             when you use Train with a paired Apple Watch and grant Health access,
-            we may process workout-related metrics such as heart rate, active energy
-            (calories), distance, and pace. These metrics may be shown live in the
-            app, stored with your completed Train session summary, and written to
-            Apple Health on your devices when you allow it. Without a Watch or without
-            Health permission, Train works without collecting this data.
+            we may process workout-related metrics such as heart rate (including average,
+            maximum, and time in heart-rate zones), active energy (calories), distance,
+            pace or speed, elevation ascended, steps, cadence, power, swimming stroke
+            count and pool lengths (including related swim stats such as SWOLF when
+            available), and per-kilometer splits on run or walk sessions. These metrics
+            may be shown live on iPhone and Apple Watch, stored with your completed Train
+            session summary on device, optionally uploaded to Stantia’s servers when cloud
+            upload is enabled, and written to Apple Health on your devices when you allow
+            it. Android and iPhone without a Watch do not collect HealthKit live metrics;
+            Train still works without this data.
+          </li>
+          <li>
+            <strong>Insights and public profile metrics</strong> —
+            we compute Hybrid Index, specialty split, activity trends, and related
+            training insights from your completed sessions. By default, Hybrid Index and
+            specialty split on your public Stats tab are private. If you turn on
+            <em>Public profile metrics</em> in Settings, other athletes can see those
+            insights on your profile, and you may be included in monthly athlete rankings
+            that require public metrics.
+          </li>
+          <li>
+            <strong>Shared session images</strong> —
+            when you share a session card or Stories sticker, the image is composed on
+            your device from the session fields and modules you choose to include
+            (for example distance, time, pace, heart rate, calories, splits, zones, route
+            drawing, or notes). Public feed posts do not automatically attach your GPS
+            route. What appears on a sticker you export is under your control for that share.
+          </li>
+          <li>
+            <strong>App preferences</strong> —
+            settings such as appearance (light/dark and accent), UI language
+            (English / Español), push notification preference, Watch metrics cloud upload
+            (iOS), and public profile metrics stay with your account or on device as needed
+            to apply them. Language preference can also set the language of push notification
+            copy when push is enabled.
+          </li>
+          <li>
+            <strong>Subscription and entitlement data (Stantia Pro)</strong> —
+            if you use or manage Stantia Pro, we store subscription status, plan or product
+            identifiers, entitlement flags (for example features unlocked for Pro), and
+            related billing lifecycle events needed to provide paid features. When real
+            App Store or Google Play billing is enabled, purchase validation may involve
+            Apple or Google; we do not receive your full payment card details.
           </li>
           <li>
             <strong>Route and location data from Apple Watch GPS (optional)</strong> — during
@@ -189,25 +236,28 @@
           </li>
           <li>
             <strong>What we access</strong> — with your permission, Stantia may read and
-            write workout-related Health data needed for Train (for example heart rate,
-            active energy, distance, pace, and workout samples, and, for outdoor sessions, the
-            route recorded by the Watch). We request access through
-            an in-app disclosure (including that aggregate metrics may be uploaded to
-            Stantia’s servers) and then the system Health permission prompts.
+            write workout-related Health data needed for Train (for example heart rate and
+            zones, active energy, distance, pace or speed, elevation, steps, cadence, power,
+            swim strokes and lengths, workout samples, and, for outdoor sessions, the route
+            recorded by the Watch). We request access through an in-app disclosure (including
+            that aggregate metrics may be uploaded to Stantia’s servers) and then the system
+            Health permission prompts.
           </li>
           <li>
-            <strong>How we use it</strong> — to show live metrics during Train, include
-            summaries and routes on completed sessions and history on your device, optionally
-            upload aggregate session metrics and routes to Stantia’s servers when cloud upload
-            is enabled,
-            and save workouts to Apple Health so they can appear alongside your other
-            activity on your devices.
+            <strong>How we use it</strong> — to show live metrics during Train on iPhone and
+            the Watch companion, include summaries and routes on completed sessions and history
+            on your device, optionally upload aggregate session metrics and routes to Stantia’s
+            servers when cloud upload is enabled, and save workouts to Apple Health so they can
+            appear alongside your other activity on your devices.
           </li>
           <li>
-            <strong>Phone and Watch</strong> — Stantia asks, when a Watch is detected, whether
-            you want to measure with Apple Watch. If you decline, Train runs without Watch
-            metrics or routes. After a Watch-measured session, distance, pace, and calories are
-            shown on the complete screen as measured and cannot be edited there.
+            <strong>Phone and Watch</strong> — workouts start from iPhone Train. When a Watch
+            is detected, Stantia asks whether you want to measure with Apple Watch. If you
+            decline, Train runs without Watch metrics or routes. After a Watch-measured
+            session, distance, pace, and Watch-measured calories are shown on the complete
+            screen as measured and cannot be edited there. Turning off cloud upload keeps
+            HealthKit-derived fields and routes on this device only while local History may
+            still show them.
           </li>
           <li>
             <strong>What we do not do</strong> — we do not sell Health or fitness data,
@@ -227,8 +277,105 @@
         </ul>
       </section>
 
+      <section id="garmin">
+        <h2>4. Garmin Connect</h2>
+        <p>
+          Connecting Garmin is optional. You train on your Garmin device as usual.
+          After Garmin Connect syncs the activity, Garmin may push that data to
+          Stantia’s servers. We associate it with the Stantia account that authorized
+          the connection. Stantia does not control the watch during the workout and
+          does not request historical Garmin activities on Starter access.
+        </p>
+        <h3>How we use Garmin user data</h3>
+        <p>We use Garmin activity data only to:</p>
+        <ul>
+          <li>Create or update a training session in your Stantia History</li>
+          <li>
+            Show duration, distance, pace, heart rate, calories, and sport on that
+            session, Insights, streaks, rankings, and Programs compliance when those
+            features use your History
+          </li>
+          <li>Let you share that session yourself (a post, Stories card, or crew), if you choose</li>
+        </ul>
+        <p>
+          We do not sell Garmin user data. We do not use it for advertising, marketing,
+          or data-broker purposes. We do not use Garmin data, or anything derived from
+          it, to train, evaluate, or improve AI models.
+        </p>
+        <h3>Third parties that receive or process Garmin user data</h3>
+        <p>
+          Besides Garmin (the source of the data, under Garmin’s terms), the following
+          process Garmin-derived activity records on our behalf:
+        </p>
+        <ul>
+          <li>
+            <strong>Google LLC (Firebase / Google Cloud)</strong> — Authentication,
+            Firestore, Cloud Functions, and Cloud Storage. This is our hosting and
+            backend. Cloud Functions receive Garmin’s push notifications; Firestore
+            stores the resulting session on your account.
+          </li>
+        </ul>
+        <p>
+          We do not send Garmin user data to advertising networks, analytics vendors,
+          AI providers, or other fitness apps. Other Stantia athletes see Garmin-derived
+          details only if <em>you</em> share a session or post that includes them.
+        </p>
+        <h3>Sale or sharing</h3>
+        <p>
+          Garmin user data is <strong>not sold</strong>. It is not shared with a third
+          party for that party’s own use, except: (1) Google Cloud/Firebase as our
+          processor, as listed above; (2) other Stantia users, only when you publish or
+          share a session; (3) if required by law or to protect safety, as described in
+          this policy.
+        </p>
+        <h3>AI Transparency Statement</h3>
+        <p>
+          Stantia does <strong>not</strong> process Garmin user data with AI systems.
+          We do not use Garmin data to train, evaluate, or improve AI models, and Garmin
+          does not authorize that use. Because we do not run AI on Garmin data, there is
+          no AI consent to grant or withdraw for that processing. If this ever changed,
+          we would update this policy first, obtain explicit consent, and give you an
+          easy way to withdraw it before any such processing.
+        </p>
+        <h3>Access, correction, deletion, export, and withdrawing consent</h3>
+        <ul>
+          <li>
+            <strong>Access and correct</strong> — open the session in History in the
+            Stantia app, or email
+            <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+            to request a copy or a correction.
+          </li>
+          <li>
+            <strong>Export</strong> — email
+            <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+            and we will provide an export of Garmin-derived sessions tied to your
+            account where technically feasible.
+          </li>
+          <li>
+            <strong>Delete a session</strong> — delete it in History. That removes it
+            from Stantia; it does not delete the original activity in Garmin Connect.
+          </li>
+          <li>
+            <strong>Withdraw consent / disconnect</strong> — disconnect Garmin in
+            Stantia Settings, or revoke Stantia in Garmin Connect. We then stop
+            receiving new activities. Existing History sessions stay until you delete
+            them or delete your account, unless you ask us to remove them.
+          </li>
+          <li>
+            <strong>Delete your account</strong> — Settings → Delete account, or our
+            <a href="../delete-account/">Delete account</a> page. That removes Garmin
+            connection records and associated personal data we are not required to keep.
+          </li>
+        </ul>
+        <p>
+          Garmin API credentials are issued only to Stantia and are not shared with,
+          transferred to, or used by any third party. If someone asks us for those
+          keys, we will not provide them.
+        </p>
+      </section>
+
       <section>
-        <h2>4. How we use information</h2>
+        <h2>5. How we use information</h2>
         <p>We use information to:</p>
         <ul>
           <li>Create and manage your account and athlete profile</li>
@@ -239,6 +386,18 @@
           <li>Display public profile fields and published content to other athletes</li>
           <li>
             Provide optional Apple Watch / HealthKit Train metrics, routes, and session summaries
+          </li>
+          <li>
+            Import optional Garmin Connect activities into your History after you connect Garmin
+          </li>
+          <li>
+            Compute Hybrid Index and activity insights, and — only when you enable public
+            profile metrics — show those insights on your Stats tab to others and include you
+            in eligible monthly rankings
+          </li>
+          <li>
+            Provide Stantia Pro entitlements and subscription management when you use paid
+            features
           </li>
           <li>
             Send in-app and, if you enable them, push notifications for social activity
@@ -255,19 +414,27 @@
       </section>
 
       <section>
-        <h2>5. How information is shared</h2>
+        <h2>6. How information is shared</h2>
         <ul>
           <li>
             <strong>Other Stantia users</strong> — public profile fields, public posts,
             and public workouts are visible to other athletes. Your country flag is
             visible only if you turn on “Show flag.” City or province, date of birth,
             and gender are stored with your account and are not shown on your public
-            profile. Private workouts remain
+            profile.             Private workouts remain
             in your library until you choose to share them. HealthKit metrics from Train
             are part of your session experience; they are not posted publicly unless you
-            choose to share a session summary or similar content yourself. Public posts do not
-            include your GPS route. When you repost someone’s post, your followers can see that
-            repost with your name on it, even if they do not follow the original author.
+            choose to share a session summary, Stories sticker, or similar content yourself.
+            Public posts do not include your GPS route. Hybrid Index and specialty split stay
+            private on your profile unless you enable public profile metrics. When you repost
+            someone’s post, your followers can see that repost with your name on it, even if
+            they do not follow the original author.
+          </li>
+          <li>
+            <strong>App stores and billing partners</strong> — when you purchase or manage
+            Stantia Pro through Apple or Google, those platforms process payment according to
+            their terms. We receive entitlement and transaction identifiers needed to unlock
+            features, not your full payment card number.
           </li>
           <li>
             <strong>Crew members</strong> — posts you publish in a crew are visible to current
@@ -292,7 +459,14 @@
             (Authentication, Firestore, Cloud Storage, Cloud Functions) to store
             account data, content, media, and session records (which may include
             aggregate Train metrics you captured when cloud upload is enabled), and to
-            run backend logic.
+            run backend logic. The same infrastructure processes Garmin activity
+            records when you have connected Garmin, as described in
+            <a href="#garmin">Garmin Connect</a>.
+          </li>
+          <li>
+            <strong>Garmin</strong> — if you connect Garmin, Garmin processes your
+            device activities under Garmin’s policies and sends authorized activity
+            data to Stantia. We do not give Garmin API keys to any third party.
           </li>
           <li>
             <strong>Legal and safety</strong> — we may disclose information if required
@@ -303,7 +477,7 @@
       </section>
 
       <section>
-        <h2>6. Account deletion and your choices</h2>
+        <h2>7. Account deletion and your choices</h2>
         <p>You can:</p>
         <ul>
           <li>
@@ -319,6 +493,20 @@
             Watch-connected Train metrics, and turn off
             <em>Upload Watch metrics to cloud</em> in Stantia Settings so HealthKit-derived
             metrics and routes stay on this device only
+          </li>
+          <li>
+            Connect or disconnect Garmin in Stantia Settings, revoke Stantia in Garmin
+            Connect, and request access, correction, deletion, or export of
+            Garmin-derived sessions as described in
+            <a href="#garmin">Garmin Connect</a>
+          </li>
+          <li>
+            Keep Hybrid Index and specialty split private, or turn on
+            <em>Public profile metrics</em> if you want others (and monthly rankings) to see them
+          </li>
+          <li>
+            Manage Stantia Pro from Settings when available, including canceling according to
+            App Store or Google Play rules when those stores handle billing
           </li>
           <li>
             Delete your account in-app (Settings → Delete account), or follow the steps on
@@ -339,7 +527,7 @@
       </section>
 
       <section>
-        <h2>7. Data retention</h2>
+        <h2>8. Data retention</h2>
         <p>
           We retain account and content data while your account is active, including
           Train session summaries and any associated metrics stored with your Stantia
@@ -347,11 +535,15 @@
           within a reasonable period, except where we must keep limited records for
           security, dispute resolution, or legal compliance. Data stored in Apple Health
           on your devices is retained according to your Apple Health settings.
+          Garmin-derived sessions stored with your Stantia account are retained while
+          the account is active, unless you delete the session or disconnect and ask
+          us to remove them. Disconnecting Garmin stops new imports; it does not by
+          itself erase History you already saved.
         </p>
       </section>
 
       <section>
-        <h2>8. Security</h2>
+        <h2>9. Security</h2>
         <p>
           We use industry-standard safeguards provided by our cloud providers,
           including encrypted transport (HTTPS/TLS) and access controls. No method of
@@ -361,7 +553,7 @@
       </section>
 
       <section>
-        <h2>9. Children’s privacy</h2>
+        <h2>10. Children’s privacy</h2>
         <p>
           Stantia is not directed to children under 13 (or the minimum age required in
           your country). We do not knowingly collect personal information from
@@ -372,7 +564,7 @@
       </section>
 
       <section>
-        <h2>10. International processing</h2>
+        <h2>11. International processing</h2>
         <p>
           Stantia may process information on servers located outside your country
           (including through Firebase/Google Cloud regions). By using the app, you
@@ -382,7 +574,7 @@
       </section>
 
       <section>
-        <h2>11. Changes to this policy</h2>
+        <h2>12. Changes to this policy</h2>
         <p>
           We may update this Privacy Policy as Stantia evolves. We will revise the
           “Last updated” date above and, when changes are material, provide additional
@@ -392,7 +584,7 @@
       </section>
 
       <section>
-        <h2>12. Contact</h2>
+        <h2>13. Contact</h2>
         <p>
           Contact:
           <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>

@@ -21,6 +21,7 @@ Each page has an EN | ES switcher. `js/site.js` remembers the choice and, on fir
 | Privacy Policy | https://fermacu.github.io/stantia-app-legal/privacy/ | https://fermacu.github.io/stantia-app-legal/es/privacy/ |
 | Terms | https://fermacu.github.io/stantia-app-legal/terms/ | https://fermacu.github.io/stantia-app-legal/es/terms/ |
 | Delete account | https://fermacu.github.io/stantia-app-legal/delete-account/ | https://fermacu.github.io/stantia-app-legal/es/delete-account/ |
+| Garmin branding (300×300 PNG) | https://stantia.app/assets/garmin-branding.png | same file |
 
 ## When you change copy
 
