@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="../../js/prefs.js?v=2"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stantia Studio</title>
+    <meta
+      name="description"
+      content="Explorá los proyectos de Stantia Studio. Fotografía y producción audiovisual para academias, atletas y eventos."
+    />
+    <link rel="canonical" href="https://fermacu.github.io/stantia-app-legal/es/studio/" />
+    <link rel="alternate" hreflang="en" href="https://fermacu.github.io/stantia-app-legal/studio/" />
+    <link rel="alternate" hreflang="es" href="https://fermacu.github.io/stantia-app-legal/es/studio/" />
+    <link rel="alternate" hreflang="x-default" href="https://fermacu.github.io/stantia-app-legal/studio/" />
+    <link rel="icon" href="../../assets/logo-mark.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css?v=56" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stantia" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Stantia Studio" />
+    <meta property="og:description" content="Explorá los proyectos de Stantia Studio. Fotografía y producción audiovisual para academias, atletas y eventos." />
+    <meta property="og:url" content="https://stantia.app/es/studio/" />
+    <meta property="og:image" content="https://stantia.app/assets/og-share.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Stantia Studio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://stantia.app/assets/og-share.png" />
+  </head>
+  <body class="projects studio-page">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="studio-exit" href="../">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5" />
+          </svg>
+          Salir de Studio
+        </a>
+        <a class="studio-header__logo" href="./" aria-label="Stantia Studio">
+          <img src="../../assets/logo-studio.png?v=2" alt="Stantia Studio" />
+        </a>
+        <div class="header-actions">
+          <nav class="lang-switch" aria-label="Idioma">
+            <a href="../../studio/" hreflang="en" lang="en" data-lang="en">EN</a>
+            <a href="./" hreflang="es" lang="es" data-lang="es" aria-current="true" class="is-active">ES</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <header class="projects-intro">
+        <h1>Explora nuestros proyectos</h1>
+      </header>
+
+      <section class="home-work studio-card" aria-label="Liga BJJ 2026">
+        <a class="home-work__banner" href="./liga-bjj/">
+          <img class="home-work__photo" src="" alt="" data-project-cover="liga-bjj" />
+          <div class="home-work__copy">
+            <h2 class="home-work__event">Liga BJJ 2026</h2>
+            <p class="home-work__sub">Scramble Jiu-Jitsu Academy</p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer home-foot">
+      <div class="home-foot__inner">
+        <div class="home-foot__brand">
+          <a href="../" aria-label="Inicio de Stantia">
+            <img class="home-foot__logo" src="../../assets/logo-wordmark.png" alt="Stantia" />
+          </a>
+          <p class="home-foot__slogan">Entrená. Registrá. <span>Compartí.</span></p>
+          <p>La comunidad de atletas híbridos.</p>
+        </div>
+        <nav class="home-foot__nav" aria-label="Pie de página">
+          <div class="home-foot__col">
+            <p>Sitio</p>
+            <a href="../">Inicio</a>
+            <a href="../#galeria">Galería</a>
+            <a href="./">Studio</a>
+          </div>
+          <div class="home-foot__col">
+            <p>App</p>
+            <a href="../privacy/">Acerca de la app</a>
+            <a href="../help/">Ayuda y guías</a>
+            <a href="../#inicio">Empezar</a>
+          </div>
+          <div class="home-foot__col">
+            <p>Contacto</p>
+            <a href="mailto:soporte@stantia.app">soporte@stantia.app</a>
+          </div>
+        </nav>
+        <p class="home-foot__meta">© <span id="year"></span> Stantia</p>
+      </div>
+    </footer>
+    <script src="../../js/site.js?v=4" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js" defer></script>
+    <script src="../../js/firebase-config.js?v=1" defer></script>
+    <script src="../../js/project-auth.js?v=19" defer></script>
+    <script src="../../js/project-cover.js?v=1" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.StantiaProjectAuth && window.StantiaProjectAuth.mountNavbar) {
+          window.StantiaProjectAuth.mountNavbar();
+        }
+      });
+    </script>
+  </body>
+</html>

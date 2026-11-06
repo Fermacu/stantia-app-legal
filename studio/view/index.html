@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../styles.css?v=14" />
+    <link rel="stylesheet" href="../../styles.css?v=57" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stantia" />
     <meta property="og:locale" content="en_US" />
@@ -24,16 +24,14 @@
   <body class="projects">
     <header class="site-header">
       <div class="site-header__inner">
-        <div class="brand-lockup">
-          <a class="brand-back" href="../" aria-label="Back to projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg></a>
-          <a class="brand" href="../../" aria-label="Stantia home">
-            <img class="brand__wordmark" src="../../assets/logo-wordmark.png" alt="Stantia" height="28" />
-          </a>
-        </div>
+        <a class="brand-lockup brand-lockup--studio" href="../" aria-label="Back to Stantia Studio">
+          <span class="brand-back" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg></span>
+          <img class="brand__studio" src="../../assets/logo-studio.png?v=2" alt="Stantia Studio" />
+        </a>
         <div class="header-actions">
           <nav class="lang-switch" aria-label="Language">
             <a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true" class="is-active" id="lang-en">EN</a>
-            <a href="../../es/projects/view/" hreflang="es" lang="es" data-lang="es" id="lang-es">ES</a>
+            <a href="../../es/studio/view/" hreflang="es" lang="es" data-lang="es" id="lang-es">ES</a>
           </nav>
         </div>
       </div>
@@ -46,10 +44,6 @@
           <div class="home-work__copy">
             <h2 class="home-work__event" data-project-title>Project</h2>
             <p class="home-work__sub" data-project-subtitle></p>
-            <a class="project-banner__gallery" href="#gallery">
-              See gallery
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
           </div>
         </div>
       </section>
@@ -76,11 +70,14 @@
         <button class="project-lightbox__nav project-lightbox__nav--prev" type="button" aria-label="Previous">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 5.5 8 12l6.5 6.5"/></svg>
         </button>
-        <img alt="" />
+        <div class="project-lightbox__stage">
+          <img alt="" draggable="false" />
+          <div class="project-lightbox__mark" aria-hidden="true"></div>
+        </div>
         <button class="project-lightbox__nav project-lightbox__nav--next" type="button" aria-label="Next">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
         </button>
-        <button class="project-lightbox__download" type="button">
+        <button class="project-lightbox__download" type="button" disabled>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
           Download
         </button>
@@ -94,13 +91,14 @@
           <a href="../../" aria-label="Stantia home">
             <img class="home-foot__logo" src="../../assets/logo-wordmark.png" alt="Stantia" />
           </a>
-          <p>The network for hybrid athletes.</p>
+          <p class="home-foot__slogan">Train. Record. <span>Share.</span></p>
+          <p>The community of hybrid athletes.</p>
         </div>
         <nav class="home-foot__nav" aria-label="Footer">
           <div class="home-foot__col">
             <p>Site</p>
             <a href="../../">Home</a>
-            <a href="../">Projects</a>
+            <a href="../">Studio</a>
           </div>
           <div class="home-foot__col">
             <p>Contact</p>
@@ -119,14 +117,17 @@
         var en = document.getElementById('lang-en');
         var es = document.getElementById('lang-es');
         if (en) en.href = './' + q;
-        if (es) es.href = '../../es/projects/view/' + q;
+        if (es) es.href = '../../es/studio/view/' + q;
       })();
     </script>
     <script src="../../js/site.js?v=4" defer></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-functions-compat.js" defer></script>
     <script src="../../js/firebase-config.js?v=1" defer></script>
-    <script src="../../js/project-gallery.js?v=7" defer></script>
-    <script src="../../js/project-photos.js?v=4" defer></script>
+    <script src="../../js/project-auth.js?v=19" defer></script>
+    <script src="../../js/project-gallery.js?v=23" defer></script>
+    <script src="../../js/project-photos.js?v=12" defer></script>
   </body>
 </html>

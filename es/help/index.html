@@ -67,7 +67,7 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Soporte</p>
       <h1>Ayuda y guías</h1>
-      <p class="hero__meta">Última actualización: 16 de octubre de 2026 · App versión 2.0.10</p>
+      <p class="hero__meta">Última actualización: 29 de octubre de 2026 · App versión 2.0.12</p>
       <p class="hero__lede">
         El entrenamiento es el contenido. La comunidad es el producto. Así te mueves en Stantia,
         creas workouts, entrenas en vivo, compartes sesiones y ves qué tan híbrido eres.
@@ -203,7 +203,9 @@
           activar o desactivar notificaciones push; y, en iPhone, decidir si las métricas del
           Apple Watch se suben a la nube. La opción <strong>Métricas públicas en el perfil</strong> viene
           apagada por defecto. Actívalo si otros atletas deben ver tu Hybrid Index y el reparto
-          por especialidad en la pestaña Estadísticas.
+          por especialidad en la pestaña Estadísticas (y para aparecer en rankings mensuales que
+          exigen métricas públicas). <strong>Stantia Pro</strong> (Ajustes → Stantia Pro)
+          desbloquea extras de pago como la racha de actividad cuando esté disponible en tu cuenta.
         </p>
       </section>
 
@@ -385,10 +387,14 @@
           por km.
         </p>
         <p>
-          Comparte una Otras sesión como imagen desde el detalle (Destacado, Métricas, Con notas o
-          Minimalista). <strong>Compartir en Stories</strong> también puede incluir stickers de
-          ruta GPS cuando la sesión tiene una ruta registrada por tu Apple Watch. Borrar una Otras sesión la desvincula de posts ligados (fotos y caption se
-          quedan); los posts que solo compartían esa sesión se eliminan.
+          Comparte una sesión terminada como imagen desde el detalle.
+          <strong>Compartir en Stories</strong> usa una vista previa en vivo con plantillas rápidas
+          (Destacado, Esfuerzo, Splits, Zonas, Intervalos, Completo, tarjeta de ruta y posters de
+          ruta distintivos cuando hay un trazo GPS). Tú eliges qué módulos incluir — distancia,
+          tiempo, ritmo, frecuencia cardiaca y calorías, splits por km, zonas de FC, largos de
+          piscina, ritmos de intervalo, bloques, notas y ruta. La ruta GPS nunca se adjunta sola
+          a un post público del feed. Borrar una Otras sesión la desvincula de posts ligados
+          (fotos y caption se quedan); los posts que solo compartían esa sesión se eliminan.
         </p>
         <p>
           Desde una sesión terminada puedes invitar a seguidores mutuos sin publicar un post. Si
@@ -435,10 +441,9 @@
         <h3>Cómo inicia una sesión en vivo</h3>
         <p>
           El reloj del iPhone es la fuente de verdad. Inicia tu sesión en Entrenar en iPhone; el
-          tiempo trascurrido se sincroniza al Watch. El Watch también puede iniciar cosas: en
-          idle muestra inicios rápidos <strong>Free</strong>, <strong>Run</strong>,
-          <strong>Swim</strong>, <strong>Strength</strong> y <strong>Ride</strong> que abren esa
-          sesión en el iPhone.
+          tiempo trascurrido se sincroniza al Watch. En idle, el Watch muestra el wordmark de
+          Stantia y te indica que inicies el entrenamiento en iPhone (no hay botones de inicio
+          rápido en el Watch).
         </p>
         <p>
           Al pulsar <strong>Iniciar</strong> por primera vez en una sesión, cuando se detecta un Watch
@@ -446,6 +451,12 @@
           eliges medir, Apple Health arranca de inmediato con el reloj de Entrenar — sin un
           segundo toque en el Watch. Si lo rechazas, Entrenar sigue sin métricas del Watch. Si el
           iPhone no preguntó (por ejemplo, el Watch aún no se detectaba), puede preguntar el Watch.
+        </p>
+        <p>
+          En sesiones de natación en piscina, Stantia pregunta el
+          <strong>largo de piscina (25 m o 50 m)</strong> antes de medir para que la detección de
+          largos de HealthKit coincida con Apple Fitness. La natación en aguas abiertas aún no está
+          soportada.
         </p>
 
         <h3>Modo de métricas por bloque</h3>
@@ -474,17 +485,27 @@
         <h3>Qué verás</h3>
         <ul>
           <li>
-            <strong>En vivo</strong> — FC, Energía y Tiempo en bloques de Esfuerzo; los de Distancia también
-            muestran Ritmo y Distancia en iPhone y Watch
+            <strong>En vivo (iPhone)</strong> — FC, Energía y Tiempo en bloques de Esfuerzo; los de
+            Distancia también muestran Ritmo y Distancia. Cuando HealthKit las aporta, las sesiones
+            también pueden mostrar elevación, cadencia, potencia, brazadas y largos, splits por km
+            (carrera/caminata) y zonas de frecuencia cardiaca
+          </li>
+          <li>
+            <strong>En vivo (Watch)</strong> — layout tipo Fitness según el deporte: tiempo grande,
+            distancia o FC como segundo hero, y luego una grilla de calorías activas, FC / media /
+            máx, ritmo o velocidad, elevación, cadencia, potencia, brazadas y largos, y la zona de
+            FC actual cuando esté disponible
           </li>
           <li>
             <strong>Pausado</strong> — las métricas se pausan con la sesión (“Metrics paused”)
           </li>
           <li>
-            <strong>Resumen</strong> — al terminar, las stats agregadas (FC media/máx, energía y
-            ritmo/distancia si se capturaron) pueden guardarse con la sesión en este dispositivo, subirse a
-            los servidores de Stantia cuando <em>Subir métricas del Watch a la nube</em> está activo en Ajustes, y
-            escribir el workout en Apple Health
+            <strong>Resumen</strong> — al terminar, el Watch mantiene un resumen de totales con un
+            botón <strong>Done</strong> (iniciar una sesión nueva desde iPhone lo cierra). Las
+            stats agregadas (FC media/máx, energía, ritmo/distancia y otros campos capturados)
+            pueden guardarse con la sesión en este dispositivo, subirse a los servidores de Stantia
+            cuando <em>Subir métricas del Watch a la nube</em> está activo en Ajustes, y escribir el
+            workout en Apple Health
           </li>
         </ul>
 
@@ -519,8 +540,9 @@
         <ul>
           <li><strong>Pausa / Reanudar</strong> en cualquiera de los dos dispositivos mantienen sincronizados el reloj de Entrenar y las métricas</li>
           <li>
-            <strong>End</strong> en el Watch termina las métricas del bloque actual y pausa
-            Entrenar en iPhone (con confirmación)
+            <strong>End</strong> en el Watch termina las métricas del bloque actual, pausa
+            Entrenar en iPhone (con confirmación) y abre el resumen del Watch hasta que pulses
+            <strong>Done</strong> o inicies otra sesión
           </li>
           <li>
             Reiniciar un timer a idle detiene las métricas del Watch hasta que vuelvas a iniciar el timer
@@ -613,7 +635,9 @@
         </ul>
         <p>
           Los insights también muestran el split por especialidad y tendencias de volumen para ver hacia
-          dónde se inclina tu mix — úsalo como brújula, no como juicio de esfuerzo.
+          dónde se inclina tu mix — úsalo como brújula, no como juicio de esfuerzo. En tu
+          perfil público, el Hybrid Index y el reparto por especialidad se mantienen privados
+          hasta que actives <strong>Métricas públicas en el perfil</strong> en Ajustes.
         </p>
       </section>
 

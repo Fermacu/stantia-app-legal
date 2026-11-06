@@ -92,7 +92,8 @@
 
   root.setAttribute('aria-busy', 'true');
   root.innerHTML =
-    '<div class="project-list__loading" aria-hidden="true"><span></span><span></span></div>';
+    '<section class="home-work project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>' +
+    '<section class="home-work project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>';
 
   var config = window.STANTIA_FIREBASE;
   if (!config || typeof firebase === 'undefined') {

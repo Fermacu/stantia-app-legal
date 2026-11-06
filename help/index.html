@@ -67,7 +67,7 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Support</p>
       <h1>Help &amp; Guides</h1>
-      <p class="hero__meta">Last updated: October 16, 2026 · App version 2.0.10</p>
+      <p class="hero__meta">Last updated: October 29, 2026 · App version 2.0.12</p>
       <p class="hero__lede">
         Training is the content. Community is the product. Here’s how to get around Stantia,
         build workouts, train live, share sessions, and track how hybrid you really are.
@@ -201,7 +201,10 @@
           accent color; set the app language to <strong>English</strong> or <strong>Español</strong>;
           turn push notifications on or off; and, on iPhone, choose whether Apple Watch metrics
           upload to the cloud. <strong>Public profile metrics</strong> is off by default. Turn it
-          on if other athletes should see your Hybrid Index and specialty split on your Stats tab.
+          on if other athletes should see your Hybrid Index and specialty split on your Stats tab
+          (and so you can appear in monthly rankings that require public metrics).
+          <strong>Stantia Pro</strong> (Settings → Stantia Pro) unlocks paid extras such as the
+          Activity streak when available on your account.
         </p>
       </section>
 
@@ -382,10 +385,13 @@
           pace per km.
         </p>
         <p>
-          Share an Other session as an image card from session detail (Highlight, Metrics, With
-          notes, or Minimal). <strong>Share to Stories</strong> can also include GPS route
-          stickers when the session has a route recorded by your Apple Watch. Deleting an Other session detaches it from linked posts
-          (photos and caption stay); posts that only shared that session are removed.
+          Share a finished session as an image from session detail. <strong>Share to Stories</strong>
+          uses one live preview with quick templates (Highlight, Effort, Splits, Zones, Intervals,
+          Full, Route card, and distinctive route posters when a GPS path exists). You choose which
+          modules to include — distance, time, pace, heart rate and calories, km splits, HR zones,
+          pool lengths, interval paces, blocks, notes, and route. The GPS route is never attached
+          automatically to a public feed post. Deleting an Other session detaches it from linked
+          posts (photos and caption stay); posts that only shared that session are removed.
         </p>
         <p>
           From a finished session you can invite mutual followers without posting. If they accept
@@ -432,10 +438,8 @@
         <h3>How a live session starts</h3>
         <p>
           The iPhone clock is the source of truth. Start your session in Train on iPhone; the
-          elapsed time syncs to the Watch. Your Watch can also start things: when it’s idle, it
-          shows <strong>Free</strong>, <strong>Run</strong>, <strong>Swim</strong>,
-          <strong>Strength</strong>, and <strong>Ride</strong> quick starts that open that session
-          on iPhone.
+          elapsed time syncs to the Watch. Watch idle shows the Stantia wordmark and asks you to
+          start the workout on iPhone (there are no Watch quick-start buttons).
         </p>
         <p>
           On the first <strong>Start</strong> of a session, when a paired Watch is detected,
@@ -443,6 +447,11 @@
           measure, Apple Health starts right away with the Train clock — no second tap on the
           Watch. If you decline, Train keeps running without Watch metrics. If iPhone didn’t ask
           (for example, the Watch wasn’t detected yet), the Watch may ask instead.
+        </p>
+        <p>
+          For pool swim sessions, Stantia asks for indoor <strong>pool length (25 m or 50 m)</strong>
+          before measuring so HealthKit lap detection matches Apple Fitness. Open-water swim is
+          not supported yet.
         </p>
 
         <h3>Metrics mode per block</h3>
@@ -471,17 +480,27 @@
         <h3>What you’ll see</h3>
         <ul>
           <li>
-            <strong>Live</strong> — HR, Energy, and Time on Effort blocks; Distance blocks also
-            show Pace and Distance on iPhone and Watch
+            <strong>Live (iPhone)</strong> — HR, Energy, and Time on Effort blocks; Distance
+            blocks also show Pace and Distance. When HealthKit provides them, sessions can also
+            surface elevation, cadence, power, swim strokes and lengths, km splits (run/walk),
+            and heart-rate zones
+          </li>
+          <li>
+            <strong>Live (Watch)</strong> — a Fitness-like layout by sport: large elapsed time,
+            distance or heart rate as the secondary hero, then a grid of active calories, HR /
+            avg / max, pace or speed, elevation, cadence, power, swim strokes and lengths, and
+            the current HR zone when available
           </li>
           <li>
             <strong>Paused</strong> — metrics pause with the session (“Metrics paused”)
           </li>
           <li>
-            <strong>Summary</strong> — after you finish, rollup stats (avg/max HR, energy, and
-            pace/distance when captured) can save with the session on this device, upload to
-            Stantia’s servers when <em>Upload Watch metrics to cloud</em> is on in Settings, and
-            write the workout to Apple Health
+            <strong>Summary</strong> — after you finish, the Watch keeps a summary of totals with
+            a <strong>Done</strong> button (starting a new session from iPhone dismisses it).
+            Rollup stats (avg/max HR, energy, pace/distance, and other captured fields) can save
+            with the session on this device, upload to Stantia’s servers when
+            <em>Upload Watch metrics to cloud</em> is on in Settings, and write the workout to
+            Apple Health
           </li>
         </ul>
 
@@ -516,8 +535,9 @@
         <ul>
           <li><strong>Pause / Resume</strong> on either device keep the Train clock and metrics in sync</li>
           <li>
-            <strong>End</strong> on Watch ends Watch metrics for the current block and pauses
-            Train on iPhone (with confirmation)
+            <strong>End</strong> on Watch ends Watch metrics for the current block, pauses Train
+            on iPhone (with confirmation), and opens the Watch summary until you tap
+            <strong>Done</strong> or start another session
           </li>
           <li>
             Restarting a timer to idle stops Watch metrics until you start the block timer
@@ -610,7 +630,9 @@
         </ul>
         <p>
           Insights also show specialty split and volume trends so you can see where your mix
-          leans — use it as a compass, not a judgment of effort.
+          leans — use it as a compass, not a judgment of effort. On your public profile, Hybrid
+          Index and specialty split stay private until you enable
+          <strong>Public profile metrics</strong> in Settings.
         </p>
       </section>
 

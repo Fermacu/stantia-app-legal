@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=15" />
+    <link rel="stylesheet" href="./styles.css?v=26" />
       <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stantia" />
     <meta property="og:locale" content="en_US" />
@@ -50,7 +50,7 @@
           <nav class="nav" aria-label="Site">
             <a href="./privacy/">About the app</a>
             <a href="#gallery">Gallery</a>
-            <a href="./projects/">Projects</a>
+            <a href="./studio/">Studio</a>
           </nav>
         </div>
       </div>
@@ -82,17 +82,15 @@
           </script>
           <div class="home-open__statement home-open__statement--intro">
             <h1>Train.<br /><strong>Record.</strong><br /><span class="home-open__accent">Share.</span></h1>
-            <p class="home-open__lede">
-              Stantia is the network for hybrid athletes. Train live, share the session, and
-              compete with people who move the way you do.
-            </p>
-            <a class="home-cta" href="#inicio">Move With STANTIA</a>
+            <a class="home-cta" href="#inicio">Discover Stantia</a>
           </div>
           <div class="home-open__statement home-open__statement--coach" aria-hidden="true">
             <h2 class="home-open__display">Be part of the<br /><strong>Stantia community</strong><br /><span class="home-open__accent">live sport like never before</span></h2>
+            <a class="home-cta" href="#inicio">Discover Stantia</a>
           </div>
           <div class="home-open__statement home-open__statement--shop" aria-hidden="true">
             <h2 class="home-open__display"><span class="home-open__accent">No matter your sport,</span><br /><strong>on Stantia</strong><br />we are all part of the movement.</h2>
+            <a class="home-cta" href="#inicio">Discover Stantia</a>
           </div>
         </div>
         <button type="button" class="home-arrow home-arrow--prev" data-home-dir="-1" aria-label="Previous">
@@ -109,13 +107,14 @@
 
       <section class="home-gallery" id="gallery" aria-label="Gallery">
         <div class="home-gallery__head">
-          <h2 class="home-gallery__title">
-            <span class="home-gallery__accent">Our athletes</span><br />
-            are the<br />
-            <strong>most important</strong><br />
-            part of our community.
-          </h2>
-          <a class="home-gallery__join" href="#inicio">I want to be part</a>
+          <div class="home-gallery__copy">
+            <h2 class="home-gallery__title">
+              <span class="home-gallery__accent">Where athletes</span><br />
+              <strong>come first.</strong>
+            </h2>
+            <p class="home-gallery__sub">Be part of our community of hybrid athletes.</p>
+          </div>
+          <a class="home-gallery__join" href="#inicio">Join Stantia</a>
         </div>
                 <div class="home-gallery__viewport">
           <div class="home-gallery__track" hidden>
@@ -320,21 +319,54 @@
             </figure>
             </div>
           </div>
+          <div class="home-gallery__slide">
+            <p class="home-gallery__athlete">Scramble</p>
+            <div class="home-gallery__row">
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="./assets/home/sports/scramble-1.jpg" aria-label="Athlete training">
+                <source src="./assets/home/sports/scramble-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption>01</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="./assets/home/sports/scramble-2.jpg" aria-label="Athlete training">
+                <source src="./assets/home/sports/scramble-2.mp4" type="video/mp4" />
+              </video>
+              <figcaption>02</figcaption>
+            </figure>
+            <figure class="home-film">
+              <video autoplay muted loop playsinline preload="metadata" poster="./assets/home/sports/scramble-5.jpg" aria-label="Athlete training">
+                <source src="./assets/home/sports/scramble-5.mp4" type="video/mp4" />
+              </video>
+              <figcaption>05</figcaption>
+            </figure>
+            </div>
           </div>
+          </div>
+        </div>
+        <div class="home-gallery__more">
+          <button type="button" class="home-gallery__more-btn">View gallery</button>
         </div>
       </section>
 
-      <section class="home-work home-work--intro" id="projects" aria-label="Work with our Studio Stantia">
-        <div class="home-work__banner">
+      <section class="home-work home-work--intro" id="studio" aria-label="Work with us">
+        <header class="home-studio">
+          <img class="studio-mark" src="./assets/logo-studio.png?v=2" alt="Stantia Studio" />
+          <div class="home-studio__chips" aria-label="Studio disciplines">
+            <span class="home-studio__chip">Photography</span>
+            <span class="home-studio__chip">Production</span>
+          </div>
+        </header>
+        <a class="home-work__banner" href="./studio/">
           <img class="home-work__photo" src="" alt="" data-project-cover="liga-bjj" />
           <div class="home-work__copy">
             <div class="home-work__lead">
-              <h2>Work with our Studio</h2>
-              <img class="home-work__logo" src="./assets/logo-wordmark.png" alt="Stantia" />
+              <h2>Work with <span>us.</span></h2>
+              <p>We push sport forward, create community, and tell stories that move. Step into Stantia Studio and discover what we build.</p>
             </div>
-            <a class="home-work__cta" href="./projects/">See projects</a>
+            <span class="home-work__cta">View more</span>
           </div>
-        </div>
+        </a>
       </section>
     </main>
 
@@ -344,14 +376,15 @@
           <a href="./" aria-label="Stantia home">
             <img class="home-foot__logo" src="./assets/logo-wordmark.png" alt="Stantia" />
           </a>
-          <p>The network for hybrid athletes.</p>
+          <p class="home-foot__slogan">Train. Record. <span>Share.</span></p>
+          <p>The community of hybrid athletes.</p>
         </div>
         <nav class="home-foot__nav" aria-label="Footer">
           <div class="home-foot__col">
             <p>Site</p>
             <a href="#inicio">Home</a>
             <a href="#gallery">Gallery</a>
-            <a href="./projects/">Projects</a>
+            <a href="./studio/">Studio</a>
           </div>
           <div class="home-foot__col">
             <p>App</p>
@@ -863,7 +896,7 @@
             if (reduce || gallerySlides < 2) return;
             galleryTimer = window.setInterval(function () {
               showGallery(galleryIndex + 1);
-            }, 7000);
+            }, 3800);
           };
           var buildGallery = function () {
             var gallerySize = galleryQuery.matches ? 2 : 4;
@@ -962,13 +995,13 @@
               var nextPiece = function () {
                 var duration = video.duration;
                 if (!duration || !isFinite(duration)) return;
-                var maxStart = Math.max(0, duration - 5.2 - 2);
+                var maxStart = Math.max(0, duration - 2.8 - 2);
                 var start = maxStart ? Math.random() * maxStart : 0;
                 try { video.currentTime = start; } catch (err) {}
                 window.clearTimeout(partTimer);
                 partTimer = window.setTimeout(function () {
                   if (!video.paused) nextPiece();
-                }, 5200);
+                }, 2800);
               };
               video.addEventListener("loadedmetadata", nextPiece);
               watchTail(video, nextPiece);
