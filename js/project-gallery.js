@@ -216,9 +216,38 @@
       });
   }
 
-  function saveBlob(blob, name) {
-    if (!galleryState.unlocked) return Promise.reject(new Error('locked'));
-    if (!blob || !blob.size) return Promise.reject(new Error('empty-blob'));
+  function isPhoneLike() {
+    try {
+      if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return true;
+    } catch (_) {}
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '');
+  }
+
+  function isImageBlob(blob, name) {
+    var type = (blob && blob.type) || '';
+    if (/^image\//i.test(type)) return true;
+    return /\.(jpe?g|png|webp|gif|heic)$/i.test(String(name || ''));
+  }
+
+  function blobToImageFile(blob, name) {
+    var type = (blob && blob.type) || 'image/jpeg';
+    if (!/^image\//i.test(type)) type = 'image/jpeg';
+    var safe = String(name || 'stantia-photo.jpg').replace(/[\\/]+/g, '-');
+    if (!/\.[a-z0-9]+$/i.test(safe)) {
+      safe += /png/i.test(type) ? '.png' : /webp/i.test(type) ? '.webp' : '.jpg';
+    }
+    return new File([blob], safe, { type: type });
+  }
+
+  function canShareFiles(files) {
+    try {
+      return !!(navigator.share && navigator.canShare && navigator.canShare({ files: files }));
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function saveBlobViaAnchor(blob, name) {
     var objectUrl = URL.createObjectURL(blob);
     var link = document.createElement('a');
     link.href = objectUrl;
@@ -231,6 +260,127 @@
       URL.revokeObjectURL(objectUrl);
     }, 4000);
     return Promise.resolve();
+  }
+
+  function ensureSaveSheet() {
+    var existing = document.getElementById('stantia-save-sheet');
+    if (existing) return existing;
+    var sheet = document.createElement('div');
+    sheet.id = 'stantia-save-sheet';
+    sheet.className = 'project-save-sheet';
+    sheet.hidden = true;
+    sheet.innerHTML =
+      '<div class="project-save-sheet__dialog" role="dialog" aria-modal="true" aria-labelledby="stantia-save-title">' +
+      '  <p class="project-save-sheet__eyebrow" data-save-eyebrow></p>' +
+      '  <h2 id="stantia-save-title" data-save-title></h2>' +
+      '  <p data-save-copy></p>' +
+      '  <div class="project-save-sheet__actions">' +
+      '    <button type="button" class="project-cart__btn project-cart__btn--ghost" data-save-cancel></button>' +
+      '    <button type="button" class="project-cart__btn project-cart__btn--primary" data-save-confirm></button>' +
+      '  </div>' +
+      '</div>';
+    document.body.appendChild(sheet);
+    sheet.addEventListener('click', function (event) {
+      if (event.target === sheet) closeSaveSheet(true);
+    });
+    var cancel = sheet.querySelector('[data-save-cancel]');
+    if (cancel) {
+      cancel.addEventListener('click', function () {
+        closeSaveSheet(true);
+      });
+    }
+    return sheet;
+  }
+
+  var pendingSave = null;
+
+  function closeSaveSheet(abort) {
+    var sheet = document.getElementById('stantia-save-sheet');
+    if (sheet) sheet.hidden = true;
+    document.body.classList.remove('save-sheet-open');
+    if (abort && pendingSave && typeof pendingSave.reject === 'function') {
+      var reject = pendingSave.reject;
+      pendingSave = null;
+      reject(new Error('abort'));
+    }
+  }
+
+  function promptSaveToLibrary(files) {
+    var sheet = ensureSaveSheet();
+    var es = isEs();
+    var count = files.length;
+    sheet.querySelector('[data-save-eyebrow]').textContent = es ? 'Listo' : 'Ready';
+    sheet.querySelector('[data-save-title]').textContent = es
+      ? count > 1
+        ? 'Guardar en tu librería'
+        : 'Guardar en tu librería'
+      : count > 1
+        ? 'Save to your library'
+        : 'Save to your library';
+    sheet.querySelector('[data-save-copy]').textContent = es
+      ? count > 1
+        ? 'Toca Guardar y elige “Guardar imagen” / Fotos para enviarlas a tu librería.'
+        : 'Toca Guardar y elige “Guardar imagen” / Fotos para enviarla a tu librería.'
+      : count > 1
+        ? 'Tap Save and choose “Save Image” / Photos to add them to your library.'
+        : 'Tap Save and choose “Save Image” / Photos to add it to your library.';
+    sheet.querySelector('[data-save-cancel]').textContent = es ? 'Cancelar' : 'Cancel';
+    sheet.querySelector('[data-save-confirm]').textContent =
+      es ? (count > 1 ? 'Guardar ' + count + ' fotos' : 'Guardar foto') : count > 1 ? 'Save ' + count + ' photos' : 'Save photo';
+
+    return new Promise(function (resolve, reject) {
+      pendingSave = { resolve: resolve, reject: reject, files: files };
+      var confirm = sheet.querySelector('[data-save-confirm]');
+      confirm.onclick = function () {
+        var payload = pendingSave && pendingSave.files ? pendingSave.files : files;
+        pendingSave = null;
+        sheet.hidden = true;
+        document.body.classList.remove('save-sheet-open');
+        shareImageFiles(payload).then(resolve).catch(reject);
+      };
+      sheet.hidden = false;
+      document.body.classList.add('save-sheet-open');
+    });
+  }
+
+  function shareImageFiles(files) {
+    if (!files || !files.length) return Promise.reject(new Error('empty'));
+    if (!canShareFiles(files)) return Promise.reject(new Error('share'));
+    return navigator.share({
+      files: files,
+      title: files.length > 1 ? 'Stantia' : files[0].name,
+    }).catch(function (err) {
+      // User dismissed the share sheet — treat as success/cancel, not a hard error.
+      if (err && err.name === 'AbortError') return;
+      throw err;
+    });
+  }
+
+  function saveImageFiles(files) {
+    if (!files || !files.length) return Promise.reject(new Error('empty'));
+    if (!isPhoneLike() || !canShareFiles(files)) {
+      var chain = Promise.resolve();
+      files.forEach(function (file) {
+        chain = chain.then(function () {
+          return saveBlobViaAnchor(file, file.name);
+        });
+      });
+      return chain;
+    }
+    return shareImageFiles(files).catch(function (err) {
+      // Async fetch often drops the original tap gesture — ask for one fresh tap.
+      if (err && String(err.message || '') === 'abort') throw err;
+      return promptSaveToLibrary(files);
+    });
+  }
+
+  function saveBlob(blob, name) {
+    if (!galleryState.unlocked) return Promise.reject(new Error('locked'));
+    if (!blob || !blob.size) return Promise.reject(new Error('empty-blob'));
+    if (isPhoneLike() && isImageBlob(blob, name)) {
+      return saveImageFiles([blobToImageFile(blob, name)]);
+    }
+    return saveBlobViaAnchor(blob, name);
   }
 
   function loadJsZip() {
@@ -274,15 +424,33 @@
       if (typeof onProgress === 'function') onProgress(done, total, phase);
     }
 
-    // One file: direct download. Multiple: ZIP (browsers block multi auto-downloads).
-    if (list.length === 1) {
-      report(0, 1, 'download');
-      return window.StantiaProjectAuth.fetchPhotoBlob(galleryState.projectId, list[0].photoId).then(
-        function (blob) {
-          report(1, 1, 'download');
-          return saveBlob(blob, list[0].fileName || 'stantia-' + list[0].photoId + '.jpg');
-        },
-      );
+    var preferLibrary = isPhoneLike();
+
+    // Phones: keep real image files (share → Photos). ZIP never lands in the library.
+    if (preferLibrary || list.length === 1) {
+      report(0, list.length, 'download');
+      var files = [];
+      var chain = Promise.resolve();
+      list.forEach(function (item, index) {
+        chain = chain.then(function () {
+          return window.StantiaProjectAuth
+            .fetchPhotoBlob(galleryState.projectId, item.photoId)
+            .then(function (blob) {
+              files.push(
+                blobToImageFile(
+                  blob,
+                  item.fileName || 'stantia-' + item.photoId + '.jpg',
+                ),
+              );
+              report(index + 1, list.length, 'download');
+            });
+        });
+      });
+      return chain.then(function () {
+        report(list.length, list.length, preferLibrary ? 'library' : 'download');
+        if (preferLibrary) return saveImageFiles(files);
+        return saveBlobViaAnchor(files[0], files[0].name);
+      });
     }
 
     report(0, list.length, 'download');
@@ -309,7 +477,7 @@
       }).then(function (blob) {
         var zipName =
           'stantia-' + (galleryState.projectId || 'photos') + '-' + list.length + '.zip';
-        return saveBlob(blob, zipName);
+        return saveBlobViaAnchor(blob, zipName);
       });
     });
   }
@@ -387,7 +555,9 @@
       download: es ? 'Descargar' : 'Download',
       downloading: es ? 'Descargando…' : 'Downloading…',
       zipping: es ? 'Preparando ZIP…' : 'Preparing ZIP…',
+      library: es ? 'Preparando para tu librería…' : 'Preparing for your library…',
       downloadFailed: es ? 'Error al descargar' : 'Download failed',
+      downloadCanceled: es ? 'Cancelado' : 'Canceled',
       signIn: es ? 'Inicia sesión' : 'Sign in',
       clear: es ? 'Vaciar' : 'Clear',
       remove: es ? 'Quitar' : 'Remove',
@@ -514,6 +684,10 @@
           downloadBtn.textContent = cartCopy('zipping');
           return;
         }
+        if (phase === 'library') {
+          downloadBtn.textContent = cartCopy('library');
+          return;
+        }
         downloadBtn.textContent = cartCopy('downloading') + ' ' + done + '/' + total;
       })
         .then(function () {
@@ -522,10 +696,14 @@
         })
         .catch(function (err) {
           var code = err && err.message ? String(err.message) : '';
-          downloadBtn.textContent =
-            code === 'auth' || code === 'locked'
-              ? cartCopy('signIn')
-              : cartCopy('downloadFailed');
+          if (code === 'abort') {
+            downloadBtn.textContent = cartCopy('downloadCanceled');
+          } else {
+            downloadBtn.textContent =
+              code === 'auth' || code === 'locked'
+                ? cartCopy('signIn')
+                : cartCopy('downloadFailed');
+          }
           window.setTimeout(function () {
             renderCartModal();
           }, 1800);
@@ -534,7 +712,8 @@
           var label = downloadBtn.textContent || '';
           if (
             label.indexOf(cartCopy('downloading')) === 0 ||
-            label === cartCopy('zipping')
+            label === cartCopy('zipping') ||
+            label === cartCopy('library')
           ) {
             downloadBtn.textContent = cartCopy('download');
             renderCartModal();
