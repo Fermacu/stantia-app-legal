@@ -229,14 +229,134 @@
     return /\.(jpe?g|png|webp|gif|heic)$/i.test(String(name || ''));
   }
 
-  function blobToImageFile(blob, name) {
+  function isJpegBlob(blob, name) {
+    var type = (blob && blob.type) || '';
+    if (/^image\/jpeg/i.test(type)) return true;
+    return /\.jpe?g$/i.test(String(name || ''));
+  }
+
+  function pad2(n) {
+    return n < 10 ? '0' + n : String(n);
+  }
+
+  function formatExifDate(date) {
+    return (
+      date.getFullYear() +
+      ':' +
+      pad2(date.getMonth() + 1) +
+      ':' +
+      pad2(date.getDate()) +
+      ' ' +
+      pad2(date.getHours()) +
+      ':' +
+      pad2(date.getMinutes()) +
+      ':' +
+      pad2(date.getSeconds())
+    );
+  }
+
+  function libraryFileName(name, when) {
+    var d = when instanceof Date ? when : new Date();
+    var stamp =
+      d.getFullYear() +
+      pad2(d.getMonth() + 1) +
+      pad2(d.getDate()) +
+      '-' +
+      pad2(d.getHours()) +
+      pad2(d.getMinutes()) +
+      pad2(d.getSeconds());
+    var safe = String(name || 'stantia-photo.jpg').replace(/[\\/]+/g, '-');
+    if (!/\.[a-z0-9]+$/i.test(safe)) safe += '.jpg';
+    if (/^stantia-\d{8}-\d{6}-/i.test(safe)) return safe;
+    return 'stantia-' + stamp + '-' + safe;
+  }
+
+  function arrayBufferToBinaryString(buffer) {
+    var bytes = new Uint8Array(buffer);
+    var chunk = 0x8000;
+    var parts = [];
+    for (var i = 0; i < bytes.length; i += chunk) {
+      parts.push(String.fromCharCode.apply(null, bytes.subarray(i, Math.min(i + chunk, bytes.length))));
+    }
+    return parts.join('');
+  }
+
+  function binaryStringToUint8Array(binary) {
+    var out = new Uint8Array(binary.length);
+    for (var i = 0; i < binary.length; i += 1) out[i] = binary.charCodeAt(i) & 0xff;
+    return out;
+  }
+
+  function loadPiexif() {
+    if (window.piexif) return Promise.resolve(window.piexif);
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js';
+      script.async = true;
+      script.onload = function () {
+        if (window.piexif) resolve(window.piexif);
+        else reject(new Error('piexif'));
+      };
+      script.onerror = function () {
+        reject(new Error('piexif'));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  // Galleries often sort by EXIF capture date. Stamp "now" so downloads land in Recents.
+  function stampBlobForLibrary(blob, name, when) {
+    if (!blob || !isJpegBlob(blob, name)) return Promise.resolve(blob);
+    var date = when instanceof Date ? when : new Date();
+    return loadPiexif()
+      .then(function (piexif) {
+        return blob.arrayBuffer().then(function (buf) {
+          var binary = arrayBufferToBinaryString(buf);
+          var exifObj;
+          try {
+            exifObj = piexif.load(binary);
+          } catch (_) {
+            exifObj = { '0th': {}, Exif: {}, GPS: {}, '1st': {} };
+          }
+          if (!exifObj['0th']) exifObj['0th'] = {};
+          if (!exifObj.Exif) exifObj.Exif = {};
+          var stamp = formatExifDate(date);
+          exifObj['0th'][piexif.ImageIFD.DateTime] = stamp;
+          exifObj.Exif[piexif.ExifIFD.DateTimeOriginal] = stamp;
+          exifObj.Exif[piexif.ExifIFD.DateTimeDigitized] = stamp;
+          try {
+            if (piexif.ExifIFD.SubSecTime) delete exifObj.Exif[piexif.ExifIFD.SubSecTime];
+            if (piexif.ExifIFD.SubSecTimeOriginal) delete exifObj.Exif[piexif.ExifIFD.SubSecTimeOriginal];
+            if (piexif.ExifIFD.SubSecTimeDigitized) delete exifObj.Exif[piexif.ExifIFD.SubSecTimeDigitized];
+          } catch (_) {}
+          var dumped = piexif.dump(exifObj);
+          var inserted = piexif.insert(dumped, binary);
+          return new Blob([binaryStringToUint8Array(inserted)], { type: 'image/jpeg' });
+        });
+      })
+      .catch(function () {
+        return blob;
+      });
+  }
+
+  function blobToImageFile(blob, name, when) {
     var type = (blob && blob.type) || 'image/jpeg';
     if (!/^image\//i.test(type)) type = 'image/jpeg';
     var safe = String(name || 'stantia-photo.jpg').replace(/[\\/]+/g, '-');
     if (!/\.[a-z0-9]+$/i.test(safe)) {
       safe += /png/i.test(type) ? '.png' : /webp/i.test(type) ? '.webp' : '.jpg';
     }
-    return new File([blob], safe, { type: type });
+    var date = when instanceof Date ? when : new Date();
+    return new File([blob], libraryFileName(safe, date), {
+      type: type,
+      lastModified: date.getTime(),
+    });
+  }
+
+  function prepareLibraryFile(blob, name, when) {
+    return stampBlobForLibrary(blob, name, when).then(function (stamped) {
+      return blobToImageFile(stamped, name, when);
+    });
   }
 
   function canShareFiles(files) {
@@ -378,7 +498,9 @@
     if (!galleryState.unlocked) return Promise.reject(new Error('locked'));
     if (!blob || !blob.size) return Promise.reject(new Error('empty-blob'));
     if (isPhoneLike() && isImageBlob(blob, name)) {
-      return saveImageFiles([blobToImageFile(blob, name)]);
+      return prepareLibraryFile(blob, name).then(function (file) {
+        return saveImageFiles([file]);
+      });
     }
     return saveBlobViaAnchor(blob, name);
   }
@@ -431,17 +553,20 @@
       report(0, list.length, 'download');
       var files = [];
       var chain = Promise.resolve();
+      var baseStamp = Date.now();
       list.forEach(function (item, index) {
         chain = chain.then(function () {
+          var fileName = item.fileName || 'stantia-' + item.photoId + '.jpg';
+          // Stagger dates so a batch still sorts as newest-first in the library.
+          var when = new Date(baseStamp + index * 1000);
           return window.StantiaProjectAuth
             .fetchPhotoBlob(galleryState.projectId, item.photoId)
             .then(function (blob) {
-              files.push(
-                blobToImageFile(
-                  blob,
-                  item.fileName || 'stantia-' + item.photoId + '.jpg',
-                ),
-              );
+              if (preferLibrary) return prepareLibraryFile(blob, fileName, when);
+              return blobToImageFile(blob, fileName, when);
+            })
+            .then(function (file) {
+              files.push(file);
               report(index + 1, list.length, 'download');
             });
         });
