@@ -7,7 +7,7 @@
     <title>Ayuda y guías — Stantia</title>
     <meta
       name="description"
-      content="Cómo usar Stantia: crear workouts, entrenar en vivo, Apple Watch, smart timers, Hybrid Index, crews, feed y preguntas frecuentes."
+      content="Cómo usar Stantia: workouts, Train, importar Apple Watch y Garmin, eventos, programas, widgets, Hybrid Index, crews, feed y preguntas frecuentes."
     />
     <link rel="canonical" href="https://fermacu.github.io/stantia-app-legal/es/help/" />
     <link rel="alternate" hreflang="en" href="https://fermacu.github.io/stantia-app-legal/help/" />
@@ -20,12 +20,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../styles.css?v=59" />
+    <link rel="stylesheet" href="../../styles.css?v=60" />
       <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stantia" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="Ayuda y guías — Stantia" />
-    <meta property="og:description" content="Cómo usar Stantia: crear workouts, entrenar en vivo, Apple Watch, smart timers, Hybrid Index, crews, feed y preguntas frecuentes." />
+    <meta property="og:description" content="Cómo usar Stantia: workouts, Train, importar Apple Watch y Garmin, eventos, programas, widgets, Hybrid Index, crews, feed y preguntas frecuentes." />
     <meta property="og:url" content="https://stantia.app/es/help/" />
     <meta property="og:image" content="https://stantia.app/assets/og-share.png" />
     <meta property="og:image:type" content="image/png" />
@@ -67,10 +67,11 @@
     <header class="hero hero--wide">
       <p class="hero__eyebrow">Soporte</p>
       <h1>Ayuda y guías</h1>
-      <p class="hero__meta">Última actualización: 29 de octubre de 2026 · App versión 2.0.12</p>
+      <p class="hero__meta">Última actualización: 14 de noviembre de 2026 · App versión 2.0.15</p>
       <p class="hero__lede">
         El entrenamiento es el contenido. La comunidad es el producto. Así te mueves en Stantia,
-        creas workouts, entrenas en vivo, compartes sesiones y ves qué tan híbrido eres.
+        creas workouts, entrenas en vivo, importas desde Garmin o Apple Watch, te unes a eventos
+        Stantia, compartes sesiones y ves qué tan híbrido eres.
       </p>
       <nav class="guide-toc guide-toc--mobile" aria-label="En esta página">
         <a href="#screens">Pantallas</a>
@@ -79,9 +80,13 @@
         <a href="#preview">Vista previa</a>
         <a href="#train">Entrenar</a>
         <a href="#apple-watch">Apple Watch</a>
+        <a href="#import">Importar</a>
         <a href="#timers">Timers</a>
+        <a href="#programs">Programas</a>
+        <a href="#widgets">Widgets</a>
         <a href="#hybrid-index">Hybrid Index</a>
         <a href="#crews">Crews</a>
+        <a href="#events">Eventos</a>
         <a href="#feed">Feed</a>
         <a href="#faq">Preguntas</a>
       </nav>
@@ -98,9 +103,13 @@
             <li><a href="#preview" data-nav>Vista previa de sesión</a></li>
             <li><a href="#train" data-nav>Entrenar en vivo</a></li>
             <li><a href="#apple-watch" data-nav>Apple Watch</a></li>
+            <li><a href="#import" data-nav>Importar workouts</a></li>
             <li><a href="#timers" data-nav>Smart timers</a></li>
+            <li><a href="#programs" data-nav>Programas</a></li>
+            <li><a href="#widgets" data-nav>Widgets</a></li>
             <li><a href="#hybrid-index" data-nav>Hybrid Index</a></li>
             <li><a href="#crews" data-nav>Crews</a></li>
+            <li><a href="#events" data-nav>Eventos Stantia</a></li>
             <li><a href="#feed" data-nav>Feed</a></li>
             <li><a href="#faq" data-nav>Preguntas</a></li>
           </ol>
@@ -195,17 +204,19 @@
           <li><strong>Perfil</strong> — tu página, ajustes, Acerca de y ayuda</li>
         </ul>
         <p>
-          El encabezado del Feed tiene <strong>crear (+)</strong> a la izquierda, el
-          <strong>wordmark de Stantia</strong> al centro y las <strong>notificaciones</strong> a
-          la derecha. Usa <strong>+</strong> en Workouts para crear un workout nuevo. En <strong>Perfil → Ajustes</strong> puedes editar nombre,
+          El encabezado del Feed tiene <strong>crear (+)</strong>, el
+          <strong>wordmark de Stantia</strong> al centro, <strong>Eventos</strong> (eventos
+          deportivos publicados por Stantia) y <strong>Activity</strong> (notificaciones). Usa
+          <strong>+</strong> en Workouts para crear un workout nuevo. En <strong>Perfil → Ajustes</strong> puedes editar nombre,
           username, bio, especialidades, preferencias del feed y país; elegir tema claro u oscuro
           y color de acento; poner el idioma en <strong>English</strong> o <strong>Español</strong>;
           activar o desactivar notificaciones push; y, en iPhone, decidir si las métricas del
           Apple Watch se suben a la nube. La opción <strong>Métricas públicas en el perfil</strong> viene
           apagada por defecto. Actívalo si otros atletas deben ver tu Hybrid Index y el reparto
           por especialidad en la pestaña Estadísticas (y para aparecer en rankings mensuales que
-          exigen métricas públicas). <strong>Stantia Pro</strong> (Ajustes → Stantia Pro)
-          desbloquea extras de pago como la racha de actividad cuando esté disponible en tu cuenta.
+          exigen métricas públicas).           <strong>Stantia Pro</strong> (Ajustes → Stantia Pro)
+          desbloquea Programas, widgets de pantalla de inicio, racha de actividad e Insights más
+          profundos cuando estén disponibles en tu cuenta.
         </p>
       </section>
 
@@ -555,6 +566,39 @@
         </p>
       </section>
 
+      <section class="guide" id="import">
+        <p class="guide__eyebrow">Trae workouts</p>
+        <h2>Importar desde Apple Watch o Garmin</h2>
+        <p>
+          ¿Ya terminaste una sesión fuera de Entrenar en Stantia? Abre <strong>Entrenar → Registrar
+          una sesión completada</strong> (o el <strong>+</strong> de Historial) y usa
+          <strong>Importar workout</strong>. Las importaciones crean Otras sesiones editables en
+          Historial — no son corridas del runner de Entrenar. Las filas muestran un chip
+          <strong>Importado de Apple Watch</strong> o <strong>Importado de Garmin Connect</strong>.
+        </p>
+        <h3>Apple Watch / Fitness</h3>
+        <p>
+          En iPhone, elige workouts recientes de Apple Health que no haya registrado Stantia
+          Entrenar. Distancia, ritmo, duración, calorías, frecuencia cardíaca y extras (splits,
+          zonas, elevación, ruta cuando exista) llenan el formulario. Puedes editar antes de
+          guardar.
+        </p>
+        <h3>Garmin Connect</h3>
+        <p>
+          Conecta Garmin en <strong>Perfil → Ajustes → Workouts → Garmin Connect</strong>
+          (OAuth — no es emparejar un reloj). Los resúmenes de Garmin esperan en una bandeja de
+          importación hasta que los elijas en Importar workout. Cuando el plan del partner lo
+          permita, Stantia también puede traer filas recientes de Activity API; si no, usa
+          actividades de Garmin ya reflejadas en Apple Health.
+        </p>
+        <p>
+          Importar siempre lista ambas fuentes cuando estén disponibles. Al guardar, las métricas
+          del reloj quedan en la sesión para que Historial, Insights, share cards y rankings la
+          traten como cualquier sesión registrada. Las importaciones de natación usan el ritmo en
+          movimiento del reloj por 100&nbsp;m.
+        </p>
+      </section>
+
       <section class="guide" id="timers">
         <p class="guide__eyebrow">Timer rápido</p>
         <h2>Entrena con smart timers</h2>
@@ -591,6 +635,65 @@
           el mismo comportamiento de pausa / reanudar y métricas opcionales del Watch cuando está listo.
           Compártelos desde Historial o adjunta una corrida completada a un post — no como adjunto de
           workout de Biblioteca.
+        </p>
+      </section>
+
+      <section class="guide" id="programs">
+        <p class="guide__eyebrow">Stantia Pro</p>
+        <h2>Programas y plan semanal</h2>
+        <p>
+          En <strong>Entrenar</strong>, abre <strong>Programas</strong> (calendario) para planear la
+          semana y seguir objetivos. Los programas son parte de <strong>Stantia Pro</strong>
+          (<code>planner</code>). Quienes están en Free ven la card de bloqueo Pro.
+        </p>
+        <ul>
+          <li>
+            <strong>Esta semana</strong> — sesiones hechas vs planeadas, una línea de coach (hoy
+            sigue abierto / próximo día / el hueco), días parciales o perdidos, y
+            <strong>Reprogramar</strong> en slots perdidos
+          </li>
+          <li>
+            <strong>Calendario del mes</strong> — layout lun–dom; agenda varias sesiones por día
+            (especialidad o cualquiera, horas o distancia de locomoción, o un workout de
+            biblioteca de Míos / Guardados), con recordatorio local opcional ese día
+          </li>
+          <li>
+            <strong>Objetivos periódicos</strong> — horas o distancia, semanal o por rango de
+            fechas; varios pueden quedar activos con progreso en vivo desde sesiones completadas y
+            registradas
+          </li>
+        </ul>
+        <p>
+          Entrenar también muestra mini-cards Pro de objetivos abiertos y las sesiones planeadas
+          de hoy cuando tienes Pro.
+        </p>
+      </section>
+
+      <section class="guide" id="widgets">
+        <p class="guide__eyebrow">Stantia Pro</p>
+        <h2>Widgets de pantalla de inicio</h2>
+        <p>
+          Con Stantia Pro (<code>custom_widgets</code>), agrega widgets de Stantia a la pantalla
+          de inicio de iPhone o Android. Cada uno muestra el wordmark de Stantia. Sin Pro, el
+          widget muestra un estado vacío de Stantia Pro.
+        </p>
+        <ul>
+          <li><strong>Activity</strong> (mediano) — barras de minutos de entrenamiento de los últimos 7 días</li>
+          <li>
+            <strong>Streak</strong> (pequeño / mediano) — racha semanal y puntos lun–dom
+          </li>
+          <li>
+            <strong>This week</strong> (mediano) — conteo de sesiones, horas y las mismas barras de 7 días
+          </li>
+          <li>
+            <strong>Programs</strong> (pequeño / mediano) — próximo plan pendiente más un objetivo
+            abierto con barra de progreso
+          </li>
+        </ul>
+        <p>
+          Activity, Streak y This week abren Historial → Insights. Programs abre Entrenar →
+          Programas. La app refresca el snapshot del widget cuando cambian sesiones, planes,
+          objetivos o tu suscripción.
         </p>
       </section>
 
@@ -681,12 +784,52 @@
         </ul>
       </section>
 
+      <section class="guide" id="events">
+        <p class="guide__eyebrow">Comunidad</p>
+        <h2>Eventos Stantia</h2>
+        <p>
+          Stantia publica eventos deportivos desde la cuenta oficial de marca. Todos ven esos
+          posts en el feed (con la etiqueta <strong>Evento Stantia</strong>), aunque no sigan esa
+          cuenta. Abre <strong>Eventos</strong> en el encabezado del Feed para el directorio
+          completo — próximos primero, pasados al final.
+        </p>
+        <ul>
+          <li>
+            Las cards del evento muestran cover, especialidades, cuándo y dónde, avatares de
+            quienes van, y un checkbox circular de <strong>RSVP</strong>. Toca el promo para abrir
+            el <strong>detalle del evento</strong>
+          </li>
+          <li>
+            El detalle incluye Acerca de, Cuándo, Dónde, fotos, quién va y una grilla de posts de
+            atletas ligados a ese evento. Cuando el evento termina, quienes marcaron que van pueden
+            calificarlo de 1 a 5 estrellas
+          </li>
+          <li>
+            Compartir desde el detalle arma una imagen estilo Stories y abre la hoja del sistema
+            (incluye WhatsApp). Los links abren el evento en la app
+          </li>
+          <li>
+            Los recordatorios del día del evento llegan por push a quienes marcaron que van (solo
+            push — no van a la bandeja de Actividad)
+          </li>
+        </ul>
+        <h3>Liga tu entrenamiento a un evento</h3>
+        <p>
+          Al crear o editar un post puedes adjuntar un evento Stantia publicado (en lugar de un
+          workout o una sesión). El feed muestra un banner compacto — título y fecha — como ligado
+          a un evento de Stantia; tocar abre el detalle (sin RSVP en ese banner). Las sesiones
+          registradas también pueden guardar un evento ligado; al compartir esa sesión el link
+          pasa al post. El resumen de sesión muestra un banner «Ligado a un evento de Stantia».
+        </p>
+      </section>
+
       <section class="guide" id="feed">
         <p class="guide__eyebrow">Comunidad</p>
         <h2>Conéctate a través del entrenamiento</h2>
         <p>
           El feed es donde los atletas comparten progreso, ideas y workouts. Sigue a quienes quieres
-          tener cerca en el entrenamiento — tu feed muestra sus posts y los tuyos.
+          tener cerca en el entrenamiento — tu feed muestra sus posts y los tuyos, más los posts
+          de eventos Stantia de la cuenta oficial.
         </p>
         <p>
           Tu feed también puede incluir <strong>reposts</strong>: cuando alguien que sigues
@@ -696,14 +839,14 @@
           o sesiones de personas que no sigues cuando coinciden con tus especialidades de interés
           del feed (con la etiqueta <em>Según tus intereses</em>). En posts de personas que no
           sigues aparece un botón <strong>Seguir</strong>. En posts con fotos, pequeñas burbujas de
-          avatares muestran amigos que dieron like o republicaron. El menú de cada post te deja
-          ocultarlo, reportarlo o dejar de seguir al autor.
+          avatares muestran amigos que dieron like o republicaron (ocultas en cards de eventos
+          Stantia). El menú de cada post te deja ocultarlo, reportarlo o dejar de seguir al autor.
         </p>
         <p>
-          Crear un post es un flujo corto de varios pasos (mismo chrome que Nuevo workout):
-          <strong>Contenido</strong> (fotos + caption) → <strong>Adjuntar</strong> → Publicar. Cada
-          parte es opcional, pero el post necesita al menos caption, fotos o un adjunto
-          válido.
+          Crear un post es una pantalla estilo Instagram: fotos, caption y Compartir en el
+          encabezado. Filas de opciones adjuntan una sesión, un workout de biblioteca o un evento
+          Stantia, e invitan colaboradores. Cada parte es opcional, pero el post necesita al menos
+          caption, fotos o un adjunto válido.
         </p>
         <h3>Qué puedes adjuntar</h3>
         <p>Elige como máximo un tipo de adjunto por post:</p>
@@ -723,6 +866,11 @@
             <strong>Otras sesión</strong> — elige una Historial → Otras sesión existente, o
             créala al publicar. Se muestra como banner de <strong>Sesión completada</strong> y
             abre el resumen de sesión.
+          </li>
+          <li>
+            <strong>Evento Stantia</strong> — un evento publicado. Muestra un banner compacto de
+            evento ligado (título + fecha). Una sesión registrada puede traer ya su propio evento
+            ligado.
           </li>
         </ul>
         <ul>
@@ -787,8 +935,10 @@
           <details class="faq__item">
             <summary>¿Stantia es gratis?</summary>
             <p>
-              Sí — Stantia es gratis. Si llegan funciones premium después, comunicaremos
-              precios con claridad antes de cualquier cambio.
+              El entrenamiento principal, Historial, el feed, crews y la comunidad siguen gratis.
+              <strong>Stantia Pro</strong> desbloquea extras como Programas (planner), widgets de
+              pantalla de inicio, racha de actividad e Insights más profundos (Studio / Trends).
+              Gestiona Pro en <strong>Perfil → Ajustes → Stantia Pro</strong>.
             </p>
           </details>
 
@@ -853,8 +1003,40 @@
             <p>
               No. Las métricas del Watch son opcionales. Con un Apple Watch emparejado, la app Stantia Watch
               y permiso de Salud, puedes ver frecuencia cardiaca, energía y distancia en vivo
-              mientras entrenas, y registrar una ruta GPS en sesiones al aire libre. Sin Watch, las sesiones siguen normal. Ver la guía de
+              mientras entrenas, y registrar una ruta GPS en sesiones al aire libre. También puedes
+              <a href="#import">importar</a> actividades terminadas de Apple Health o Garmin Connect
+              al Historial. Sin Watch, las sesiones siguen normal. Ver la guía de
               <a href="#apple-watch">Apple Watch</a> para setup y modos de métricas.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>¿Cómo importo un workout de Garmin o Apple Watch?</summary>
+            <p>
+              Abre <strong>Entrenar → Registrar una sesión completada</strong> (o el
+              <strong>+</strong> de Historial) y toca <strong>Importar workout</strong>. Conecta
+              Garmin en Ajustes → Workouts primero si quieres Garmin Connect. Las importaciones
+              se vuelven Otras sesiones con un chip de Importado — ver
+              <a href="#import">Importar workouts</a>.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>¿Qué son los eventos Stantia?</summary>
+            <p>
+              Eventos deportivos oficiales publicados por Stantia. Explóralos desde Feed → Eventos,
+              marca que vas (RSVP), abre el detalle, comparte una imagen Stories y opcionalmente
+              liga tus posts o sesiones registradas a un evento. Ver
+              <a href="#events">Eventos Stantia</a>.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>¿Qué muestran los widgets de pantalla de inicio?</summary>
+            <p>
+              Con Stantia Pro puedes agregar widgets de Activity, Streak, This week y Programs.
+              Sin Pro muestran un estado vacío de Pro. Ver
+              <a href="#widgets">Widgets de pantalla de inicio</a>.
             </p>
           </details>
 
@@ -910,11 +1092,12 @@
           <details class="faq__item">
             <summary>¿Cómo funciona el feed?</summary>
             <p>
-              Tu feed muestra tus posts, los de atletas que sigues y los que ellos republican
-              (con la etiqueta de quién republicó). También puedes ver posts de workouts o
-              sesiones que coinciden con tus intereses. Crea posts con texto, fotos y
-              opcionalmente un workout de biblioteca/Guardados, una corrida de Entrenar o una
-              Otras sesión. Usa Buscar para descubrir atletas.
+              Tu feed muestra tus posts, los de atletas que sigues, los que ellos republican
+              (con la etiqueta de quién republicó), posts de eventos Stantia de la cuenta oficial
+              y posts de workouts o sesiones que coinciden con tus intereses. Crea posts con
+              texto, fotos y opcionalmente un workout de biblioteca/Guardados, una corrida de
+              Entrenar, una Otras sesión o un evento Stantia ligado. Usa Buscar para descubrir
+              atletas.
             </p>
           </details>
 

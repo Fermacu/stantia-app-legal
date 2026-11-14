@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open event — Stantia</title>
+    <meta name="description" content="Open this Stantia event in the app, or get Stantia from the store." />
+    <link rel="canonical" href="https://stantia.app/open/event/" />
+    <link rel="icon" href="../../assets/logo-mark.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Stantia" />
+    <meta property="og:title" content="Open event — Stantia" />
+    <meta property="og:description" content="Open this Stantia event in the app, or get Stantia from the store." />
+    <meta property="og:url" content="https://stantia.app/open/event/" />
+    <meta property="og:image" content="https://stantia.app/assets/og-share.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://stantia.app/assets/og-share.png" />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #0b0b0f;
+        color: #f4f4f5;
+        padding: 24px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0 0 8px;
+      }
+      p {
+        margin: 0 0 20px;
+        color: rgba(244, 244, 245, 0.72);
+        line-height: 1.45;
+      }
+      a {
+        color: #fff;
+        font-weight: 600;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        background: #fff;
+        color: #0b0b0f;
+      }
+      .btn--ghost {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Opening Stantia…</h1>
+      <p id="copy">If the app does not open, get Stantia from the store.</p>
+      <div class="actions">
+        <a class="btn" id="open-app" href="#">Open in Stantia</a>
+        <a class="btn btn--ghost" id="store" href="https://apps.apple.com/app/stantia/id6790072749">Get the app</a>
+      </div>
+    </main>
+    <script>
+      (function () {
+        var APP_STORE = 'https://apps.apple.com/app/stantia/id6790072749';
+        var PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.fermacu.stantia';
+        var params = new URLSearchParams(window.location.search);
+        var eventId = (params.get('id') || '').trim();
+        var isAndroid = /Android/i.test(navigator.userAgent || '');
+        var isEs = /^es\b/i.test(navigator.language || '');
+        var storeUrl = isAndroid ? PLAY_STORE : APP_STORE;
+        var appUrl = eventId ? 'hybrd://event/' + encodeURIComponent(eventId) : 'hybrd://';
+
+        document.getElementById('store').setAttribute('href', storeUrl);
+        document.getElementById('open-app').setAttribute('href', appUrl);
+
+        if (isEs) {
+          document.documentElement.lang = 'es';
+          document.querySelector('h1').textContent = 'Abriendo Stantia…';
+          document.getElementById('copy').textContent =
+            'Si la app no se abre, descarga Stantia desde la tienda.';
+          document.getElementById('open-app').textContent = 'Abrir en Stantia';
+          document.getElementById('store').textContent = 'Descargar la app';
+        }
+
+        var left = false;
+        function markLeft() {
+          left = true;
+        }
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) markLeft();
+        });
+        window.addEventListener('pagehide', markLeft);
+
+        window.location.href = appUrl;
+        window.setTimeout(function () {
+          if (!left) window.location.href = storeUrl;
+        }, 1400);
+      })();
+    </script>
+  </body>
+</html>
