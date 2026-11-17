@@ -2698,6 +2698,10 @@ body.studio-page .projects-intro h1 {
   letter-spacing: -0.04em;
 }
 
+body.studio-page [data-projects-list] > .studio-card:not(:last-child) {
+  padding-bottom: 0;
+}
+
 body.projects .home-work {
   max-width: 88rem;
   margin-right: auto;
@@ -4278,6 +4282,10 @@ body.home .site-footer,
   body.studio-page .studio-card {
     padding-top: 2.5rem;
     padding-bottom: 3.5rem;
+  }
+
+  body.studio-page [data-projects-list] > .studio-card:not(:last-child) {
+    padding-bottom: 0;
   }
 
   body.studio-page .studio-card .home-work__banner {

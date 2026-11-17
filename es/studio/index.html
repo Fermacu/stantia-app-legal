@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../styles.css?v=59" />
+    <link rel="stylesheet" href="../../styles.css?v=60" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stantia" />
     <meta property="og:locale" content="es_ES" />
@@ -61,15 +61,17 @@
         <h1>Explora nuestros proyectos</h1>
       </header>
 
-      <section class="home-work studio-card" aria-label="Liga BJJ 2026">
-        <a class="home-work__banner" href="./liga-bjj/">
-          <img class="home-work__photo" src="" alt="" data-project-cover="liga-bjj" />
-          <div class="home-work__copy">
-            <h2 class="home-work__event">Liga BJJ 2026</h2>
-            <p class="home-work__sub">Scramble Jiu-Jitsu Academy</p>
-          </div>
-        </a>
-      </section>
+      <div data-projects-list data-lang="es" data-base="./">
+        <section class="home-work studio-card" aria-label="Liga BJJ 2026">
+          <a class="home-work__banner" href="./liga-bjj/">
+            <img class="home-work__photo" src="" alt="" data-project-cover="liga-bjj" />
+            <div class="home-work__copy">
+              <h2 class="home-work__event">Liga BJJ 2026</h2>
+              <p class="home-work__sub">Scramble Jiu-Jitsu Academy</p>
+            </div>
+          </a>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer home-foot">
@@ -109,6 +111,7 @@
     <script src="../../js/firebase-config.js?v=1" defer></script>
     <script src="../../js/project-auth.js?v=19" defer></script>
     <script src="../../js/project-cover.js?v=1" defer></script>
+    <script src="../../js/project-list.js?v=1" defer></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         if (window.StantiaProjectAuth && window.StantiaProjectAuth.mountNavbar) {

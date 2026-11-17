@@ -56,7 +56,7 @@
       var location = pick(data, 'location', 'locationEs');
       var cover = typeof data.coverUrl === 'string' ? data.coverUrl : '';
       var href = projectHref(item.id);
-      html += '<section class="home-work" aria-label="' + escapeAttr(title) + '">';
+      html += '<section class="home-work studio-card" aria-label="' + escapeAttr(title) + '">';
       html += '<a class="home-work__banner" href="' + escapeAttr(href) + '">';
       if (cover) {
         html += '<img class="home-work__photo" src="' + escapeAttr(cover) + '" alt="" loading="lazy" />';
@@ -92,8 +92,8 @@
 
   root.setAttribute('aria-busy', 'true');
   root.innerHTML =
-    '<section class="home-work project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>' +
-    '<section class="home-work project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>';
+    '<section class="home-work studio-card project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>' +
+    '<section class="home-work studio-card project-list__skeleton" aria-hidden="true"><div class="home-work__banner project-list__skeleton-banner"></div></section>';
 
   var config = window.STANTIA_FIREBASE;
   if (!config || typeof firebase === 'undefined') {
