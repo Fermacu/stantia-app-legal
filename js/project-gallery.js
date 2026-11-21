@@ -617,8 +617,11 @@
     img.removeAttribute('data-locked-thumb');
     item.el.classList.remove('is-thumb-blocked');
     function markLoaded() {
-      item.el.classList.add('is-loaded');
+      window.requestAnimationFrame(function () {
+        item.el.classList.add('is-loaded');
+      });
     }
+    item.el.classList.remove('is-loaded');
     if (img.complete && img.naturalWidth) markLoaded();
     else {
       img.addEventListener('load', markLoaded, { once: true });
@@ -645,7 +648,17 @@
       if (galleryState.unlocked) {
         item.el.classList.remove('is-thumb-blocked');
         if (item.preview) img.src = item.preview;
-        item.el.classList.add('is-loaded');
+        function markUnlockedLoaded() {
+          window.requestAnimationFrame(function () {
+            item.el.classList.add('is-loaded');
+          });
+        }
+        if (img.complete && img.naturalWidth) markUnlockedLoaded();
+        else {
+          item.el.classList.remove('is-loaded');
+          img.addEventListener('load', markUnlockedLoaded, { once: true });
+          img.addEventListener('error', markUnlockedLoaded, { once: true });
+        }
         return;
       }
       paintLockedThumb(item);
@@ -1131,12 +1144,28 @@
       document.body.classList.add('lightbox-open');
       frame.removeAttribute('src');
       frame.classList.add('is-loading');
+      if (stage) stage.classList.add('is-waiting');
       box.classList.remove('is-overlay-mark');
+
+      function revealFrame() {
+        window.requestAnimationFrame(function () {
+          frame.classList.remove('is-loading');
+          if (stage) stage.classList.remove('is-waiting');
+        });
+      }
+
+      function bindFrameReveal() {
+        if (frame.complete && frame.naturalWidth) revealFrame();
+        else {
+          frame.addEventListener('load', revealFrame, { once: true });
+          frame.addEventListener('error', revealFrame, { once: true });
+        }
+      }
 
       if (galleryState.unlocked) {
         frame.src = src;
         frame.alt = item.alt || '';
-        frame.classList.remove('is-loading');
+        bindFrameReveal();
         return;
       }
 
@@ -1146,16 +1175,16 @@
           if (galleryState.items[galleryState.index].preview !== src) return;
           frame.src = marked.objectUrl;
           frame.alt = item.alt || '';
-          frame.classList.remove('is-loading');
           box.classList.remove('is-overlay-mark');
+          bindFrameReveal();
         })
         .catch(function () {
           if (galleryState.unlocked) return;
           if (galleryState.items[galleryState.index].preview !== src) return;
           frame.src = src;
           frame.alt = item.alt || '';
-          frame.classList.remove('is-loading');
           box.classList.add('is-overlay-mark');
+          bindFrameReveal();
         });
     }
 
@@ -1166,6 +1195,7 @@
       document.body.classList.remove('lightbox-open');
       frame.removeAttribute('src');
       frame.classList.remove('is-loading');
+      if (stage) stage.classList.remove('is-waiting');
       box.classList.remove('is-overlay-mark');
       box.classList.remove('is-unlocked');
     }

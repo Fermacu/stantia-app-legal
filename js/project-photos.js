@@ -24,7 +24,10 @@
   var summaryEl = document.querySelector('[data-project-summary]');
   var sportEl = document.querySelector('[data-project-sport]');
   var locationEl = document.querySelector('[data-project-location]');
-  var sectionEl = document.querySelector('.home-work');
+  var sportChip = document.querySelector('[data-project-sport-chip]');
+  var locationChip = document.querySelector('[data-project-location-chip]');
+  var chipsEl = document.querySelector('[data-project-chips]');
+  var sectionEl = document.querySelector('.project-intro, .home-work');
   var gallerySection = document.querySelector('.project-gallery');
   var galleryReady = false;
   var latestPhotos = [];
@@ -122,16 +125,11 @@
       summaryEl.textContent = summary;
       summaryEl.hidden = !summary;
     }
-    if (sportEl) {
-      sportEl.textContent = sport;
-      var sportWrap = sportEl.closest('.project-fact, .project-chip');
-      if (sportWrap) sportWrap.hidden = !sport;
-    }
-    if (locationEl) {
-      locationEl.textContent = location;
-      var locWrap = locationEl.closest('.project-fact, .project-chip');
-      if (locWrap) locWrap.hidden = !location;
-    }
+    if (sportEl) sportEl.textContent = sport;
+    if (locationEl) locationEl.textContent = location;
+    if (sportChip) sportChip.hidden = !sport;
+    if (locationChip) locationChip.hidden = !location;
+    if (chipsEl) chipsEl.hidden = !(sport || location);
     if (sectionEl) sectionEl.setAttribute('aria-label', title);
     if (gallerySection) gallerySection.setAttribute('aria-label', isEs ? 'Galería' : 'Gallery');
     if (grid) grid.setAttribute('data-alt', title);
@@ -141,7 +139,8 @@
   function showSkeletons(count) {
     if (!grid) return;
     var html = '';
-    for (var i = 0; i < count; i += 1) {
+    var total = Math.max(count || 9, 9);
+    for (var i = 0; i < total; i += 1) {
       html += '<div class="project-gallery__skeleton" aria-hidden="true"><span></span></div>';
     }
     grid.innerHTML = html;
@@ -199,11 +198,15 @@
 
   function bindThumbLoaders() {
     if (!grid) return;
-    grid.querySelectorAll('.project-gallery__item').forEach(function (item) {
+    var items = grid.querySelectorAll('.project-gallery__item');
+    items.forEach(function (item, index) {
       var img = item.querySelector('img');
       if (!img) return;
+      item.style.setProperty('--reveal-delay', Math.min(index * 45, 360) + 'ms');
       function done() {
-        item.classList.add('is-loaded');
+        window.requestAnimationFrame(function () {
+          item.classList.add('is-loaded');
+        });
       }
       if (img.complete && img.naturalWidth) done();
       else {
