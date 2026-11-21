@@ -1,3 +1,6 @@
 
 # Raw source videos (too large for GitHub Pages; site uses assets/home/sports/)
 assets/sports/
+
+# Web encodes live on media.stantia.app (R2)
+assets/home/sports/*.mp4
